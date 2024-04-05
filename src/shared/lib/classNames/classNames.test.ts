@@ -6,7 +6,7 @@ describe('classNames', () => {
     });
 
     test('with additional class', () => {
-        const exptected = 'className class1 class2'
+        const exptected = 'className class1 class2';
         expect(classNames('className', {}, ['class1', 'class2'])).toBe(exptected);
     });
 
