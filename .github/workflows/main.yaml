@@ -1,33 +1,43 @@
 name: linting testing building
+
 on:
   push:
     branches: [ master ]
   pull_request:
     branches: [ master ]
-  jobs:
+
+jobs:
   unit-ui-testing:
     runs-on: ubuntu-latest
     strategy:
       matrix:
         node-version: [18.x]
     steps:
-      - uses: actions/checkout@v2
-      - name: Staring Node.js ${{ matrix.node-version }}
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Setup Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
-        with: 
+        with:
           node-version: ${{ matrix.node-version }}
-        
-      - name: install modules
+
+      - name: Install modules
         run: npm install
-      - name: build
+
+      - name: Build
         run: npm run build:prod
-        name: lint typescript
+
+      - name: Lint TypeScript
         run: npm run lint:ts
-        name: lint css
+
+      - name: Lint CSS
         run: npm run lint:scss
-        name: unit testing
+
+      - name: Unit testing
         run: npm run test:unit
-        name: build storybook
+
+      - name: Build Storybook
         run: npm run storybook:build
-        name: screenshot testing
+
+      - name: Screenshot testing
         run: npm run test:ui:ci
