@@ -15,5 +15,3 @@ render(
     </BrowserRouter>,
     document.getElementById('root'),
 );
-
-// try to pass tests

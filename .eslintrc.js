@@ -43,6 +43,7 @@ module.exports = {
             'error', { markupOnly: true, ignoreAttribute: ['to', 'data-testid'] },
         ],
         'max-len': ['error', { ignoreComments: true, code: 100 }],
+        'linebreak-style': ['error', process.platform === 'win32' ? 'windows' : 'unix'],
     },
     globals: {
         __IS_DEV__: true,
