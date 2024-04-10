@@ -10,4 +10,4 @@ const meta: Meta<typeof MainPage> = {
 export default meta;
 type Story = StoryObj<typeof MainPage>;
 
-export const DarkIcon: Story = {};
+export const Primary: Story = {};
