@@ -6,10 +6,28 @@ import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 
 interface ThemeSwitcherProps {
     className?: string;
+    invertedColor?: boolean;
 }
 
-export const ThemeSwitcher = ({ className }: ThemeSwitcherProps) => {
+export const ThemeSwitcher = (props: ThemeSwitcherProps) => {
     const { theme, toogleTheme } = useTheme();
+
+    const {
+        className,
+        invertedColor = false,
+    } = props;
+
+    if (invertedColor) {
+        return (
+            <Button
+                className={classNames('', {}, [className])}
+                onClick={toogleTheme}
+                theme={ButtonTheme.CLEAR}
+            >
+                {theme === Theme.DARK ? <DarkIcon /> : <LightIcon />}
+            </Button>
+        );
+    }
 
     return (
         <Button
@@ -17,7 +35,7 @@ export const ThemeSwitcher = ({ className }: ThemeSwitcherProps) => {
             onClick={toogleTheme}
             theme={ButtonTheme.CLEAR}
         >
-            {theme === Theme.DARK ? <DarkIcon /> : <LightIcon />}
+            {theme === Theme.DARK ? <LightIcon /> : <DarkIcon />}
         </Button>
     );
 };
