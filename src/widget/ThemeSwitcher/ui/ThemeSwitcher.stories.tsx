@@ -10,4 +10,4 @@ const meta: Meta<typeof ThemeSwitcher> = {
 export default meta;
 type Story = StoryObj<typeof ThemeSwitcher>;
 
-export const DarkIcon: Story = {};
+export const Primary: Story = {};
