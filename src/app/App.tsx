@@ -1,4 +1,3 @@
-import './styles/index.scss';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Navbar } from 'widget/Navbar';
 import { Sidebar } from 'widget/Sidebar';
