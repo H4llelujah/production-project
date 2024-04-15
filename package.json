@@ -109,5 +109,6 @@
         "preset": "iPhone 7"
       }
     }
-  }
+  },
+  "overrides": { "loki": { "@storybook/react": "$@storybook/react" } } 
 }
