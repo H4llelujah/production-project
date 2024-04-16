@@ -30,7 +30,7 @@ export const globalTypes = {
     theme: {
         name: 'theme',
         description: 'Select light or dark theme',
-        defaultValue: 'light',
+        defaultValue: Theme.LIGHT,
         toolbar: {
             icon: 'mirror',
             items: [Theme.LIGHT, Theme.DARK],

@@ -17,13 +17,13 @@ const ThemeProvider = (props: ThemeProviderProps) => {
     } = props;
 
     const [theme, setTheme] = useState<Theme>(initialTheme || defaultTheme);
-
     // for storybook!
     useEffect(() => {
         if (initialTheme) {
             setTheme(initialTheme);
         }
-    }, [initialTheme]);
+        document.body.className = theme;
+    }, [initialTheme, theme]);
 
     const defaultProps = useMemo(() => ({
         theme,
