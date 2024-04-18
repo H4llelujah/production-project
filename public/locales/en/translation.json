@@ -6,5 +6,7 @@
     "Загрузка": "Loading...",
     "Страница не найдена": "Page not found",
     "О сайте": "About us",
-    "Войти": "Login"
+    "Войти": "Login",
+    "Введите username": "Enter username",
+    "Введите пароль": "Enter password"
 }
