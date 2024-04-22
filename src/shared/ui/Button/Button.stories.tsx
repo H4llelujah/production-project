@@ -122,3 +122,11 @@ export const SizeXL: Story = {
         size: ButtonSize.XL,
     },
 };
+
+export const disabled: Story = {
+    args: {
+        children: 'text',
+        size: ButtonSize.L,
+        disabled: true,
+    },
+};
