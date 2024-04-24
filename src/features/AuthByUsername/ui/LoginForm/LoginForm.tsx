@@ -16,7 +16,7 @@ interface LoginFormProps {
     isOpen?: boolean;
 }
 
-export const LoginForm = memo(({ className, isOpen }: LoginFormProps) => {
+const LoginForm = memo(({ className, isOpen }: LoginFormProps) => {
     const { t } = useTranslation();
     const dispatch = useAppDispatch();
 
@@ -61,3 +61,5 @@ export const LoginForm = memo(({ className, isOpen }: LoginFormProps) => {
         </div>
     );
 });
+
+export default LoginForm;
