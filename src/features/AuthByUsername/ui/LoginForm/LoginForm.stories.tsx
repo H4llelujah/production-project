@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { StoreProvider } from 'app/providers/StoreProvider';
+import { loginReducer } from 'features/AuthByUsername/model/slice/loginSlice';
 import LoginForm from './LoginForm';
 
 const meta: Meta<typeof LoginForm> = {
@@ -23,11 +24,13 @@ export const Error: Story = {
     },
     decorators: [
         (Story) => (
-            <StoreProvider initialState={{
-                loginForm: {
-                    isLoading: true, password: '', username: '', error: 'ERROR',
-                },
-            }}
+            <StoreProvider
+                initialState={{
+                    loginForm: {
+                        isLoading: true, password: '', username: '', error: 'ERROR',
+                    },
+                }}
+                asyncReducers={{ loginForm: loginReducer }}
             >
                 <Story />
             </StoreProvider>
@@ -41,7 +44,10 @@ export const Loading: Story = {
     },
     decorators: [
         (Story) => (
-            <StoreProvider initialState={{ loginForm: { isLoading: true, password: '', username: '' } }}>
+            <StoreProvider
+                asyncReducers={{ loginForm: loginReducer }}
+                initialState={{ loginForm: { isLoading: true, password: '', username: '' } }}
+            >
                 <Story />
             </StoreProvider>
         ),
