@@ -17,14 +17,13 @@ import { loginByUsername } from '../../model/services/loginByUsername/loginByUse
 
 interface LoginFormProps {
     className?: string;
-    isOpen?: boolean;
 }
 
 const initalReducers: ReducerList = {
     loginForm: loginReducer,
 };
 
-const LoginForm = memo(({ className, isOpen }: LoginFormProps) => {
+const LoginForm = memo(({ className }: LoginFormProps) => {
     const { t } = useTranslation();
     const dispatch = useAppDispatch();
 
@@ -54,7 +53,7 @@ const LoginForm = memo(({ className, isOpen }: LoginFormProps) => {
                     className={cls.input}
                     type="text"
                     placeholder={t('Введите username')}
-                    autoFocus={isOpen}
+                    autoFocus
                     onChange={onChangeUsername}
                     value={username}
                 />

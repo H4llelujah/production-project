@@ -22,6 +22,8 @@ export const Modal = (props: ModalProps) => {
         isOpen,
     } = props;
 
+    const [isShow, setIsShow] = useState(false);
+
     const [isClosing, setIsClosing] = useState(false);
     const timerRef = useRef<ReturnType<typeof setTimeout>>();
 
@@ -46,10 +48,15 @@ export const Modal = (props: ModalProps) => {
     };
 
     useEffect(() => {
+        setTimeout(() => setIsShow(true), 100);
+    }, [isShow]);
+
+    useEffect(() => {
         if (isOpen) {
             window.addEventListener('keydown', onKeyDown);
         }
         return () => {
+            window.removeEventListener('keydown', onKeyDown);
             clearTimeout(timerRef.current);
         };
     }, [isOpen, onKeyDown]);
@@ -61,7 +68,7 @@ export const Modal = (props: ModalProps) => {
 
     return (
         <Portal>
-            <div className={classNames(cls.Modal, mods, [className])}>
+            <div className={classNames(cls.Modal, isShow ? mods : {}, [className])}>
                 <div className={cls.overlay} onClick={closeHandler}>
                     <div className={cls.content} onClick={onContentClick}>
                         {children}

@@ -13,15 +13,11 @@ export default meta;
 type Story = StoryObj<typeof LoginForm>;
 
 export const Primary: Story = {
-    args: {
-        isOpen: true,
-    },
+    args: {},
 };
 
 export const Error: Story = {
-    args: {
-        isOpen: true,
-    },
+    args: {},
     decorators: [
         (Story) => (
             <StoreProvider
@@ -39,9 +35,7 @@ export const Error: Story = {
 };
 
 export const Loading: Story = {
-    args: {
-        isOpen: true,
-    },
+    args: {},
     decorators: [
         (Story) => (
             <StoreProvider
