@@ -9,5 +9,6 @@
     "О сайте": "About us",
     "Войти": "Login",
     "Введите username": "Enter username",
-    "Введите пароль": "Enter password"
+    "Введите пароль": "Enter password",
+    "Форма авторизации": "Auth form"
 }
