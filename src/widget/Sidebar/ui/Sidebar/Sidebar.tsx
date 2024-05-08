@@ -1,27 +1,30 @@
 import { classNames } from 'shared/lib/classNames/classNames';
-import { useState } from 'react';
+import { memo, useMemo, useState } from 'react';
 import { ThemeSwitcher } from 'widget/ThemeSwitcher';
 import { LangSwitcher } from 'widget/LangSwitcher';
 import { Button, ButtonSize, ButtonTheme } from 'shared/ui/Button/Button';
-import { AppLink, AppLinkTheme } from 'shared/ui/AppLink/AppLink';
-import { useTranslation } from 'react-i18next';
-import { RoutePaths } from 'shared/config/routeConfig/routeConfig';
-import MainIcon from 'shared/assets/icons/home-icon.svg';
-import AboutIcon from 'shared/assets/icons/about-icon.svg';
 import cls from './Sidebar.module.scss';
+import { SidebarItemList } from '../../model/item';
+import { SidebarItem } from '../SidebarItem/SidebarItem';
 
 interface SidebarProps {
     className?: string;
 }
 
-export const Sidebar = ({ className }: SidebarProps) => {
+export const Sidebar = memo(({ className }: SidebarProps) => {
     const [collapsed, setcollapsed] = useState(false);
-
-    const { t } = useTranslation();
 
     const onToggle = () => {
         setcollapsed((prev) => !prev);
     };
+
+    const itemsList = useMemo(() => SidebarItemList.map((item) => (
+        <SidebarItem
+            item={item}
+            collapsed={collapsed}
+            key={item.path}
+        />
+    )), [collapsed]);
 
     return (
         <div
@@ -29,22 +32,7 @@ export const Sidebar = ({ className }: SidebarProps) => {
             className={classNames(cls.Sidebar, { [cls.collapsed]: collapsed }, [className])}
         >
             <div className={cls.items}>
-                <AppLink
-                    theme={AppLinkTheme.INVERTED}
-                    className={cls.item}
-                    to={RoutePaths.main}
-                >
-                    <MainIcon className={cls.icon} />
-                    <span className={cls.link}>{t('Главная страница')}</span>
-                </AppLink>
-                <AppLink
-                    theme={AppLinkTheme.INVERTED}
-                    className={cls.item}
-                    to={RoutePaths.about}
-                >
-                    <AboutIcon className={cls.icon} />
-                    <span className={cls.link}>{t('О сайте')}</span>
-                </AppLink>
+                {itemsList}
             </div>
             <Button
                 data-testid="sidebar-toggle"
@@ -62,4 +50,4 @@ export const Sidebar = ({ className }: SidebarProps) => {
             </div>
         </div>
     );
-};
+});
