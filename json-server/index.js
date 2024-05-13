@@ -1,4 +1,5 @@
 /* eslint-disable linebreak-style */
+
 const fs = require('fs');
 const jsonServer = require('json-server');
 const path = require('path');
@@ -17,6 +18,7 @@ server.use(async (req, res, next) => {
     next();
 });
 
+// Эндпоинт для логина
 server.post('/login', (req, res) => {
     try {
         const { username, password } = req.body;
@@ -38,17 +40,18 @@ server.post('/login', (req, res) => {
     }
 });
 
-// eslint-disable-next-line consistent-return
+// проверяем, авторизован ли пользователь
+// eslint-disable-next-line
 server.use((req, res, next) => {
     if (!req.headers.authorization) {
         return res.status(403).json({ message: 'AUTH ERROR' });
     }
-
     next();
 });
 
 server.use(router);
 
+// запуск сервера
 server.listen(8000, () => {
     console.log('server is running on 8000 port');
 });
