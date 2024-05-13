@@ -23,7 +23,7 @@ export const Error: Story = {
             <StoreProvider
                 initialState={{
                     loginForm: {
-                        isLoading: true, password: '', username: '', error: 'ERROR',
+                        error: 'ERROR',
                     },
                 }}
                 asyncReducers={{ loginForm: loginReducer }}
@@ -40,7 +40,7 @@ export const Loading: Story = {
         (Story) => (
             <StoreProvider
                 asyncReducers={{ loginForm: loginReducer }}
-                initialState={{ loginForm: { isLoading: true, password: '', username: '' } }}
+                initialState={{ loginForm: { isLoading: true } }}
             >
                 <Story />
             </StoreProvider>
