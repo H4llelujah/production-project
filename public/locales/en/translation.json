@@ -10,5 +10,7 @@
     "Войти": "Login",
     "Введите username": "Enter username",
     "Введите пароль": "Enter password",
-    "Форма авторизации": "Auth form"
+    "Форма авторизации": "Auth form",
+    "Главная": "Main",
+    "Профиль": "Profile"
 }
