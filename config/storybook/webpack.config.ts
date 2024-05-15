@@ -30,9 +30,9 @@ export default ({ config }: {config: webpack.Configuration}) => {
     config.resolve?.modules?.push(paths.src);
     config.resolve?.extensions?.push('.ts', '.tsx');
 
-    config.plugins?.push(new DefinePlugin({
-        __IS_DEV__: true,
-        __API__: '',
+    config!.plugins!.push(new DefinePlugin({
+        __IS_DEV__: JSON.stringify(true),
+        __API__: JSON.stringify(''),
     }));
 
     return config;
