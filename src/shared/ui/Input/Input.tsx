@@ -1,6 +1,6 @@
 import { classNames } from 'shared/lib/classNames/classNames';
 import React, {
-    InputHTMLAttributes, MutableRefObject, memo, useEffect, useRef, useState,
+    InputHTMLAttributes, MutableRefObject, SyntheticEvent, memo, useEffect, useRef, useState,
 } from 'react';
 import cls from './Input.module.scss';
 
@@ -47,8 +47,8 @@ export const Input = memo((props: InputProps) => {
         setIsFocused(false);
     };
 
-    const onSelect = (e: any) => {
-        setCaretPosition(e?.target?.selectionStart || 0);
+    const onSelect = (e: SyntheticEvent<HTMLInputElement, Event>) => {
+        setCaretPosition(e.currentTarget.selectionStart || 0);
     };
 
     const onChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
