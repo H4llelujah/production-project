@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
+import { StoreProvider } from 'app/providers/StoreProvider';
 import { Sidebar } from './Sidebar';
 
 const meta: Meta<typeof Sidebar> = {
@@ -10,4 +11,18 @@ const meta: Meta<typeof Sidebar> = {
 export default meta;
 type Story = StoryObj<typeof Sidebar>;
 
-export const Primary: Story = {};
+export const Primary: Story = {
+    decorators: [
+        (Story) => (
+            <StoreProvider
+                initialState={{
+                    user: { authData: {} },
+                }}
+            >
+                <Story />
+            </StoreProvider>
+        ),
+    ],
+};
+
+export const noAuth: Story = {};
