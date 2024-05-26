@@ -2,5 +2,17 @@
     "Ваше имя": "Your name",
     "Ваша фамилия": "Your lastname",
     "Профиль": "Profile",
-    "Редактировать": "Edit"
+    "Редактировать": "Edit",
+    "Отменить": "Cancel",
+    "Сохранить": "Save",
+    "Ваш возраст": "Your age",
+    "Город": "City",
+    "Введите имя пользователя": "Enter username",
+    "Введите ссылку на аватар": "Enter avatar link",
+    "Страна": "Country",
+    "Валюта": "Currency",
+    "Некорректные имя или фамилия": "Incorrect firstname or lastname",
+    "Некорректный возраст": "Incorrect age",
+    "Данные не указаны": "Data are not provided ",
+    "Серверная ошибка": "Server issue"
 }
