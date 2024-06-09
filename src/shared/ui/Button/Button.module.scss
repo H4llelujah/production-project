@@ -2,43 +2,97 @@
     cursor: pointer;
     color: (var(--primary-color));
     padding: 6px 15px;
+    transition: all 0.3s ease-out;
 }
 
 .clear,
-.clearInverted {
+.clearInverted,
+.icon_inside {
     padding: 0;
     border: 0;
     border: none;
     background: none;
     outline: none;
+    position: relative;
 }
 
 .clearInverted {
     color: var(--inverted-primary-color);
+
+    &::after {
+        background-color: (var(--inverted-primary-color));
+    }
+}
+
+.clear {
+    &::after {
+        background-color: (var(--primary-color));
+    }
+}
+
+.clear,
+.clearInverted {
+    &::after {
+        display: block;
+        position: absolute;
+        left: 0;
+        width: 0;
+        height: 2px;
+        content: "";
+        transition: all 0.3s ease-out;
+    }
+
+    &:hover::after {
+        width: 100%;
+    }
+}
+
+.icon_inside {
+    &:hover {
+        transform: scale(1.2);
+    }
 }
 
 .outline {
     border: 1px solid var(--primary-color);
     color: var(--primary-color);
     background: none;
+
+    &:hover {
+        background-color: var(--primary-color);
+        color: var(--inverted-primary-color);
+    }
 }
 
 .outline_red {
     border: 1px solid var(--red-light);
     color: var(--red-light);
     background: none;
+
+    &:hover {
+        background-color: var(--red-light);
+        color: #fff;
+    }
 }
 
 .background {
     background: var(--bg-color);
     color: var(--primary-color);
     border: none;
+
+    &:hover {
+        transform: scale(1.2);
+    }
 }
 
 .backgroundInverted {
     background: var(--inverted-bg-color);
     color: var(--inverted-primary-color);
     border: none;
+
+    &:hover {
+        transform: scale(1.2);
+    }
 }
 
 .square {
