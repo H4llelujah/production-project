@@ -1,7 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Country } from 'entities/Country';
 import { Currency } from 'entities/Currency';
-import avatar from 'shared/assets/tests/StorybookAvatar.jpg';
 import { ProfileCard } from './ProfileCard';
 
 const meta: Meta<typeof ProfileCard> = {
@@ -12,6 +11,8 @@ const meta: Meta<typeof ProfileCard> = {
 
 export default meta;
 type Story = StoryObj<typeof ProfileCard>;
+
+const avatar = 'https://cs14.pikabu.ru/post_img/big/2023/02/13/8/1676296367166243426.png';
 
 export const Primary: Story = {
     args: {
