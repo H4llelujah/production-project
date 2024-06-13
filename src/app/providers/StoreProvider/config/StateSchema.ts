@@ -1,5 +1,5 @@
 import {
-    Action, EnhancedStore, Reducer, ReducersMapObject,
+    EnhancedStore, Reducer, ReducersMapObject,
     UnknownAction,
 } from '@reduxjs/toolkit';
 import { AxiosInstance } from 'axios';
@@ -7,7 +7,9 @@ import { ArticleDetailsSchema } from 'entities/Article';
 import { CounterSchema } from 'entities/Counter';
 import { ProfileSchema } from 'entities/Profile';
 import { UserSchema } from 'entities/User';
+import { addCommentFormSchema } from 'features/AddCommentForm';
 import { LoginSchema } from 'features/AuthByUsername';
+import { ArticleDetailsCommentSchema } from 'pages/ArticleDetailsPage';
 import { NavigateOptions, To } from 'react-router-dom';
 
 export interface StateSchema {
@@ -18,6 +20,8 @@ export interface StateSchema {
     loginForm?: LoginSchema;
     profile?: ProfileSchema;
     ArticleDetails?: ArticleDetailsSchema;
+    articleDetailsComments?: ArticleDetailsCommentSchema;
+    addCommentForm?: addCommentFormSchema;
 }
 
 interface EmptyObject {

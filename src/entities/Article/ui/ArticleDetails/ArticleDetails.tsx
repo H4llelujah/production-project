@@ -10,6 +10,7 @@ import { Avatar } from 'shared/ui/Avatar/Avatar';
 import CaledarIcon from 'shared/assets/icons/calendar-icon.svg';
 import EyeIcon from 'shared/assets/icons/eye-icon.svg';
 import { Icon } from 'shared/ui/Icon/Icon';
+import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { articleDetailsReducer } from '../../model/slice/ArticleDetailsSlice';
 import { FetchArticleById } from '../../model/services/FetchArticleById/FetchArticleById';
 import { getArticleDetailsData, getArticleDetailsError, getArticleDetailsIsLoading } from '../../model/selectors/ArticleDetails';
@@ -36,11 +37,9 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
     const error = useSelector(getArticleDetailsError);
     const dispatch = useAppDispatch();
 
-    useEffect(() => {
-        if (__PROJECT__ !== 'storybook') {
-            dispatch(FetchArticleById(id));
-        }
-    }, [dispatch, id]);
+    useInitialEffect(() => {
+        dispatch(FetchArticleById(id));
+    }, [id, dispatch]);
 
     const renderBlock = useCallback((block: ArticleBlock) => {
         switch (block.type) {

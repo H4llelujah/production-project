@@ -19,6 +19,8 @@ import { useSelector } from 'react-redux';
 import { Currency } from 'entities/Currency';
 import { Country } from 'entities/Country';
 import { Text, TextTheme } from 'shared/ui/Text/Text';
+import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
+import { useParams } from 'react-router-dom';
 import { ProfilePageHeader } from './ProfilePageHeader/ProfilePageHeader';
 
 const reducers: ReducerList = {
@@ -37,6 +39,7 @@ const ProfilePage = ({ className }: ProfilePageProps) => {
     const error = useSelector(getProfileError);
     const readonly = useSelector(getProfileReadonly);
     const validateErrors = useSelector(getProfileValidateErrors);
+    const { id } = useParams<{id: string}>();
 
     const validateErrorTranslations = {
         [validateProfileError.INCORRECT_USER_DATA]: t('Некорректные имя или фамилия'),
@@ -45,11 +48,9 @@ const ProfilePage = ({ className }: ProfilePageProps) => {
         [validateProfileError.SERVER_ERROR]: t('Серверная ошибка'),
     };
 
-    useEffect(() => {
-        if (__PROJECT__ !== 'storybook') {
-            dispatch(fetchProfileData());
-        }
-    }, [dispatch]);
+    useInitialEffect(() => {
+        dispatch(fetchProfileData(id));
+    }, [id, dispatch]);
 
     const onChangeFirstname = useCallback((value?: string) => {
         dispatch(profileActions.updateProfile({ first: value || '' }));

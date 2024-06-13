@@ -1,14 +1,14 @@
 {
   "posts": [
     {
-      "id": 1,
+      "id": "1",
       "title": "json-server",
-      "userId": 1
+      "userId": "1"
     },
     {
-      "id": 2,
+      "id": "2",
       "title": "json-server",
-      "userId": 2
+      "userId": "2"
     }
   ],
   "articles": [
@@ -102,23 +102,70 @@
       "text": "some comment 3",
       "articleId": "1",
       "userId": "1"
+    },
+    {
+      "userId": "1",
+      "articleId": "1",
+      "text": "fffff",
+      "id": "sJ9LrLM"
+    },
+    {
+      "userId": "2",
+      "articleId": "1",
+      "text": "Hello world!",
+      "id": "1y9d-hf"
+    },
+    {
+      "userId": "2",
+      "articleId": "1",
+      "text": "mySeconComment",
+      "id": "VZFWkiY"
+    },
+    {
+      "userId": "2",
+      "articleId": "1",
+      "text": "Masha",
+      "id": "OV5cAj5"
     }
   ],
   "users": [
     {
-      "id": 1,
+      "id": "1",
       "username": "admin",
-      "password": "123"
+      "password": "123",
+      "role": "ADMIN",
+      "avatar": "https://cs14.pikabu.ru/post_img/big/2023/02/13/8/1676296367166243426.png"
+    },
+    {
+      "id": "2",
+      "username": "user",
+      "password": "1234",
+      "role": "USER",
+      "avatar": "https://masterpiecer-images.s3.yandex.net/487ca75268ea11eeaea6da477c0f1ee2:upscaled"
     }
   ],
-  "profile": {
-    "first": "Павел",
-    "lastname": "Балдин",
-    "age": 21,
-    "currency": "USD",
-    "country": "Russia",
-    "city": "Kopeysk",
-    "username": "admin",
-    "avatar": "https://sun9-74.userapi.com/impg/KPPEas-ba6N31TPjzLQpZDmonxr5UJ-4ibFccg/bplUSOJKyxU.jpg?size=960x1280&quality=95&sign=51f59a9ffc77c88c727eeb8c6d71412d&type=album"
-  }
+  "profile": [
+    {
+      "id": "1",
+      "first": "Павел",
+      "lastname": "Балдин",
+      "age": 21,
+      "currency": "USD",
+      "country": "Russia",
+      "city": "Kopeysk",
+      "username": "admin",
+      "avatar": "https://cs14.pikabu.ru/post_img/big/2023/02/13/8/1676296367166243426.png"
+    },
+    {
+      "id": "2",
+      "first": "Artem",
+      "lastname": "Testoviy",
+      "age": 25,
+      "currency": "RUB",
+      "country": "Armenia",
+      "city": "Moskow",
+      "username": "admin",
+      "avatar": "https://masterpiecer-images.s3.yandex.net/487ca75268ea11eeaea6da477c0f1ee2:upscaled"
+    }
+  ]
 }
