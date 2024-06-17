@@ -8,9 +8,11 @@
     "Вы ввели неверный пароль или имя пользователя": "Uncorrect password or username",
     "О сайте": "About us",
     "Войти": "Login",
+    "Выйти": "Logout",
     "Введите username": "Enter username",
     "Введите пароль": "Enter password",
     "Форма авторизации": "Auth form",
     "Главная": "Main",
-    "Профиль": "Profile"
+    "Профиль": "Profile",
+    "Статьи": "Articles"
 }
