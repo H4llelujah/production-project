@@ -21,7 +21,7 @@ const reducers: ReducerList = {
 
 const AddCommentForm = (props: AddCommentFormProps) => {
     const { className, onSendComment } = props;
-    const { t } = useTranslation();
+    const { t } = useTranslation('/articles');
     const dispatch = useAppDispatch();
     const text = useSelector(getCommentFormText);
     const error = useSelector(getCommentFormError);

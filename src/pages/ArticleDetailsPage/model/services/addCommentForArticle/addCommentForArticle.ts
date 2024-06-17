@@ -15,8 +15,8 @@ export const addCommentForArticle = createAsyncThunk<Comment, string | undefined
         const userData = getUserAuthData(getState());
         const article = getArticleDetailsData(getState());
 
-        if (!userData || text === '' || !article) {
-            return rejectWithValue('no Data');
+        if (!userData || !text || !article) {
+            return rejectWithValue('noData');
         }
 
         try {

@@ -14,7 +14,7 @@ interface CommentListProps {
 
 export const CommentList = memo((props: CommentListProps) => {
     const { className, comments, isLoading } = props;
-    const { t } = useTranslation();
+    const { t } = useTranslation('/articles');
 
     if (isLoading) {
         return (
@@ -37,7 +37,7 @@ export const CommentList = memo((props: CommentListProps) => {
                         className={cls.comment}
                     />
                 ))
-                : <Text text={t('Комментарии отсутствуют!')} />}
+                : <Text text={t('Комментарии отсутствуют!')} className={cls.comment} />}
         </div>
     );
 });

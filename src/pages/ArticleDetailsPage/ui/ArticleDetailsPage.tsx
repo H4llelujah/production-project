@@ -25,7 +25,7 @@ const reducers: ReducerList = {
 };
 
 const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
-    const { t } = useTranslation();
+    const { t } = useTranslation('/articles');
     const { id } = useParams<{id: string}>();
     const comments = useSelector(getArticleComments.selectAll);
     const CommentsIsLoading = useSelector(getArticleCommentsIsLoading);
