@@ -5,17 +5,17 @@ import { fetchCommentsByArticleId } from './fetchCommentsByArticleId';
 const testCommentArray: Comment[] = [
     {
         id: '1',
-        user: { id: 1, username: 'test' },
+        user: { id: '1', username: 'test' },
         text: 'someComment1',
     },
     {
         id: '2',
-        user: { id: 1, username: 'test' },
+        user: { id: '1', username: 'test' },
         text: 'someComment2',
     },
     {
         id: '3',
-        user: { id: 1, username: 'test' },
+        user: { id: '1', username: 'test' },
         text: 'someComment3',
     },
 ];

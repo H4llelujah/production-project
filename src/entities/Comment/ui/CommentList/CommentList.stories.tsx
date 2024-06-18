@@ -16,11 +16,11 @@ const SecondAvatar = 'https://cs14.pikabu.ru/post_img/big/2023/02/13/8/167629636
 export const Primary: Story = {
     args: {
         comments: [
-            { id: '1', text: 'comment 1', user: { id: 1, username: 'Vlad', avatar: FirstAvatar } },
-            { id: '2', text: 'comment 2', user: { id: 2, username: 'Artem', avatar: SecondAvatar } },
-            { id: '3', text: 'comment 3', user: { id: 1, username: 'Vlad', avatar: FirstAvatar } },
-            { id: '4', text: 'comment 4', user: { id: 2, username: 'Artem', avatar: SecondAvatar } },
-            { id: '5', text: 'comment 5', user: { id: 1, username: 'Vlad', avatar: FirstAvatar } },
+            { id: '1', text: 'comment 1', user: { id: '1', username: 'Vlad', avatar: FirstAvatar } },
+            { id: '2', text: 'comment 2', user: { id: '2', username: 'Artem', avatar: SecondAvatar } },
+            { id: '3', text: 'comment 3', user: { id: '1', username: 'Vlad', avatar: FirstAvatar } },
+            { id: '4', text: 'comment 4', user: { id: '2', username: 'Artem', avatar: SecondAvatar } },
+            { id: '5', text: 'comment 5', user: { id: '1', username: 'Vlad', avatar: FirstAvatar } },
         ],
     },
 };
@@ -28,11 +28,11 @@ export const Primary: Story = {
 export const Loading: Story = {
     args: {
         comments: [
-            { id: '1', text: 'comment 1', user: { id: 1, username: 'Vlad', avatar: FirstAvatar } },
-            { id: '2', text: 'comment 2', user: { id: 2, username: 'Artem', avatar: SecondAvatar } },
-            { id: '3', text: 'comment 3', user: { id: 1, username: 'Vlad', avatar: FirstAvatar } },
-            { id: '4', text: 'comment 4', user: { id: 2, username: 'Artem', avatar: SecondAvatar } },
-            { id: '5', text: 'comment 5', user: { id: 1, username: 'Vlad', avatar: FirstAvatar } },
+            { id: '1', text: 'comment 1', user: { id: '1', username: 'Vlad', avatar: FirstAvatar } },
+            { id: '2', text: 'comment 2', user: { id: '2', username: 'Artem', avatar: SecondAvatar } },
+            { id: '3', text: 'comment 3', user: { id: '1', username: 'Vlad', avatar: FirstAvatar } },
+            { id: '4', text: 'comment 4', user: { id: '2', username: 'Artem', avatar: SecondAvatar } },
+            { id: '5', text: 'comment 5', user: { id: '1', username: 'Vlad', avatar: FirstAvatar } },
         ],
         isLoading: true,
     },

@@ -15,7 +15,7 @@ type Story = StoryObj<typeof CommentCard>;
 export const Primary: Story = {
     args: {
         comment: {
-            id: '1', text: 'comment 1', user: { id: 1, username: 'Vlad', avatar: FirstAvatar },
+            id: '1', text: 'comment 1', user: { id: '1', username: 'Vlad', avatar: FirstAvatar },
         },
     },
 };

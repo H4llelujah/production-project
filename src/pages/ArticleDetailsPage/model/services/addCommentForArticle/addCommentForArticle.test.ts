@@ -4,7 +4,7 @@ import { addCommentForArticle } from './addCommentForArticle';
 
 const testComment: Comment = {
     id: '1',
-    user: { id: 1, username: 'test' },
+    user: { id: '1', username: 'test' },
     text: '',
 };
 
@@ -12,7 +12,7 @@ describe('addCommentForArticle', () => {
     test('sucsess add comment', async () => {
         const thunk = new TestAsyncThunk(addCommentForArticle, {
             user: {
-                authData: { id: 1, username: 'test' },
+                authData: { id: '1', username: 'test' },
             },
             ArticleDetails: { data: { id: '2' } },
         });
