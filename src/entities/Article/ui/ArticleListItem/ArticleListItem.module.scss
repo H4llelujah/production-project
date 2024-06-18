@@ -1,0 +1,99 @@
+.BIG {
+    .view {
+        margin-left: auto;
+        margin-right: 8px;
+    }
+
+    .header {
+        display: flex;
+        align-items: center;
+    }
+
+    .username {
+        margin-left: 10px;
+    }
+
+    .date {
+        margin-left: auto;
+    }
+
+    .img {
+        width: 100%;
+        max-height: 250px;
+        object-fit: cover;
+        margin: 16px 0;
+    }
+
+    .textBlock {
+        max-height: 190px;
+        overflow-y: hidden;
+    }
+
+    .footer {
+        display: flex;
+        align-items: center;
+        margin-top: 16px;
+    }
+}
+
+.SMALL {
+    width: 230px;
+    transition: 0.2s;
+    cursor: pointer;
+
+    .date {
+        position: absolute;
+        opacity: 0;
+        top: 0;
+        right: 0;
+        transition: 0.2s;
+    }
+
+    &:hover {
+        transform: scale(1.05);
+
+        .date {
+            opacity: 1;
+        }
+    }
+
+    .imageWrapper {
+        width: 200px;
+        height: 200px;
+        position: relative;
+    }
+
+    .img {
+        width: 200px;
+        height: 200px;
+    }
+
+    .infoWrapper {
+        display: flex;
+        align-items: center;
+        margin-top: 8px;
+    }
+
+    .types p {
+        width: 115px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .view {
+        margin-left: auto;
+        margin-right: 8px;
+    }
+
+    .title {
+        margin-top: 8px;
+    }
+
+    .title p {
+        width: 200px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+}

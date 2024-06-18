@@ -16,7 +16,7 @@ export const Primary: Story = {};
 export const UserLogin: Story = {
     decorators: [
         (Story) => (
-            <StoreProvider initialState={{ user: { authData: { id: 1, username: '1' } } }}>
+            <StoreProvider initialState={{ user: { authData: { id: '1', username: '1' } } }}>
                 <Story />
             </StoreProvider>
         ),

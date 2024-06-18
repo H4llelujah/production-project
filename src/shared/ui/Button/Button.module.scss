@@ -47,12 +47,6 @@
     }
 }
 
-.icon_inside {
-    &:hover {
-        transform: scale(1.2);
-    }
-}
-
 .outline {
     border: 1px solid var(--primary-color);
     color: var(--primary-color);
@@ -131,4 +125,12 @@
 
 .disabled {
     opacity: 0.5;
+}
+
+.icon_inside {
+    line-height: 1;
+
+    &:hover {
+        transform: scale(1.2);
+    }
 }
