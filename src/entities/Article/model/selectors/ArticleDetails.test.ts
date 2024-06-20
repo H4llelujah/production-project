@@ -79,7 +79,7 @@ describe('ArticleDetails', () => {
             ],
         };
         const state: DeepPartial<StateSchema> = {
-            ArticleDetails: {
+            articleDetails: {
                 data,
             },
         };
@@ -91,7 +91,7 @@ describe('ArticleDetails', () => {
     });
     test('Loading selector should return true', () => {
         const state: DeepPartial<StateSchema> = {
-            ArticleDetails: {
+            articleDetails: {
                 isLoading: true,
             },
         };
@@ -103,7 +103,7 @@ describe('ArticleDetails', () => {
     });
     test('Error selector should return error', () => {
         const state: DeepPartial<StateSchema> = {
-            ArticleDetails: {
+            articleDetails: {
                 error: 'error1',
             },
         };
@@ -111,7 +111,7 @@ describe('ArticleDetails', () => {
     });
     test('Error selector should return undefined', () => {
         const state: DeepPartial<StateSchema> = {
-            ArticleDetails: {},
+            articleDetails: {},
         };
         expect(getArticleDetailsError(state as StateSchema)).toEqual(undefined);
     });

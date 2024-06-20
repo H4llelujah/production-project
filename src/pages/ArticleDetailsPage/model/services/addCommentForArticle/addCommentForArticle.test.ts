@@ -14,7 +14,7 @@ describe('addCommentForArticle', () => {
             user: {
                 authData: { id: '1', username: 'test' },
             },
-            ArticleDetails: { data: { id: '2' } },
+            articleDetails: { data: { id: '2' } },
         });
         thunk.api.post.mockReturnValue(Promise.resolve({ data: testComment }));
 
