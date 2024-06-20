@@ -12,6 +12,7 @@ import { useCallback } from 'react';
 import { AddCommentForm } from 'features/AddCommentForm';
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import { RoutePaths } from 'shared/config/routeConfig/routeConfig';
+import { Page } from 'shared/ui/Page/Page';
 import cls from './ArticleDetailsPage.module.scss';
 import { ArticleDetailsCommentReducer, getArticleComments } from '../model/slice/ArticleDetailsCommentSlice';
 import { getArticleCommentsIsLoading } from '../model/selectors/comments';
@@ -55,7 +56,7 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
     }
     return (
         <DynamicModlueLoader reducers={reducers} removeAfterUnmount>
-            <div className={classNames(cls.ArticleDetailsPage, {}, [className])}>
+            <Page className={classNames(cls.ArticleDetailsPage, {}, [className])}>
                 <Button theme={ButtonTheme.OUTLINE} onClick={onBackToList}>
                     {t('Назад к списку')}
                 </Button>
@@ -66,7 +67,7 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
                     isLoading={CommentsIsLoading}
                     comments={comments}
                 />
-            </div>
+            </Page>
         </DynamicModlueLoader>
 
     );
