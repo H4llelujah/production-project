@@ -20,7 +20,7 @@ export interface StateSchema {
     // Асинхронные редюсеры
     loginForm?: LoginSchema;
     profile?: ProfileSchema;
-    ArticleDetails?: ArticleDetailsSchema;
+    articleDetails?: ArticleDetailsSchema;
     articleDetailsComments?: ArticleDetailsCommentSchema;
     addCommentForm?: addCommentFormSchema;
     articlesPage?: ArticlesPageSchema;
