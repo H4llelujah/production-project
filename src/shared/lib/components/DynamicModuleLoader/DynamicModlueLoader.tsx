@@ -8,8 +8,6 @@ export type ReducerList = {
     [name in StateSchemaKey]?: Reducer;
 }
 
-type ReducersListEntry = [StateSchemaKey, Reducer]
-
 interface DynamicModlueLoaderProps {
     children: ReactNode;
     reducers: ReducerList;
@@ -23,9 +21,14 @@ export const DynamicModlueLoader: FC<DynamicModlueLoaderProps> = (props) => {
     const store = useStore() as ReduxStoreWithManager;
 
     useEffect(() => {
+        const mountedReducers = store.reducerManager.getMountedReducres();
+
         Object.entries(reducers).forEach(([name, reducer]) => {
-            store.reducerManager.add(name as StateSchemaKey, reducer);
-            dispatch({ type: `@INIT ${name} reducer` });
+            const mounted = mountedReducers[name as StateSchemaKey];
+            if (!mounted) {
+                store.reducerManager.add(name as StateSchemaKey, reducer);
+                dispatch({ type: `@INIT ${name} reducer` });
+            }
         });
         return () => {
             if (removeAfterUnmount) {

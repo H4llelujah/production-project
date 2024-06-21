@@ -34,11 +34,14 @@ export type CombinedState<S> = EmptyObject & S;
 
 export type StateSchemaKey = keyof StateSchema;
 
+export type MountedReducres = OptionalRecord<StateSchemaKey, boolean>
+
 export interface ReducerManager {
     getReducerMap: () => ReducersMapObject<StateSchema>;
     reduce: (state: StateSchema, action: UnknownAction) => CombinedState<StateSchema>;
     add: (key: StateSchemaKey, reducer: Reducer) => void;
     remove: (key: StateSchemaKey) => void;
+    getMountedReducres: () => MountedReducres;
 }
 
 export interface ReduxStoreWithManager extends EnhancedStore<StateSchema> {
@@ -47,7 +50,6 @@ export interface ReduxStoreWithManager extends EnhancedStore<StateSchema> {
 
 export interface ThunkExtraArg {
     api: AxiosInstance;
-    navigate?:(to: To, options?: NavigateOptions) => void,
 }
 
 export interface ThunkConfig<T> {
