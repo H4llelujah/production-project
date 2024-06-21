@@ -10,10 +10,10 @@ import { Page } from 'shared/ui/Page/Page';
 import cls from './ArticlesPage.module.scss';
 import { articlesPageReducer, getArticles, articlePageActions } from '../model/slice/articlesPageSlice';
 import {
-    getArticlesPageError, getArticlesPageIsLoading, getArticlesPageView,
+    getArticlesPageError, getArticlesPageInit, getArticlesPageIsLoading, getArticlesPageView,
 } from '../model/selectors/articlesPageSelectors';
-import { fetchArticleList } from '../model/services/fetchArticleList/fetchArticleList';
 import { fetchNextArticle } from '../model/services/fetchNextArticle/fetchNextArticle';
+import { initArticlesPage } from '../model/services/initArticlesPage/initArticlesPage';
 
 interface ArticlesPageProps {
     className?: string;
@@ -29,6 +29,7 @@ const ArticlesPage = ({ className }: ArticlesPageProps) => {
     const isLoading = useSelector(getArticlesPageIsLoading);
     const error = useSelector(getArticlesPageError);
     const view = useSelector(getArticlesPageView);
+    const inited = useSelector(getArticlesPageInit);
     const dispatch = useAppDispatch();
 
     const onChangeView = useCallback((view: ArticleView) => {
@@ -40,14 +41,11 @@ const ArticlesPage = ({ className }: ArticlesPageProps) => {
     }, [dispatch]);
 
     useInitialEffect(() => {
-        dispatch(articlePageActions.initState());
-        dispatch(fetchArticleList(
-            { page: 1 },
-        ));
+        dispatch(initArticlesPage());
     }, []);
 
     return (
-        <DynamicModlueLoader reducers={reducers} removeAfterUnmount>
+        <DynamicModlueLoader reducers={reducers} removeAfterUnmount={false}>
             <Page onScrollEnd={onScrollEnd} className={classNames(cls.ArticlesPage, {}, [className])}>
                 <ArticleViewSelector className={cls.viewSelector} view={view} onViewChange={onChangeView} />
                 <ArticleList
