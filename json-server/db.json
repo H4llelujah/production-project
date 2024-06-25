@@ -14,11 +14,11 @@
   "articles": [
     {
       "id": "1",
-      "title": "Javascript news",
+      "title": "NEW JS 2024",
       "subtitle": "Что нового в JS за 2022 год?",
       "img": "https://teknotower.com/wp-content/uploads/2020/11/js.png",
-      "views": 1022,
-      "createdAt": "26.02.2022",
+      "views": 302055,
+      "createdAt": "21.05.2024",
       "userId": "1",
       "type": [
         "IT"
@@ -86,11 +86,11 @@
     },
     {
       "id": "2",
-      "title": "Python news",
+      "title": "Python AI",
       "subtitle": "Что нового в JS за 2022 год?",
       "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/640px-Python-logo-notext.svg.png",
-      "views": 1022,
-      "createdAt": "26.02.2022",
+      "views": 1502430,
+      "createdAt": "23.01.2023",
       "userId": "1",
       "type": [
         "IT"
@@ -110,11 +110,11 @@
     },
     {
       "id": "3",
-      "title": "Kotlin news",
+      "title": "New andriod engine with Kotlin",
       "subtitle": "Что нового в JS за 2022 год?",
       "img": "https://habrastorage.org/getpro/habr/upload_files/784/040/572/784040572c499a4b59cbf7ce8d06e31e.png",
-      "views": 1022,
-      "createdAt": "26.02.2022",
+      "views": 202242,
+      "createdAt": "1.06.2022",
       "userId": "1",
       "type": [
         "IT"
@@ -134,11 +134,11 @@
     },
     {
       "id": "4",
-      "title": "Python news",
+      "title": "TypeScript! Coming soon!",
       "subtitle": "Что нового в JS за 2022 год?",
-      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/640px-Python-logo-notext.svg.png",
-      "views": 1022,
-      "createdAt": "26.02.2022",
+      "img": "https://habrastorage.org/webt/um/fe/t_/umfet_kngorlggfmgokzowwtsuu.png",
+      "views": 10224,
+      "createdAt": "21.11.2021",
       "userId": "1",
       "type": [
         "IT"
@@ -158,14 +158,14 @@
     },
     {
       "id": "5",
-      "title": "Kotlin news",
+      "title": "Новое открытие в биологии!",
       "subtitle": "Что нового в JS за 2022 год?",
-      "img": "https://habrastorage.org/getpro/habr/upload_files/784/040/572/784040572c499a4b59cbf7ce8d06e31e.png",
+      "img": "https://abit.pskgu.ru/download.php/pskgu/files/PAGES/IMAGES/e3ab8597-0531-448f-b82d-27080f0e95e0/06652576F85A09680B33C3277B763183",
       "views": 1022,
       "createdAt": "26.02.2022",
       "userId": "1",
       "type": [
-        "IT"
+        "SCIENCE"
       ],
       "blocks": [
         {
@@ -182,14 +182,14 @@
     },
     {
       "id": "6",
-      "title": "Python news",
+      "title": "Годовая инфляция замедляется!",
       "subtitle": "Что нового в JS за 2022 год?",
-      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/640px-Python-logo-notext.svg.png",
-      "views": 1022,
-      "createdAt": "26.02.2022",
+      "img": "https://resizer.mail.ru/p/e999e856-2de4-5161-b95f-91c337cdec3d/AQAGJDJMWkDLsAm2TwULzZaDAdMYqCMnNFWgL57t5CgxbY-O2mPVKs_jAFZ05sj7uxTzt4G8f-hkB_GlgSz-53wJA58.jpg",
+      "views": 97351,
+      "createdAt": "12.11.2023",
       "userId": "1",
       "type": [
-        "IT"
+        "ECONOMICS"
       ],
       "blocks": [
         {
@@ -206,14 +206,15 @@
     },
     {
       "id": "7",
-      "title": "Kotlin news",
+      "title": "Эквилибриум",
       "subtitle": "Что нового в JS за 2022 год?",
-      "img": "https://habrastorage.org/getpro/habr/upload_files/784/040/572/784040572c499a4b59cbf7ce8d06e31e.png",
-      "views": 1022,
+      "img": "https://s.afisha.ru/mediastorage/3d/fb/d3ad26f3638341378dc3ba5ffb3d.jpg",
+      "views": 64112,
       "createdAt": "26.02.2022",
       "userId": "1",
       "type": [
-        "IT"
+        "SCIENCE",
+        "ECONOMICS"
       ],
       "blocks": [
         {
@@ -230,14 +231,15 @@
     },
     {
       "id": "8",
-      "title": "Python news",
+      "title": "Hamster Kombat?",
       "subtitle": "Что нового в JS за 2022 год?",
-      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/640px-Python-logo-notext.svg.png",
-      "views": 1022,
-      "createdAt": "26.02.2022",
+      "img": "https://takiedela.ru/wp-content/uploads/2024/06/Hamster-Kombat_2.jpg",
+      "views": 7773222,
+      "createdAt": "25.06.2024",
       "userId": "1",
       "type": [
-        "IT"
+        "IT",
+        "ECONOMICS"
       ],
       "blocks": [
         {
@@ -254,14 +256,15 @@
     },
     {
       "id": "9",
-      "title": "Kotlin news",
+      "title": "Биоинформатика. Наука или метод?",
       "subtitle": "Что нового в JS за 2022 год?",
-      "img": "https://habrastorage.org/getpro/habr/upload_files/784/040/572/784040572c499a4b59cbf7ce8d06e31e.png",
-      "views": 1022,
+      "img": "https://klever.blog/wp-content/uploads/2019/01/bioinformatika-chto-eto-za-nauka-i-zachem-ona-nujna.png",
+      "views": 65321,
       "createdAt": "26.02.2022",
       "userId": "1",
       "type": [
-        "IT"
+        "IT",
+        "SCIENCE"
       ],
       "blocks": [
         {
@@ -278,11 +281,11 @@
     },
     {
       "id": "10",
-      "title": "Python news",
+      "title": "Какой фреймворк выбрать?",
       "subtitle": "Что нового в JS за 2022 год?",
-      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/640px-Python-logo-notext.svg.png",
-      "views": 1022,
-      "createdAt": "26.02.2022",
+      "img": "https://www.simplilearn.com/ice9/free_resources_article_thumb/recact_angular_vue.jpg",
+      "views": 123601,
+      "createdAt": "11.12.2023",
       "userId": "1",
       "type": [
         "IT"
@@ -302,14 +305,14 @@
     },
     {
       "id": "11",
-      "title": "Kotlin news",
+      "title": "Первое иррациональное число на планете!",
       "subtitle": "Что нового в JS за 2022 год?",
-      "img": "https://habrastorage.org/getpro/habr/upload_files/784/040/572/784040572c499a4b59cbf7ce8d06e31e.png",
-      "views": 1022,
-      "createdAt": "26.02.2022",
+      "img": "https://media.istockphoto.com/id/1635401897/ru/%D0%B2%D0%B5%D0%BA%D1%82%D0%BE%D1%80%D0%BD%D0%B0%D1%8F/%D0%BA%D0%B2%D0%B0%D0%B4%D1%80%D0%B0%D1%82%D0%BD%D1%8B%D0%B9-%D0%BA%D0%BE%D1%80%D0%B5%D0%BD%D1%8C-%D0%B8%D0%B7-2-%D0%BF%D0%BB%D0%BE%D1%81%D0%BA%D0%B8%D1%85-%D0%B7%D0%BD%D0%B0%D1%87%D0%BA%D0%BE%D0%B2-%D1%81-%D0%B4%D0%BB%D0%B8%D0%BD%D0%BD%D0%BE%D0%B9-%D1%82%D0%B5%D0%BD%D1%8C%D1%8E-%D0%BF%D1%80%D0%BE%D1%81%D1%82%D0%B0%D1%8F-%D0%BC%D0%B0%D1%82%D0%B5%D0%BC%D0%B0%D1%82%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B0%D1%8F.jpg?s=612x612&w=0&k=20&c=MDWPaoyP1u66g1tkT3LZKfRBBEhckTWKj8lLbeSTvD8=",
+      "views": 113122,
+      "createdAt": "14.04.2017",
       "userId": "1",
       "type": [
-        "IT"
+        "SCIENCE"
       ],
       "blocks": [
         {
@@ -326,14 +329,14 @@
     },
     {
       "id": "12",
-      "title": "Python news",
+      "title": "Что такое парадокс?",
       "subtitle": "Что нового в JS за 2022 год?",
-      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/640px-Python-logo-notext.svg.png",
-      "views": 1022,
-      "createdAt": "26.02.2022",
+      "img": "https://naked-science.ru/wp-content/uploads/2016/04/article_gfpeck.jpg",
+      "views": 125122,
+      "createdAt": "4.06.2022",
       "userId": "1",
       "type": [
-        "IT"
+        "SCIENCE"
       ],
       "blocks": [
         {
@@ -350,11 +353,11 @@
     },
     {
       "id": "13",
-      "title": "Kotlin news",
+      "title": "Out of memory!",
       "subtitle": "Что нового в JS за 2022 год?",
-      "img": "https://habrastorage.org/getpro/habr/upload_files/784/040/572/784040572c499a4b59cbf7ce8d06e31e.png",
-      "views": 1022,
-      "createdAt": "26.02.2022",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/ISO_C%2B%2B_Logo.svg/800px-ISO_C%2B%2B_Logo.svg.png",
+      "views": 4215122,
+      "createdAt": "8.08.2023",
       "userId": "1",
       "type": [
         "IT"
@@ -374,14 +377,14 @@
     },
     {
       "id": "14",
-      "title": "Python news",
+      "title": "Самый загадочный химический элемент!",
       "subtitle": "Что нового в JS за 2022 год?",
-      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/640px-Python-logo-notext.svg.png",
-      "views": 1022,
+      "img": "https://avatars.dzeninfra.ru/get-zen_doc/3753737/pub_63dfbd0e5990a43e3f2c55fb_63dfbf483fede37a275275f1/scale_1200",
+      "views": 15122,
       "createdAt": "26.02.2022",
       "userId": "1",
       "type": [
-        "IT"
+        "SCIENCE"
       ],
       "blocks": [
         {
@@ -398,14 +401,16 @@
     },
     {
       "id": "15",
-      "title": "Kotlin news",
+      "title": "Что такое криптовалюта?",
       "subtitle": "Что нового в JS за 2022 год?",
-      "img": "https://habrastorage.org/getpro/habr/upload_files/784/040/572/784040572c499a4b59cbf7ce8d06e31e.png",
+      "img": "https://fin-plan.org/upload/medialibrary/305/20g0qgkxp1axqd82n2dfh3ea82t7ipa7/Kriptovalyuta-_-chto-eto-prostymi-slovami.png",
       "views": 1022,
       "createdAt": "26.02.2022",
       "userId": "1",
       "type": [
-        "IT"
+        "IT",
+        "ECONOMICS",
+        "SCIENCE"
       ],
       "blocks": [
         {
@@ -422,14 +427,14 @@
     },
     {
       "id": "16",
-      "title": "Python news",
+      "title": "Страны первого и второго мира.",
       "subtitle": "Что нового в JS за 2022 год?",
-      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/640px-Python-logo-notext.svg.png",
-      "views": 1022,
-      "createdAt": "26.02.2022",
+      "img": "https://n1s1.hsmedia.ru/c9/32/ac/c932acdd3904aa2b0d5a4c0985b0fef9/1920x1152_0xac120003_12180567841619421725.jpg",
+      "views": 32122,
+      "createdAt": "1.7.2023",
       "userId": "1",
       "type": [
-        "IT"
+        "ECONOMICS"
       ],
       "blocks": [
         {
@@ -446,14 +451,14 @@
     },
     {
       "id": "17",
-      "title": "Kotlin news",
+      "title": "Как устроена черная дыра?",
       "subtitle": "Что нового в JS за 2022 год?",
-      "img": "https://habrastorage.org/getpro/habr/upload_files/784/040/572/784040572c499a4b59cbf7ce8d06e31e.png",
-      "views": 1022,
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/A_view_of_the_M87_supermassive_black_hole_in_polarised_light.tif/lossy-page1-1024px-A_view_of_the_M87_supermassive_black_hole_in_polarised_light.tif.jpg",
+      "views": 7235152,
       "createdAt": "26.02.2022",
       "userId": "1",
       "type": [
-        "IT"
+        "SCIENCE"
       ],
       "blocks": [
         {
@@ -523,6 +528,18 @@
       "articleId": "3",
       "text": "Kotlin!!!",
       "id": "GPR3tUy"
+    },
+    {
+      "userId": "1",
+      "articleId": "3",
+      "text": "Test",
+      "id": "PzF_kT-"
+    },
+    {
+      "userId": "1",
+      "articleId": "16",
+      "text": "Wow",
+      "id": "dKMNrkx"
     }
   ],
   "users": [
