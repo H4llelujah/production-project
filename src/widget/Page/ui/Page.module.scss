@@ -5,3 +5,8 @@
     overflow-y: auto;
     width: calc(100% - var(--sidebar-width));
 }
+
+.trigger {
+    height: 10px;
+    width: 100%;
+}
