@@ -12,7 +12,7 @@ describe('addCommentFormSelectors', () => {
     });
     test('getCommentFormText with no state', () => {
         const state: DeepPartial<StateSchema> = {};
-        expect(getCommentFormText(state as StateSchema)).toBe(undefined);
+        expect(getCommentFormText(state as StateSchema)).toBe('');
     });
     test('getCommentFormError success', () => {
         const state: DeepPartial<StateSchema> = {
