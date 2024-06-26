@@ -7,6 +7,9 @@ import { LoginModal } from 'features/AuthByUsername';
 import { useSelector } from 'react-redux';
 import { getUserAuthData, userActions } from 'entities/User';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { Text, TextTheme } from 'shared/ui/Text/Text';
+import { AppLink, AppLinkTheme } from 'shared/ui/AppLink/AppLink';
+import { RoutePaths } from 'shared/config/routeConfig/routeConfig';
 import cls from './Navbar.module.scss';
 
 interface NavbarProps {
@@ -36,21 +39,31 @@ export const Navbar = memo(({ className }: NavbarProps) => {
 
     if (authData) {
         return (
-            <div className={classNames(cls.Navbar, {}, [className])}>
-                <div className={cls.links}>
-                    <Button
-                        theme={ButtonTheme.CLEAR_INVERTED}
-                        onClick={onLogout}
-                    >
-                        {t('Выйти')}
-                    </Button>
-                </div>
-            </div>
+            <header className={classNames(cls.Navbar, {}, [className])}>
+                <Text
+                    className={cls.appName}
+                    title={t('Leddit')}
+                    theme={TextTheme.INVERTED}
+                />
+                <AppLink
+                    to={RoutePaths.article_create}
+                    theme={AppLinkTheme.INVERTED}
+                >
+                    {t('Создать статью')}
+                </AppLink>
+                <Button
+                    theme={ButtonTheme.CLEAR_INVERTED}
+                    onClick={onLogout}
+                    className={cls.links}
+                >
+                    {t('Выйти')}
+                </Button>
+            </header>
         );
     }
 
     return (
-        <div className={classNames(cls.Navbar, {}, [className])}>
+        <header className={classNames(cls.Navbar, {}, [className])}>
             <div className={cls.links}>
                 <Button
                     theme={ButtonTheme.CLEAR_INVERTED}
@@ -65,6 +78,6 @@ export const Navbar = memo(({ className }: NavbarProps) => {
                     />
                 )}
             </div>
-        </div>
+        </header>
     );
 });

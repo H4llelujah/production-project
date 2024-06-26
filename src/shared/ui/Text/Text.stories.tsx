@@ -17,6 +17,14 @@ export const Primary: Story = {
     },
 };
 
+export const Inverted: Story = {
+    args: {
+        title: 'title',
+        text: 'sometext some text some',
+        theme: TextTheme.INVERTED,
+    },
+};
+
 export const TitleOnly: Story = {
     args: {
         title: 'title',
