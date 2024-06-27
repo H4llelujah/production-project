@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { StoreProvider } from 'app/providers/StoreProvider';
-import { loginReducer } from 'features/AuthByUsername/model/slice/loginSlice';
+import { loginReducer } from '../../model/slice/loginSlice';
 import LoginForm from './LoginForm';
 
 const meta: Meta<typeof LoginForm> = {

@@ -1,6 +1,6 @@
 /* eslint-disable max-len */
 import type { Meta, StoryObj } from '@storybook/react';
-import { ArticleBlockCode } from 'entities/Article/model/types/article';
+import { ArticleBlockCode } from '../../model/types/article';
 import { ArticleCodeBlockComponent } from './ArticleCodeBlockComponent';
 
 const meta: Meta<typeof ArticleCodeBlockComponent> = {

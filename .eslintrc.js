@@ -23,6 +23,7 @@ module.exports = {
         '@typescript-eslint',
         'i18next',
         'react-hooks',
+        'hallelujah-fsd-plugin',
     ],
     rules: {
         'react/jsx-indent': [2, 4],
@@ -52,6 +53,7 @@ module.exports = {
         'no-param-reassign': 'off',
         'no-undef': 'off',
         'react/no-array-index-key': 'off',
+        'hallelujah-fsd-plugin/path-checker': 'error',
     },
     globals: {
         __IS_DEV__: true,
