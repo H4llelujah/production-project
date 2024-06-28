@@ -42,7 +42,7 @@ module.exports = {
         'import/no-extraneous-dependencies': 'off',
         'no-underscore-dangle': 'off',
         'i18next/no-literal-string': [
-            'error', { markupOnly: true, ignoreAttribute: ['to', 'data-testid', 'target'] },
+            'error', { markupOnly: true, ignoreAttribute: ['to', 'data-testid', 'target', 'gap', 'align', 'justify', 'direction'] },
         ],
         'max-len': ['error', { ignoreComments: true, code: 140 }],
         'linebreak-style': ['error', process.platform === 'win32' ? 'windows' : 'unix'],
@@ -54,6 +54,7 @@ module.exports = {
         'no-undef': 'off',
         'react/no-array-index-key': 'off',
         'hallelujah-fsd-plugin/path-checker': 'error',
+        'arrow-body-style': 'off',
     },
     globals: {
         __IS_DEV__: true,
