@@ -45,11 +45,20 @@ export const ErrorText: Story = {
     },
 };
 
+export const TextSizeS: Story = {
+    args: {
+        title: 'title',
+        text: 'sometext some text some',
+        theme: TextTheme.PRIMARY,
+        size: TextSize.S,
+    },
+};
+
 export const TextSizeM: Story = {
     args: {
         title: 'title',
         text: 'sometext some text some',
-        theme: TextTheme.ERROR,
+        theme: TextTheme.PRIMARY,
         size: TextSize.M,
     },
 };
@@ -58,7 +67,7 @@ export const TextSizeL: Story = {
     args: {
         title: 'title',
         text: 'sometext some text some',
-        theme: TextTheme.ERROR,
+        theme: TextTheme.PRIMARY,
         size: TextSize.L,
     },
 };
