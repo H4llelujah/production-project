@@ -42,7 +42,9 @@ module.exports = {
         'import/no-extraneous-dependencies': 'off',
         'no-underscore-dangle': 'off',
         'i18next/no-literal-string': [
-            'error', { markupOnly: true, ignoreAttribute: ['to', 'data-testid', 'target', 'gap', 'align', 'justify', 'direction', 'role'] },
+            'error', {
+                markupOnly: true, ignoreAttribute: ['anchor', 'to', 'data-testid', 'target', 'gap', 'align', 'justify', 'direction', 'role'],
+            },
         ],
         'max-len': ['error', { ignoreComments: true, code: 140 }],
         'linebreak-style': ['error', process.platform === 'win32' ? 'windows' : 'unix'],

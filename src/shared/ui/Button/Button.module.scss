@@ -42,7 +42,7 @@
         transition: all 0.3s ease-out;
     }
 
-    &:hover::after {
+    &:not(.disabled):hover::after {
         width: 100%;
     }
 }
@@ -52,7 +52,7 @@
     color: var(--primary-color);
     background: none;
 
-    &:hover {
+    &:not(.disabled):hover {
         background-color: var(--primary-color);
         color: var(--inverted-primary-color);
     }
@@ -63,7 +63,7 @@
     color: var(--red-light);
     background: none;
 
-    &:hover {
+    &:not(.disabled):hover {
         background-color: var(--red-light);
         color: #fff;
     }
@@ -74,7 +74,7 @@
     color: var(--primary-color);
     border: none;
 
-    &:hover {
+    &:not(.disabled):hover {
         transform: scale(1.2);
     }
 }
@@ -84,7 +84,7 @@
     color: var(--inverted-primary-color);
     border: none;
 
-    &:hover {
+    &:not(.disabled):hover {
         transform: scale(1.2);
     }
 }
@@ -130,7 +130,7 @@
 .icon_inside {
     line-height: 1;
 
-    &:hover {
+    &:not(.disabled):hover {
         transform: scale(1.2);
     }
 }
