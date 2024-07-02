@@ -3,5 +3,6 @@
     "Комментарии": "Comments",
     "Введите текст комментария": "Enter comment text",
     "Комментарии отсутствуют!": "No comments!",
-    "Отправить": "Send"
+    "Отправить": "Send",
+    "Произошла ошибка при загрузке статьи!": "Something went wrong while article has being loading!"
 }
