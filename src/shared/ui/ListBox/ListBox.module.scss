@@ -1,9 +1,18 @@
 .trigger {
+    cursor: pointer;
+    color: (var(--primary-color));
+    padding: 6px 15px;
+    transition: all 0.3s ease-out;
     background: none;
-    border: none;
     outline: none;
-    padding: 0;
     margin: 0;
+    border: 1px solid var(--primary-color);
+    font: var(--font-m);
+
+    &:not(.disabled):hover {
+        background-color: var(--primary-color);
+        color: var(--inverted-primary-color);
+    }
 }
 
 .options {
@@ -17,10 +26,6 @@
 .item {
     padding: 10px 20px;
     cursor: pointer;
-
-    &:not(.disabled):hover {
-        background-color: var(--listbox-bg-inverted);
-    }
 }
 
 .active {

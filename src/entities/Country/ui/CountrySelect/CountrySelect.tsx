@@ -20,7 +20,7 @@ const options = [
 ];
 
 export const CountrySelect = memo((props: CountrySelectProps) => {
-    const { t } = useTranslation('profile');
+    const { t } = useTranslation('/profile');
 
     const {
         className,
