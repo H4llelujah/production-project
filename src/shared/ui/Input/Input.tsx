@@ -82,6 +82,7 @@ export const Input = memo((props: InputProps) => {
                     onBlur={onBlur}
                     onSelect={onSelect}
                     readOnly={readonly}
+                    {...otherProps}
                 />
                 {isCarretVisible && (
                     <span
