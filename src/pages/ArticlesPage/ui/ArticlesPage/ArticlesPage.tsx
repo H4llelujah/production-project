@@ -16,6 +16,7 @@ import {
 import { fetchNextArticle } from '../../model/services/fetchNextArticle/fetchNextArticle';
 import { initArticlesPage } from '../../model/services/initArticlesPage/initArticlesPage';
 import { ArticlesPageFilters } from '../ArticlesPageFilters/ArticlesPageFilters';
+import { ArticleInfiniteList } from '../ArticleInfiniteList/ArticleInfiniteList';
 
 interface ArticlesPageProps {
     className?: string;
@@ -26,12 +27,6 @@ const reducers: ReducerList = {
 };
 
 const ArticlesPage = ({ className }: ArticlesPageProps) => {
-    const { t } = useTranslation('/articles');
-    const articles = useSelector(getArticles.selectAll);
-    const isLoading = useSelector(getArticlesPageIsLoading);
-    const error = useSelector(getArticlesPageError);
-    const view = useSelector(getArticlesPageView);
-    const inited = useSelector(getArticlesPageInit);
     const dispatch = useAppDispatch();
     const [search] = useSearchParams();
 
@@ -43,23 +38,11 @@ const ArticlesPage = ({ className }: ArticlesPageProps) => {
         dispatch(initArticlesPage(search));
     }, []);
 
-    if (error) {
-        return (
-            <Page onScrollEnd={onScrollEnd} className={classNames(cls.ArticlesPage, {}, [className])}>
-                {t('Произошла ошибка! Попробуйте перезагрузить страницу!')}
-            </Page>
-        );
-    }
-
     return (
         <DynamicModlueLoader reducers={reducers} removeAfterUnmount={false}>
             <Page onScrollEnd={onScrollEnd} className={classNames(cls.ArticlesPage, {}, [className])}>
                 <ArticlesPageFilters className={cls.filters} />
-                <ArticleList
-                    view={view}
-                    articles={articles}
-                    isLoading={isLoading}
-                />
+                <ArticleInfiniteList />
             </Page>
         </DynamicModlueLoader>
     );
