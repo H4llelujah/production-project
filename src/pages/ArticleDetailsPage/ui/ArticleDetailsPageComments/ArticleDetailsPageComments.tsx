@@ -22,8 +22,9 @@ export const ArticleDetailsPageComments = memo((props: ArticleDetailsPageComment
     const { className, id } = props;
     const { t } = useTranslation();
     const comments = useSelector(getArticleComments.selectAll);
-    const CommentsIsLoading = useSelector(getArticleCommentsIsLoading);
+    const commentsIsLoading = useSelector(getArticleCommentsIsLoading);
     const dispatch = useAppDispatch();
+    console.log(commentsIsLoading);
 
     useInitialEffect(() => {
         dispatch(fetchCommentsByArticleId(id));
@@ -40,7 +41,7 @@ export const ArticleDetailsPageComments = memo((props: ArticleDetailsPageComment
             />
             <AddCommentForm onSendComment={onSendComment} />
             <CommentList
-                isLoading={CommentsIsLoading}
+                isLoading={commentsIsLoading}
                 comments={comments}
             />
         </VStack>
