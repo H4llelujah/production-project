@@ -17,8 +17,9 @@ export {
     getUserAuthData,
 } from './model/selectors/getUserAuthData/getUserAuthData';
 
-export {
+export type {
     UserSchema,
     User,
-    UserRole,
 } from './model/types/user';
+
+export { UserRole } from './model/consts/userConsts';

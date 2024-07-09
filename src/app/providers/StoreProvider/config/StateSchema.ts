@@ -13,6 +13,7 @@ import { ArticleDetailsPageSchema } from 'pages/ArticleDetailsPage';
 import { ArticlesPageSchema } from 'pages/ArticlesPage';
 import { rtkApi } from 'shared/api/rtkApi';
 import { ScrollSaveSchema } from 'widget/ScrollSave';
+import { createReduxStore } from './store';
 
 export interface StateSchema {
     counter: CounterSchema;
@@ -60,3 +61,5 @@ export interface ThunkConfig<T> {
     extra: ThunkExtraArg;
     state: StateSchema;
 }
+
+export type AppDispatch = ReturnType<typeof createReduxStore>['dispatch'];

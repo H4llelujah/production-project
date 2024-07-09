@@ -13,9 +13,8 @@ import cls from './ArticleListItem.module.scss';
 import {
     Article,
     ArticleBlockText,
-    ArticleBlockType,
-    ArticleView,
 } from '../../model/types/article';
+import { ArticleView, ArticleBlockType } from '../../model/consts/articleConsts';
 import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
 
 interface ArticleListItemProps {

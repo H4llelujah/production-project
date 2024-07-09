@@ -2,7 +2,8 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { StoreProvider } from 'app/providers/StoreProvider';
 import { articleDetailsReducer } from '../../model/slice/ArticleDetailsSlice';
-import { Article, ArticleBlockType, ArticleType } from '../../model/types/article';
+import { Article, ArticleType } from '../../model/types/article';
+import { ArticleBlockType } from '../../model/consts/articleConsts';
 import { ArticleDetails } from './ArticleDetails';
 
 const meta: Meta<typeof ArticleDetails> = {

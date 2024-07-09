@@ -1,7 +1,8 @@
 /* eslint-disable max-len */
 import { TestAsyncThunk } from 'shared/lib/tests/TestAsyncThunk/TestAsyncThunk';
 import { FetchArticleById } from './FetchArticleById';
-import { Article, ArticleBlockType, ArticleType } from '../../types/article';
+import { Article, ArticleType } from '../../types/article';
+import { ArticleBlockType } from '../../consts/articleConsts';
 
 const data: Article = {
     id: '1',
