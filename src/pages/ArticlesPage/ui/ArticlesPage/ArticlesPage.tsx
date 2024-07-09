@@ -1,18 +1,14 @@
 import { classNames } from 'shared/lib/classNames/classNames';
-import { useTranslation } from 'react-i18next';
 import { memo, useCallback } from 'react';
-import { ArticleList } from 'entities/Article';
-import { useSelector } from 'react-redux';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { DynamicModlueLoader, ReducerList } from 'shared/lib/components/DynamicModuleLoader/DynamicModlueLoader';
 import { Page } from 'widget/Page';
 import { useSearchParams } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+import { getArticlesPageError } from '../../model/selectors/articlesPageSelectors';
 import cls from './ArticlesPage.module.scss';
-import { articlesPageReducer, getArticles } from '../../model/slice/articlesPageSlice';
-import {
-    getArticlesPageError, getArticlesPageInit, getArticlesPageIsLoading, getArticlesPageView,
-} from '../../model/selectors/articlesPageSelectors';
+import { articlesPageReducer } from '../../model/slice/articlesPageSlice';
 import { fetchNextArticle } from '../../model/services/fetchNextArticle/fetchNextArticle';
 import { initArticlesPage } from '../../model/services/initArticlesPage/initArticlesPage';
 import { ArticlesPageFilters } from '../ArticlesPageFilters/ArticlesPageFilters';
@@ -29,10 +25,13 @@ const reducers: ReducerList = {
 const ArticlesPage = ({ className }: ArticlesPageProps) => {
     const dispatch = useAppDispatch();
     const [search] = useSearchParams();
+    const error = useSelector(getArticlesPageError);
 
     const onScrollEnd = useCallback(() => {
-        dispatch(fetchNextArticle());
-    }, [dispatch]);
+        if (!error) {
+            dispatch(fetchNextArticle());
+        }
+    }, [dispatch, error]);
 
     useInitialEffect(() => {
         dispatch(initArticlesPage(search));
