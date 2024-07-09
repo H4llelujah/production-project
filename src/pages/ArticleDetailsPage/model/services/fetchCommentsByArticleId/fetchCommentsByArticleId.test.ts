@@ -47,7 +47,7 @@ describe('fetchCommentsByArticleId', () => {
 
         const result = await thunk.callThunk(undefined);
 
-        expect(thunk.api.get).toHaveBeenCalled();
+        expect(thunk.api.get).not.toHaveBeenCalled();
         expect(result.meta.requestStatus).toBe('rejected');
         expect(result.payload).toEqual('error');
     });
