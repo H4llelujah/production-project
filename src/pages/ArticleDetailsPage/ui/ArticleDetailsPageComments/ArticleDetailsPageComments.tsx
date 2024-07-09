@@ -15,7 +15,7 @@ import { fetchCommentsByArticleId } from '../../model/services/fetchCommentsByAr
 
 interface ArticleDetailsPageCommentsProps {
     className?: string;
-    id: string;
+    id?: string;
 }
 
 export const ArticleDetailsPageComments = memo((props: ArticleDetailsPageCommentsProps) => {
@@ -24,7 +24,6 @@ export const ArticleDetailsPageComments = memo((props: ArticleDetailsPageComment
     const comments = useSelector(getArticleComments.selectAll);
     const commentsIsLoading = useSelector(getArticleCommentsIsLoading);
     const dispatch = useAppDispatch();
-    console.log(commentsIsLoading);
 
     useInitialEffect(() => {
         dispatch(fetchCommentsByArticleId(id));

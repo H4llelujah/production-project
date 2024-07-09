@@ -1,6 +1,15 @@
+.icon {
+    fill: var(--inverted-primary-color);
+    transition: transform 0.3s ease-out;
+}
+
 .item {
     display: flex;
     align-items: center;
+
+    &:hover .icon {
+        transform: scale(1.2);
+    }
 }
 
 .link {
@@ -22,10 +31,6 @@
     &:hover::after {
         width: 100%;
     }
-}
-
-.icon {
-    fill: var(--inverted-primary-color);
 }
 
 .collapsed {

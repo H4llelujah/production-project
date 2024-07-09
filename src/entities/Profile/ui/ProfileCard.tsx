@@ -53,7 +53,7 @@ export const ProfileCard = (props: ProfileCardProps) => {
     }
     if (error) {
         return (
-            <HStack justify="center" className={classNames(cls.ProfileCard, {}, [className, cls.error])}>
+            <HStack max justify="center" className={classNames(cls.ProfileCard, {}, [className, cls.error])}>
                 <Text
                     theme={TextTheme.ERROR}
                     align={TextAlign.CENTER}

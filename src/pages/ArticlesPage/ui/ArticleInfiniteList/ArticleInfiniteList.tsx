@@ -6,7 +6,6 @@ import { useSelector } from 'react-redux';
 import { getArticles } from '../../model/slice/articlesPageSlice';
 import {
     getArticlesPageError,
-    getArticlesPageInit,
     getArticlesPageIsLoading,
     getArticlesPageView,
 } from '../../model/selectors/articlesPageSelectors';
@@ -26,6 +25,7 @@ export const ArticleInfiniteList = memo((props: ArticleInfiniteListProps) => {
     if (error) {
         return <Text text={t('Произошла ошибка при загрузке статьей')} />;
     }
+
     return (
         <ArticleList
             view={view}

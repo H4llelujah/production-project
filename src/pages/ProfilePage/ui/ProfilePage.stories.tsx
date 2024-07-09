@@ -41,3 +41,59 @@ export const Primary: Story = {
         ),
     ],
 };
+
+export const Loading: Story = {
+    decorators: [
+        (Story) => (
+            <StoreProvider
+                asyncReducers={{ profile: profileReducer }}
+                initialState={{
+                    profile: {
+                        isLoading: true,
+                        form: {
+                            age: 21,
+                            first: 'Pavel',
+                            lastname: 'Baldin',
+                            username: 'adming',
+                            country: Country.Belarus,
+                            currency: Currency.EUR,
+                            city: 'Kopeysk',
+                            avatar,
+                        },
+                        readonly: true,
+                    },
+                }}
+            >
+                <Story />
+            </StoreProvider>
+        ),
+    ],
+};
+
+export const Error: Story = {
+    decorators: [
+        (Story) => (
+            <StoreProvider
+                asyncReducers={{ profile: profileReducer }}
+                initialState={{
+                    profile: {
+                        error: 'error',
+                        form: {
+                            age: 21,
+                            first: 'Pavel',
+                            lastname: 'Baldin',
+                            username: 'adming',
+                            country: Country.Belarus,
+                            currency: Currency.EUR,
+                            city: 'Kopeysk',
+                            avatar,
+                        },
+                        readonly: true,
+                    },
+                }}
+            >
+                <Story />
+            </StoreProvider>
+        ),
+    ],
+};
