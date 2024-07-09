@@ -3,6 +3,7 @@ import { StyleDecorator } from '../../src/shared/config/storybook/StyleDecorator
 import { ThemeDecorator } from '../../src/shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { RouteDecorator } from '../../src/shared/config/storybook/RouteDecorator/RouteDecorator';
 import { StoreDecorator } from '../../src/shared/config/storybook/StoreDecorator/StoreDecorator';
+import { SuspenceDecorator } from '../../src/shared/config/storybook/SuspenceDecorator/SuspenceDecorator';
 import { Theme } from '../../src/app/providers/ThemeProvider/index';
 
 const preview: Preview = {
@@ -25,6 +26,7 @@ const preview: Preview = {
         ThemeDecorator,
         StyleDecorator,
         RouteDecorator,
+        SuspenceDecorator,
     ],
 };
 
