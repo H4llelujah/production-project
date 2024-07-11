@@ -1,19 +1,27 @@
 import { Popover as HPovover, PopoverButton, PopoverPanel } from '@headlessui/react';
+import { AnchorProps } from '@headlessui/react/dist/internal/floating';
+import { ReactNode } from 'react';
+import { classNames } from 'shared/lib/classNames/classNames';
+import cls from './Popover.module.scss';
 
-export function Popover() {
+interface PopoverProps {
+    className?: string;
+    trigger: ReactNode;
+    anchor?: AnchorProps;
+    children?: ReactNode;
+}
+
+export function Popover(props: PopoverProps) {
+    const {
+        className, trigger, anchor = 'bottom start', children,
+    } = props;
     return (
-        <HPovover className="relative">
-            <PopoverButton>Solutions</PopoverButton>
-
-            <PopoverPanel className="absolute z-10">
-                <div className="grid grid-cols-2">
-                    <a href="/analytics">Analytics</a>
-                    <a href="/engagement">Engagement</a>
-                    <a href="/security">Security</a>
-                    <a href="/integrations">Integrations</a>
-                </div>
-
-                <img src="/solutions.jpg" alt="" />
+        <HPovover className={classNames(cls.Popover, {}, [className])}>
+            <PopoverButton className={cls.btn}>
+                {trigger}
+            </PopoverButton>
+            <PopoverPanel anchor={anchor} className={cls.panel}>
+                {children}
             </PopoverPanel>
         </HPovover>
     );
