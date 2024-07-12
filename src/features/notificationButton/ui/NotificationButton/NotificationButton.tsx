@@ -5,7 +5,7 @@ import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import { Icon } from 'shared/ui/Icon/Icon';
 import { NotificationList } from 'entities/Notification';
 import NotificationIcon from 'shared/assets/icons/notification-icon.svg';
-import cls from './notificationButton.module.scss';
+import cls from './NotificationButton.module.scss';
 
 interface notificationButtonProps {
     className?: string;
