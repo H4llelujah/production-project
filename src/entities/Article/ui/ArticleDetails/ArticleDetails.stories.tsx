@@ -1,6 +1,6 @@
 /* eslint-disable max-len */
 import type { Meta, StoryObj } from '@storybook/react';
-import { StoreProvider } from 'app/providers/StoreProvider';
+import { StoreProvider } from '@/app/providers/StoreProvider';
 import { articleDetailsReducer } from '../../model/slice/ArticleDetailsSlice';
 import { Article, ArticleType } from '../../model/types/article';
 import { ArticleBlockType } from '../../model/consts/articleConsts';

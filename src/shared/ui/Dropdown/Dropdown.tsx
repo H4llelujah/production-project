@@ -2,8 +2,8 @@ import {
     Menu, MenuButton, MenuItem, MenuItems,
 } from '@headlessui/react';
 import { Fragment, ReactNode } from 'react';
-import { classNames } from 'shared/lib/classNames/classNames';
 import { AnchorProps } from '@headlessui/react/dist/internal/floating';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import { Button } from '../Button/Button';
 import cls from './Dropdown.module.scss';
 import { AppLink } from '../AppLink/AppLink';

@@ -1,10 +1,10 @@
 /* eslint-disable max-len */
 import type { Meta, StoryObj } from '@storybook/react';
-import { StoreProvider } from 'app/providers/StoreProvider';
-import { articleDetailsReducer } from 'entities/Article/model/slice/ArticleDetailsSlice';
-import { Article } from 'entities/Article';
-import { ArticleBlockType } from 'entities/Article/model/consts/articleConsts';
-import { Comment } from 'entities/Comment';
+import { StoreProvider } from '@/app/providers/StoreProvider';
+import { articleDetailsReducer } from '@/entities/Article/model/slice/ArticleDetailsSlice';
+import { Article } from '@/entities/Article';
+import { ArticleBlockType } from '@/entities/Article/model/consts/articleConsts';
+import { Comment } from '@/entities/Comment';
 import ArticleDetailsPage from './ArticleDetailsPage';
 import { articleDetailsPageReducer } from '../../model/slice';
 

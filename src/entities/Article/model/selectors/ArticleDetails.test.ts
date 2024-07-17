@@ -1,5 +1,5 @@
 /* eslint-disable max-len */
-import { StateSchema } from 'app/providers/StoreProvider';
+import { StateSchema } from '@/app/providers/StoreProvider';
 import { Article } from '../types/article';
 import { ArticleBlockType, ArticleType } from '../consts/articleConsts';
 import { getArticleDetailsData, getArticleDetailsError, getArticleDetailsIsLoading } from './ArticleDetails';

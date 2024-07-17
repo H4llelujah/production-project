@@ -3,7 +3,7 @@ import {
 } from '@headlessui/react';
 import { Fragment, ReactNode } from 'react';
 import { AnchorPropsWithSelection } from '@headlessui/react/dist/internal/floating';
-import { classNames } from 'shared/lib/classNames/classNames';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import cls from './ListBox.module.scss';
 import { HStack } from '../Stack';
 

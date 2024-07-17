@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { StoreProvider } from 'app/providers/StoreProvider';
-import { Article, ArticleView } from 'entities/Article';
+import { StoreProvider } from '@/app/providers/StoreProvider';
+import { Article, ArticleView } from '@/entities/Article';
 import { ArticleInfiniteList } from './ArticleInfiniteList';
 import { articlesPageReducer } from '../../model/slice/articlesPageSlice';
 

@@ -1,5 +1,5 @@
 import { Decorator } from '@storybook/react';
-import { ThemeProvider } from 'app/providers/ThemeProvider';
+import { ThemeProvider } from '@/app/providers/ThemeProvider';
 
 export const ThemeDecorator: Decorator = (Story, context) => {
     // eslint-disable-next-line react/destructuring-assignment

@@ -1,9 +1,9 @@
-import { Profile } from 'entities/Profile';
-import { Country } from 'entities/Country';
-import { Currency } from 'entities/Currency';
-import avatar from 'shared/assets/tests/StorybookAvatar.jpg';
 import type { Meta, StoryObj } from '@storybook/react';
-import { StoreProvider } from 'app/providers/StoreProvider';
+import { Profile } from '@/entities/Profile';
+import { Country } from '@/entities/Country';
+import { Currency } from '@/entities/Currency';
+import avatar from '@/shared/assets/tests/StorybookAvatar.jpg';
+import { StoreProvider } from '@/app/providers/StoreProvider';
 import { validateProfileError } from '../../model/consts/ProfileCardConsts';
 import { EditableProfileCard } from './EditableProfileCard';
 import { profileReducer } from '../../model/slices/ProfileSlice';

@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { StoreProvider } from 'app/providers/StoreProvider';
-import { Comment } from 'entities/Comment';
+import { StoreProvider } from '@/app/providers/StoreProvider';
+import { Comment } from '@/entities/Comment';
 import { ArticleDetailsPageComments } from './ArticleDetailsPageComments';
 import { articleDetailsPageReducer } from '../../model/slice/index';
 

@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { StoreProvider } from 'app/providers/StoreProvider';
-import { Country } from 'entities/Country';
-import { Currency } from 'entities/Currency';
-import avatar from 'shared/assets/tests/StorybookAvatar.jpg';
-import { profileReducer } from 'features/editableProfileCard/model/slices/ProfileSlice';
+import { StoreProvider } from '@/app/providers/StoreProvider';
+import { Country } from '@/entities/Country';
+import { Currency } from '@/entities/Currency';
+import avatar from '@/shared/assets/tests/StorybookAvatar.jpg';
+import { profileReducer } from '@/features/editableProfileCard/model/slices/ProfileSlice';
 import ProfilePage from './ProfilePage';
 
 const meta: Meta<typeof ProfilePage> = {
