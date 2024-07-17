@@ -22,7 +22,7 @@
 }
 
 .opened {
-    z-index: var(--modal-index);
+    z-index: var(--modal-z-index);
     pointer-events: auto;
     opacity: 1;
 
