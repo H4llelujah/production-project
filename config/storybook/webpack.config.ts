@@ -29,6 +29,14 @@ export default ({ config }: {config: webpack.Configuration}) => {
         });
     }
 
+    if (config.resolve) {
+        config.resolve.alias = { '@': paths.src };
+    } else {
+        config.resolve = {
+            alias: { '@': paths.src },
+        };
+    }
+
     config.resolve?.modules?.push(paths.src);
     config.resolve?.extensions?.push('.ts', '.tsx');
 
