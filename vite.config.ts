@@ -5,7 +5,7 @@ import svgr from 'vite-plugin-svgr';
 // https://vitejs.dev/config/
 export default defineConfig({
     esbuild: {
-        target: 'es6',
+        target: 'es2020',
     },
     plugins: [
         svgr({ exportAsDefault: true }),
