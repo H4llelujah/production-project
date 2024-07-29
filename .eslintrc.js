@@ -56,7 +56,7 @@ module.exports = {
         'no-param-reassign': 'off',
         'no-undef': 'off',
         'react/no-array-index-key': 'off',
-        'hallelujah-fsd-plugin/path-checker': 'error',
+        'hallelujah-fsd-plugin/path-checker': ['error', { alias: '@' }],
         'arrow-body-style': 'off',
     },
     globals: {
