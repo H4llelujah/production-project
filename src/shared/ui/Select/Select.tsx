@@ -1,4 +1,3 @@
-import { useTranslation } from 'react-i18next';
 import { ChangeEvent, memo, useMemo } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import cls from './Select.module.scss';
@@ -43,7 +42,6 @@ export const Select = memo(<T extends string>(props: SelectProps<T>) => {
         </option>
     )), [options]);
 
-    const { t } = useTranslation();
     return (
         <div className={classNames(cls.Wrapper, {}, [className])}>
             {label && (

@@ -12,7 +12,7 @@ import { ProfileSchema } from '@/features/editableProfileCard';
 import { ArticleDetailsPageSchema } from '@/pages/ArticleDetailsPage';
 import { ArticlesPageSchema } from '@/pages/ArticlesPage';
 import { rtkApi } from '@/shared/api/rtkApi';
-import { ScrollSaveSchema } from '@/widget/ScrollSave';
+import { ScrollSaveSchema } from '@/features/ScrollSave';
 import { createReduxStore } from './store';
 
 export interface StateSchema {

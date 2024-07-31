@@ -60,10 +60,6 @@ export const Input = memo((props: InputProps) => {
         setCaretPosition(e.target.value.length);
     };
 
-    const mods: Mods = {
-        [cls.readonly]: readonly,
-    };
-
     return (
         <div className={classNames(cls.InputWrapper, {}, [className])}>
             {placeholder && (

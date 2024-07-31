@@ -6,11 +6,8 @@ import { Sidebar } from '@/widget/Sidebar';
 import { getUserInited, userActions } from '@/entities/User';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { AppRouter } from './providers/router';
-import { useTheme } from './providers/ThemeProvider';
 
 const App = () => {
-    const { theme } = useTheme();
-
     const dispatch = useAppDispatch();
 
     const inited = useSelector(getUserInited);

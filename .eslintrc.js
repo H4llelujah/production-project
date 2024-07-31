@@ -57,6 +57,13 @@ module.exports = {
         'no-undef': 'off',
         'react/no-array-index-key': 'off',
         'hallelujah-fsd-plugin/path-checker': ['error', { alias: '@' }],
+        'hallelujah-fsd-plugin/layer-imports': [
+            'error',
+            {
+                alias: '@',
+                ignoreImportPatterns: ['**/StoreProvider', '**/testing'],
+            },
+        ],
         'hallelujah-fsd-plugin/public-api-imports': [
             'error',
             {
