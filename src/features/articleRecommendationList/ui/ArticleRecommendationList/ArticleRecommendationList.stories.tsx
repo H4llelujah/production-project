@@ -1,16 +1,18 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Article } from '@/entities/Article';
+import { Article, ArticleType } from '@/entities/Article';
 import { ArticleRecommendationList } from './ArticleRecommendationList';
 
 const article: Article = {
     id: '1',
-    img: '',
+    img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzDhN6PT71Exuhr6j6KayhENg5ofz4iXGR1A&s',
     createdAt: '',
-    views: 124,
-    user: { id: '1', username: 'test' },
+    views: 12445,
+    user: {
+        id: '1', username: 'test',
+    },
     blocks: [],
-    type: [],
-    title: '123',
+    type: [ArticleType.ECONOMICS],
+    title: 'Title',
     subtitle: 'asgasfasfa',
 };
 

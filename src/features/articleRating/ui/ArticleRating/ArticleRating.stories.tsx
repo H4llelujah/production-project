@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import ArticleRating from './ArticleRating';
 
 const meta: Meta<typeof ArticleRating> = {
-    title: 'FSDPath/ArticleRating',
+    title: 'Entities/ArticleRating',
     component: ArticleRating,
     tags: ['autodocs'],
 };

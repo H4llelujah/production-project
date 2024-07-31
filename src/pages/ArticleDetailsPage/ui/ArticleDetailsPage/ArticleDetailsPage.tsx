@@ -1,4 +1,3 @@
-import { useTranslation } from 'react-i18next';
 import { useParams } from 'react-router-dom';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { ArticleDetails } from '@/entities/Article';
@@ -21,7 +20,6 @@ const reducers: ReducerList = {
 };
 
 const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
-    const { t } = useTranslation('/articles');
     const { id } = useParams<{id: string}>();
 
     if (!id) {

@@ -1,4 +1,3 @@
-import { useTranslation } from 'react-i18next';
 import { memo } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { Card, CardTheme } from '@/shared/ui/Card/Card';
@@ -21,11 +20,12 @@ export const NotificationItem = memo((props: NotificationItemProps) => {
             <Text title={item.title} text={item.description} />
         </Card>
     );
-
     if (item.href) {
-        <a className={cls.link} href={item.href} target="_blank" rel="noreferrer">
-            {content}
-        </a>;
+        return (
+            <a className={cls.link} href={item.href} target="_blank" rel="noreferrer">
+                {content}
+            </a>
+        );
     }
     return content;
 });
