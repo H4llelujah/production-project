@@ -7,7 +7,11 @@ export type {
 } from './model/types/article';
 
 export {
-    ArticleSortField, ArticleType, ArticleView,
+    articleDetailsReducer,
+} from './model/slice/ArticleDetailsSlice';
+
+export {
+    ArticleSortField, ArticleType, ArticleView, ArticleBlockType,
 } from './model/consts/articleConsts';
 
 export type {

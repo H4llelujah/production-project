@@ -57,6 +57,12 @@ module.exports = {
         'no-undef': 'off',
         'react/no-array-index-key': 'off',
         'hallelujah-fsd-plugin/path-checker': ['error', { alias: '@' }],
+        'hallelujah-fsd-plugin/public-api-imports': [
+            'error',
+            {
+                alias: '@',
+                testFilesPatterns: ['**/*.test.ts', '**/*.stories.tsx'],
+            }],
         'arrow-body-style': 'off',
     },
     globals: {
