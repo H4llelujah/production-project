@@ -7,8 +7,8 @@ import {
 } from '@/entities/Article';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { SortOrder } from '@/shared/types';
-import { Input } from '@/shared/ui/Input/Input';
-import { Card } from '@/shared/ui/Card/Card';
+import { Input } from '@/shared/ui/Input';
+import { Card } from '@/shared/ui/Card';
 import { useDebounce } from '@/shared/lib/hooks/useDebounce/useDebounce';
 import cls from './ArticlesPageFilters.module.scss';
 import { articlePageActions } from '../../model/slice/articlesPageSlice';

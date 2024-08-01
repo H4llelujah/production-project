@@ -20,20 +20,25 @@ componentDirs?.forEach((directory) => {
     const indexFilePath = `${directory.getPath()}/index.ts`;
     const indexFile = directory.getSourceFile(indexFilePath);
     if (!indexFile) {
-        const sourceCode = `export * from './${directory.getBaseName()}`;
+        const sourceCode = `export * from './${directory.getBaseName()}';`;
         const file = directory.createSourceFile(indexFilePath, sourceCode, { overwrite: true });
         file.save();
     }
 });
 
-// files.forEach((sourceFile) => {
-//     const importDeclarations = sourceFile.getImportDeclarations();
-//     importDeclarations.forEach((importDeclaration) => {
-//         const value = importDeclaration.getModuleSpecifierValue();
-//         if (isAbsolute(value)) {
-//             importDeclaration.setModuleSpecifier(`@/${value}`);
-//         }
-//     });
-// });
+files.forEach((sourceFile) => {
+    const importDeclarations = sourceFile.getImportDeclarations();
+    importDeclarations.forEach((importDeclaration) => {
+        const value = importDeclaration.getModuleSpecifierValue();
+        const valueWithAlias = value.replace('@/', '');
+        const segments = valueWithAlias.split('/');
+        const isSharedLayer = segments?.[0] === 'shared';
+        const isUiSlice = segments?.[1] === 'ui';
+        if (isAbsolute(valueWithAlias) && isSharedLayer && isUiSlice) {
+            const result = valueWithAlias.split('/').slice(0, 3).join('/');
+            importDeclaration.setModuleSpecifier(`@/${result}`);
+        }
+    });
+});
 
 project.save();
