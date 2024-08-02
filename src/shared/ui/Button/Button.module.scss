@@ -80,7 +80,8 @@
 }
 
 .backgroundInverted {
-    background: var(--inverted-bg-color);
+    // background: var(--inverted-bg-color);
+    background-color: red;
     color: var(--inverted-primary-color);
     border: none;
 
