@@ -1,6 +1,6 @@
 .Button {
     cursor: pointer;
-    color: red;
+    color: (var(--primary-color));
     padding: 6px 15px;
     transition: all 0.3s ease-out;
 }
