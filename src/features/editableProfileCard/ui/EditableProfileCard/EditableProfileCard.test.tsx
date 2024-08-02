@@ -11,16 +11,16 @@ import { profileReducer } from '../../model/slices/ProfileSlice';
 // error with Listbox headless ui needs mock this components.
 // Error component shared/ui/listbox
 
-jest.mock('entities/Currency', () => {
-    const originalModule = jest.requireActual('entities/Currency');
+jest.mock('@/entities/Currency', () => {
+    const originalModule = jest.requireActual('@/entities/Currency');
     return {
         ...originalModule,
         CurrencySelect: () => <div data-testid="CurrencySelect" />,
     };
 });
 
-jest.mock('entities/Country', () => {
-    const originalModule = jest.requireActual('entities/Country');
+jest.mock('@/entities/Country', () => {
+    const originalModule = jest.requireActual('@/entities/Country');
     return {
         ...originalModule,
         CountrySelect: () => <div data-testid="CountrySelect" />,
