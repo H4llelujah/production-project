@@ -179,4 +179,4 @@ export const Primary: Story = {};
 - [notificationButton](/src/features/notificationButton)
 - [profileRating](/src/features/profileRating)
 - [ThemeSwitcher](/src/features/ThemeSwitcher)
-- [UI](/src/features/UI)
+- [ScrollSave](/src/features/ScrollSave)
