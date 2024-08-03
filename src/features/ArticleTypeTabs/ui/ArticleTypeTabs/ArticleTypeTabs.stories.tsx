@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { ArticleTypeTabs } from './ArticleTypeTabs';
 
 const meta: Meta<typeof ArticleTypeTabs> = {
-    title: 'entities/Article/ArticleTypeTabs',
+    title: 'Features/Article/ArticleTypeTabs',
     component: ArticleTypeTabs,
     tags: ['autodocs'],
 };
