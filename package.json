@@ -21,7 +21,8 @@
     "storybook:build": "storybook build -c ./config/storybook",
     "build-storybook": "storybook build -c ./config/storybook",
     "generate:slice": "node ./scripts/createSlice/index.js",
-    "chromatic": "npx chromatic --project-token=chpt_6b9f77286af7b88"
+    "chromatic": "npx chromatic --project-token=chpt_6b9f77286af7b88",
+    "postinstall": "node scripts/clear-cache"
   },
   "keywords": [],
   "author": "",
