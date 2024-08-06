@@ -24,3 +24,10 @@ export const Small: Story = {
         size: 50,
     },
 };
+
+export const NoAvatar: Story = {
+    args: {
+        src: '',
+        size: 50,
+    },
+};
