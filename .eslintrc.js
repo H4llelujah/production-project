@@ -73,6 +73,7 @@ module.exports = {
                 testFilesPatterns: ['**/*.test.ts', '**/*.stories.tsx'],
             }],
         'arrow-body-style': 'off',
+        'react/destructuring-assignment': 'off',
     },
     globals: {
         __IS_DEV__: true,
