@@ -4,4 +4,4 @@ node_modules
 .vscode
 *storybook.log
 storybook-static
-/reports
+/reports/unit
