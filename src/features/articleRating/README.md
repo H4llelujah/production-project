@@ -16,6 +16,6 @@
     
 - Public API
 
-1. **Components**:
+    **Components**:
 
     `ArticleRating` - это асинхронный компонент, который загружает и отображает рейтинг статьи. Он экспортируется через Public API как ArticleRatingAsync, чтобы обеспечить lazy loading компонента.
