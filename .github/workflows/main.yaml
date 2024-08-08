@@ -40,7 +40,6 @@ jobs:
 
         if: always()
       - name: Unit testing
-        if: always()
         run: npm run test:unit
 
         if: always()
