@@ -57,7 +57,7 @@ jobs:
         if: always()
         uses: actions/deploy-pages@v1
 
-        -name: Show GitHub Pages Report URL
+      - name: Show GitHub Pages Report URL
         run: echo "GitHub Pages deployed to - https://<username>.github.io/<repository>"
 
 
