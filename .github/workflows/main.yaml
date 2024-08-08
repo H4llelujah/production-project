@@ -49,15 +49,17 @@ jobs:
         if: always()
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
-
         if: always()
         with:
           path: 'reports'
       - name: Deploy to GitHub Pages
         id: deployment
-
         if: always()
         uses: actions/deploy-pages@v1
+
+        -name: Show GitHub Pages Report URL
+        run: echo "GitHub Pages deployed to: https://<username>.github.io/<repository>"
+
 
   checks:
     runs-on: ubuntu-latest
