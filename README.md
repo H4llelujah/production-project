@@ -65,7 +65,7 @@ npm run start:dev или npm run start:dev:vite - запуск сервера + 
 В проекте используется eslint для проверки typescript кода и stylelint для проверки файлов со стилями.
 
 Также для строгого контроля главных архитектурных принципов
-используется собственный eslint plugin *eslint-plugin-ulbi-tv-plugin*,
+используется собственный eslint plugin *eslint-plugin-hallelujah-fsd-plugin*,
 который содержит 3 правила
 1) path-checker - запрещает использовать абсолютные импорты в рамках одного модуля
 2) layer-imports - проверяет корректность использования слоев с точки зрения FSD
@@ -171,7 +171,7 @@ export const Primary: Story = {};
 - [addCommentForm](/src/features/addCommentForm)
 - [articleEditForm](/src/features/articleEditForm)
 - [articleRating](/src/features/articleRating)
-- [articleRecommendationsList](/src/features/articleRecommendationsList)
+- [articleRecommendationsList](/src/features/articleRecommendationList)
 - [ArticleSortSelector](/src/features/ArticleSortSelector)
 - [ArticleTypeTabs](/src/features/ArticleTypeTabs)
 - [ArticleViewSelector](/src/features/ArticleViewSelector)
