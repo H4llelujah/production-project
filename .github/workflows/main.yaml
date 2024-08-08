@@ -58,7 +58,7 @@ jobs:
         uses: actions/deploy-pages@v1
 
       - name: Show GitHub Pages Report URL
-        run: echo "GitHub Pages deployed to - https://${{ github.repository_owner }}.github.io/${{ github.repository }}
+        run: echo "GitHub Pages deployed to - https://${{ github.repository_owner }}.github.io/${{ github.repository }}"
 
 
   checks:
