@@ -591,6 +591,15 @@
         "MANAGER"
       ],
       "avatar": "https://masterpiecer-images.s3.yandex.net/487ca75268ea11eeaea6da477c0f1ee2:upscaled"
+    },
+    {
+      "id": "4",
+      "username": "testuser",
+      "password": "123",
+      "roles": [
+        "ADMIN"
+      ],
+      "avatar": "https://cs14.pikabu.ru/post_img/big/2023/02/13/8/1676296367166243426.png"
     }
   ],
   "profile": [
