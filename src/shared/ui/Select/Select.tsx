@@ -1,13 +1,14 @@
 import { ChangeEvent, memo, useMemo } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import cls from './Select.module.scss';
+import { TestProps } from '@/shared/types/tests';
 
 export interface SelectOptions<T extends string> {
     value: T;
     content: string;
 }
 
-interface SelectProps<T extends string> {
+interface SelectProps<T extends string> extends TestProps{
     className?: string;
     label?: string;
     options?: SelectOptions<T>[];
@@ -24,6 +25,7 @@ export const Select = memo(<T extends string>(props: SelectProps<T>) => {
         value,
         onChange,
         readonly,
+        ...otherProps
     } = props;
 
     const onChangeHandler = (e: ChangeEvent<HTMLSelectElement>) => {
@@ -34,6 +36,7 @@ export const Select = memo(<T extends string>(props: SelectProps<T>) => {
 
     const optionList = useMemo(() => options?.map((opt) => (
         <option
+            data-testid={`SelectOption.${opt.value}`}
             className={cls.option}
             value={opt.value}
             key={opt.value}
@@ -54,6 +57,7 @@ export const Select = memo(<T extends string>(props: SelectProps<T>) => {
                 className={cls.select}
                 value={value}
                 onChange={onChangeHandler}
+                {...otherProps}
             >
                 {optionList}
             </select>

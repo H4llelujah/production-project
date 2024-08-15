@@ -35,10 +35,10 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
     } = props;
     const { t } = useTranslation();
 
-    const types = <Text text={article.type.join(', ')} className={cls.types} />;
+    const types = <Text text={article.type.join(', ')} className={cls.types} data-testid="ArticleListItem.Types" />;
     const views = (
         <>
-            <Text text={String(article.views)} className={cls.view} />
+            <Text data-testid="ArticleListItem.Views" text={String(article.views)} className={cls.view} />
             <Icon Svg={EyeIcon} />
         </>
     );

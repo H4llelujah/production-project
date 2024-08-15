@@ -6,7 +6,7 @@ import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch
 import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { DynamicModlueLoader, ReducerList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModlueLoader';
 import { Page } from '@/widget/Page';
-import { getArticlesPageError } from '../../model/selectors/articlesPageSelectors';
+import { getArticlesPageError, getArticlesPageIsLoading } from '../../model/selectors/articlesPageSelectors';
 import cls from './ArticlesPage.module.scss';
 import { articlesPageReducer } from '../../model/slice/articlesPageSlice';
 import { fetchNextArticle } from '../../model/services/fetchNextArticle/fetchNextArticle';
@@ -26,12 +26,13 @@ const ArticlesPage = ({ className }: ArticlesPageProps) => {
     const dispatch = useAppDispatch();
     const [search] = useSearchParams();
     const error = useSelector(getArticlesPageError);
+    const isArticlesLoading = useSelector(getArticlesPageIsLoading);
 
     const onScrollEnd = useCallback(() => {
-        if (!error) {
+        if (!error && !isArticlesLoading) {
             dispatch(fetchNextArticle());
         }
-    }, [dispatch, error]);
+    }, [dispatch, error, isArticlesLoading]);
 
     useInitialEffect(() => {
         dispatch(initArticlesPage(search));
