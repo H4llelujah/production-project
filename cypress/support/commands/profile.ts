@@ -29,7 +29,6 @@ declare global {
         interface Chainable {
             updateProfile(firstname: string, lastname: string): Chainable<void>;
             resetProfile(profileId: string): Chainable<void>;
-
         }
     }
 }

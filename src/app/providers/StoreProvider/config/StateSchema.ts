@@ -1,5 +1,7 @@
 import {
-    EnhancedStore, Reducer, ReducersMapObject,
+    EnhancedStore,
+    Reducer,
+    ReducersMapObject,
     UnknownAction,
 } from '@reduxjs/toolkit';
 import { AxiosInstance } from 'axios';
@@ -19,7 +21,7 @@ export interface StateSchema {
     counter: CounterSchema;
     user: UserSchema;
     scrollSave: ScrollSaveSchema;
-    [rtkApi.reducerPath]: ReturnType<typeof rtkApi.reducer>
+    [rtkApi.reducerPath]: ReturnType<typeof rtkApi.reducer>;
 
     // Асинхронные редюсеры
     loginForm?: LoginSchema;
@@ -31,25 +33,28 @@ export interface StateSchema {
 }
 
 interface EmptyObject {
-    readonly [$CombinedState]?: undefined
+    readonly [$CombinedState]?: undefined;
 }
 
 export type CombinedState<S> = EmptyObject & S;
 
 export type StateSchemaKey = keyof StateSchema;
 
-export type MountedReducres = OptionalRecord<StateSchemaKey, boolean>
+export type MountedReducres = OptionalRecord<StateSchemaKey, boolean>;
 
 export interface ReducerManager {
     getReducerMap: () => ReducersMapObject<StateSchema>;
-    reduce: (state: StateSchema, action: UnknownAction) => CombinedState<StateSchema>;
+    reduce: (
+        state: StateSchema,
+        action: UnknownAction,
+    ) => CombinedState<StateSchema>;
     add: (key: StateSchemaKey, reducer: Reducer) => void;
     remove: (key: StateSchemaKey) => void;
     getMountedReducres: () => MountedReducres;
 }
 
 export interface ReduxStoreWithManager extends EnhancedStore<StateSchema> {
-    reducerManager: ReducerManager
+    reducerManager: ReducerManager;
 }
 
 export interface ThunkExtraArg {

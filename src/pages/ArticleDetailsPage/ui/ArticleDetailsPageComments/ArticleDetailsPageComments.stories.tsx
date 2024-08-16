@@ -23,7 +23,9 @@ export const Primary: Story = {
     decorators: [
         (Story) => (
             <StoreProvider
-                asyncReducers={{ articleDetailsPage: articleDetailsPageReducer }}
+                asyncReducers={{
+                    articleDetailsPage: articleDetailsPageReducer,
+                }}
                 initialState={{
                     articleDetailsPage: {
                         comments: {
@@ -47,7 +49,9 @@ export const Loading: Story = {
     decorators: [
         (Story) => (
             <StoreProvider
-                asyncReducers={{ articleDetailsPage: articleDetailsPageReducer }}
+                asyncReducers={{
+                    articleDetailsPage: articleDetailsPageReducer,
+                }}
                 initialState={{
                     articleDetailsPage: {
                         comments: {
@@ -72,7 +76,9 @@ export const Error: Story = {
     decorators: [
         (Story) => (
             <StoreProvider
-                asyncReducers={{ articleDetailsPage: articleDetailsPageReducer }}
+                asyncReducers={{
+                    articleDetailsPage: articleDetailsPageReducer,
+                }}
                 initialState={{
                     articleDetailsPage: {
                         comments: {

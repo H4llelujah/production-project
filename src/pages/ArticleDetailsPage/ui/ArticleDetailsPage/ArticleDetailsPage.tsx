@@ -1,7 +1,10 @@
 import { useParams } from 'react-router-dom';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { ArticleDetails } from '@/entities/Article';
-import { DynamicModlueLoader, ReducerList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModlueLoader';
+import {
+    DynamicModlueLoader,
+    ReducerList,
+} from '@/shared/lib/components/DynamicModuleLoader/DynamicModlueLoader';
 import { Page } from '@/widget/Page';
 import { VStack } from '@/shared/ui/Stack';
 import { ArticleRecommendationList } from '@/features/articleRecommendationList';
@@ -20,7 +23,7 @@ const reducers: ReducerList = {
 };
 
 const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
-    const { id } = useParams<{id: string}>();
+    const { id } = useParams<{ id: string }>();
 
     if (!id) {
         return null;
@@ -28,7 +31,9 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
 
     return (
         <DynamicModlueLoader reducers={reducers} removeAfterUnmount>
-            <Page className={classNames(cls.ArticleDetailsPage, {}, [className])}>
+            <Page
+                className={classNames(cls.ArticleDetailsPage, {}, [className])}
+            >
                 <VStack gap="16" max>
                     <ArticleDetailsPageHeader />
                     <ArticleDetails id={id} />
@@ -38,7 +43,6 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
                 </VStack>
             </Page>
         </DynamicModlueLoader>
-
     );
 };
 

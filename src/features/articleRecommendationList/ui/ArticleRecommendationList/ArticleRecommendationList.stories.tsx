@@ -8,7 +8,8 @@ const article: Article = {
     createdAt: '',
     views: 12445,
     user: {
-        id: '1', username: 'test',
+        id: '1',
+        username: 'test',
     },
     blocks: [],
     type: [ArticleType.ECONOMICS],

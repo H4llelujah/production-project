@@ -1,6 +1,10 @@
 import { Country } from '@/entities/Country';
 import { Currency } from '@/entities/Currency';
-import { profileActions, profileReducer, updateProfileData } from '../../../../features/editableProfileCard/model/slices/ProfileSlice';
+import {
+    profileActions,
+    profileReducer,
+    updateProfileData,
+} from '../../../../features/editableProfileCard/model/slices/ProfileSlice';
 import { ProfileSchema } from '../types/editableProfileCardSchema';
 import { validateProfileError } from '../consts/ProfileCardConsts';
 
@@ -17,10 +21,12 @@ const data = {
 describe('Profile', () => {
     test('set readonly', () => {
         const state: DeepPartial<ProfileSchema> = { readonly: false };
-        expect(profileReducer(
-            state as ProfileSchema,
-            profileActions.setReadonly(true),
-        )).toEqual({ readonly: true });
+        expect(
+            profileReducer(
+                state as ProfileSchema,
+                profileActions.setReadonly(true),
+            ),
+        ).toEqual({ readonly: true });
     });
     test('cancel edit', () => {
         const state: DeepPartial<ProfileSchema> = {
@@ -29,10 +35,9 @@ describe('Profile', () => {
             form: { first: '' },
             data,
         };
-        expect(profileReducer(
-            state as ProfileSchema,
-            profileActions.cancelEdit(),
-        )).toEqual({
+        expect(
+            profileReducer(state as ProfileSchema, profileActions.cancelEdit()),
+        ).toEqual({
             readonly: true,
             validateErrors: undefined,
             form: data,
@@ -41,10 +46,12 @@ describe('Profile', () => {
     });
     test('update profile', () => {
         const state: DeepPartial<ProfileSchema> = { form: { first: '' } };
-        expect(profileReducer(
-            state as ProfileSchema,
-            profileActions.updateProfile({ first: 'hello' }),
-        )).toEqual({
+        expect(
+            profileReducer(
+                state as ProfileSchema,
+                profileActions.updateProfile({ first: 'hello' }),
+            ),
+        ).toEqual({
             form: { first: 'hello' },
         });
     });
@@ -54,10 +61,12 @@ describe('Profile', () => {
             validateErrors: [validateProfileError.SERVER_ERROR],
         };
 
-        expect(profileReducer(
-            state as ProfileSchema,
-            updateProfileData.pending(''),
-        )).toEqual({
+        expect(
+            profileReducer(
+                state as ProfileSchema,
+                updateProfileData.pending(''),
+            ),
+        ).toEqual({
             isLoading: true,
             validateErrors: undefined,
         });
@@ -67,10 +76,12 @@ describe('Profile', () => {
             isLoading: true,
         };
 
-        expect(profileReducer(
-            state as ProfileSchema,
-            updateProfileData.fulfilled(data, ''),
-        )).toEqual({
+        expect(
+            profileReducer(
+                state as ProfileSchema,
+                updateProfileData.fulfilled(data, ''),
+            ),
+        ).toEqual({
             isLoading: false,
             validateErrors: undefined,
             readonly: true,

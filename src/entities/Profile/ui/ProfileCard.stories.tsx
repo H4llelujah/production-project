@@ -12,7 +12,8 @@ const meta: Meta<typeof ProfileCard> = {
 export default meta;
 type Story = StoryObj<typeof ProfileCard>;
 
-const avatar = 'https://cs14.pikabu.ru/post_img/big/2023/02/13/8/1676296367166243426.png';
+const avatar =
+    'https://cs14.pikabu.ru/post_img/big/2023/02/13/8/1676296367166243426.png';
 
 export const Primary: Story = {
     args: {

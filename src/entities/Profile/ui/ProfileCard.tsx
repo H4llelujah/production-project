@@ -46,14 +46,29 @@ export const ProfileCard = (props: ProfileCardProps) => {
 
     if (isLoading) {
         return (
-            <HStack justify="center" align="center" max className={classNames(cls.ProfileCard, {}, [className, cls.loading])}>
+            <HStack
+                justify="center"
+                align="center"
+                max
+                className={classNames(cls.ProfileCard, {}, [
+                    className,
+                    cls.loading,
+                ])}
+            >
                 <Loader />
             </HStack>
         );
     }
     if (error) {
         return (
-            <HStack max justify="center" className={classNames(cls.ProfileCard, {}, [className, cls.error])}>
+            <HStack
+                max
+                justify="center"
+                className={classNames(cls.ProfileCard, {}, [
+                    className,
+                    cls.error,
+                ])}
+            >
                 <Text
                     theme={TextTheme.ERROR}
                     align={TextAlign.CENTER}
@@ -69,7 +84,11 @@ export const ProfileCard = (props: ProfileCardProps) => {
     };
 
     return (
-        <VStack gap="8" max className={classNames(cls.ProfileCard, mods, [className])}>
+        <VStack
+            gap="8"
+            max
+            className={classNames(cls.ProfileCard, mods, [className])}
+        >
             <HStack max align="center" justify="center">
                 {data?.avatar && <Avatar src={data?.avatar} />}
             </HStack>

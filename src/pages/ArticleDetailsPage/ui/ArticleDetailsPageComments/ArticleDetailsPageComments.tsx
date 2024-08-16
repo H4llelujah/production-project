@@ -18,31 +18,34 @@ interface ArticleDetailsPageCommentsProps {
     id?: string;
 }
 
-export const ArticleDetailsPageComments = memo((props: ArticleDetailsPageCommentsProps) => {
-    const { className, id } = props;
-    const { t } = useTranslation();
-    const comments = useSelector(getArticleComments.selectAll);
-    const commentsIsLoading = useSelector(getArticleCommentsIsLoading);
-    const dispatch = useAppDispatch();
+export const ArticleDetailsPageComments = memo(
+    (props: ArticleDetailsPageCommentsProps) => {
+        const { className, id } = props;
+        const { t } = useTranslation();
+        const comments = useSelector(getArticleComments.selectAll);
+        const commentsIsLoading = useSelector(getArticleCommentsIsLoading);
+        const dispatch = useAppDispatch();
 
-    useInitialEffect(() => {
-        dispatch(fetchCommentsByArticleId(id));
-    }, [id, dispatch]);
+        useInitialEffect(() => {
+            dispatch(fetchCommentsByArticleId(id));
+        }, [id, dispatch]);
 
-    const onSendComment = useCallback((text: string) => {
-        dispatch(addCommentForArticle(text));
-    }, [dispatch]);
+        const onSendComment = useCallback(
+            (text: string) => {
+                dispatch(addCommentForArticle(text));
+            },
+            [dispatch],
+        );
 
-    return (
-        <VStack gap="16" max className={classNames('', {}, [className])}>
-            <Text
-                title={t('Комментарии')}
-            />
-            <AddCommentForm onSendComment={onSendComment} />
-            <CommentList
-                isLoading={commentsIsLoading}
-                comments={comments}
-            />
-        </VStack>
-    );
-});
+        return (
+            <VStack gap="16" max className={classNames('', {}, [className])}>
+                <Text title={t('Комментарии')} />
+                <AddCommentForm onSendComment={onSendComment} />
+                <CommentList
+                    isLoading={commentsIsLoading}
+                    comments={comments}
+                />
+            </VStack>
+        );
+    },
+);

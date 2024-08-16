@@ -116,7 +116,9 @@ export const OneValidateError: Story = {
                         readonly: true,
                         data: form,
                         form,
-                        validateErrors: [validateProfileError.INCORRECT_USER_DATA],
+                        validateErrors: [
+                            validateProfileError.INCORRECT_USER_DATA,
+                        ],
                     },
                 }}
             >
@@ -136,7 +138,10 @@ export const MultiValidateError: Story = {
                         readonly: true,
                         data: form,
                         form,
-                        validateErrors: [validateProfileError.INCORRECT_USER_DATA, validateProfileError.INCORRECT_USER_AGE],
+                        validateErrors: [
+                            validateProfileError.INCORRECT_USER_DATA,
+                            validateProfileError.INCORRECT_USER_AGE,
+                        ],
                     },
                 }}
             >

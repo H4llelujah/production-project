@@ -20,16 +20,27 @@ describe('validateProfileData', () => {
         expect(result).toEqual([]);
     });
     test('without firstname and lastname', () => {
-        const result = validateProfileData({ ...data, first: '', lastname: '' });
+        const result = validateProfileData({
+            ...data,
+            first: '',
+            lastname: '',
+        });
 
         expect(result).toEqual([validateProfileError.INCORRECT_USER_DATA]);
     });
     test('with age error', () => {
-        const UndefinedResult = validateProfileData({ ...data, age: undefined });
+        const UndefinedResult = validateProfileData({
+            ...data,
+            age: undefined,
+        });
         const BigNumberResult = validateProfileData({ ...data, age: 1000 });
 
-        expect(UndefinedResult).toEqual([validateProfileError.INCORRECT_USER_AGE]);
-        expect(BigNumberResult).toEqual([validateProfileError.INCORRECT_USER_AGE]);
+        expect(UndefinedResult).toEqual([
+            validateProfileError.INCORRECT_USER_AGE,
+        ]);
+        expect(BigNumberResult).toEqual([
+            validateProfileError.INCORRECT_USER_AGE,
+        ]);
     });
 
     test('incorrect all', () => {
@@ -43,8 +54,6 @@ describe('validateProfileData', () => {
     test('incorrect data', () => {
         const result = validateProfileData();
 
-        expect(result).toEqual([
-            validateProfileError.NO_DATA,
-        ]);
+        expect(result).toEqual([validateProfileError.NO_DATA]);
     });
 });

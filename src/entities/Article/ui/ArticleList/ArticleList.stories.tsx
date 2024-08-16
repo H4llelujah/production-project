@@ -21,10 +21,12 @@ const Articles = [
         img: 'https://teknotower.com/wp-content/uploads/2020/11/js.png',
         views: 1022,
         createdAt: '26.02.2022',
-        user: { id: '1', username: 'Pavel', avatar: 'https://cs14.pikabu.ru/post_img/big/2023/02/13/8/1676296367166243426.png' },
-        type: [
-            'IT',
-        ],
+        user: {
+            id: '1',
+            username: 'Pavel',
+            avatar: 'https://cs14.pikabu.ru/post_img/big/2023/02/13/8/1676296367166243426.png',
+        },
+        type: ['IT'],
         blocks: [
             {
                 id: '1',
@@ -93,10 +95,12 @@ const Articles = [
         img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/640px-Python-logo-notext.svg.png',
         views: 1022,
         createdAt: '26.02.2022',
-        user: { id: '1', username: 'Pavel', avatar: 'https://cs14.pikabu.ru/post_img/big/2023/02/13/8/1676296367166243426.png' },
-        type: [
-            'IT',
-        ],
+        user: {
+            id: '1',
+            username: 'Pavel',
+            avatar: 'https://cs14.pikabu.ru/post_img/big/2023/02/13/8/1676296367166243426.png',
+        },
+        type: ['IT'],
         blocks: [
             {
                 id: '1',
@@ -117,10 +121,12 @@ const Articles = [
         img: 'https://habrastorage.org/getpro/habr/upload_files/784/040/572/784040572c499a4b59cbf7ce8d06e31e.png',
         views: 1022,
         createdAt: '26.02.2022',
-        user: { id: '1', username: 'Pavel', avatar: 'https://cs14.pikabu.ru/post_img/big/2023/02/13/8/1676296367166243426.png' },
-        type: [
-            'IT',
-        ],
+        user: {
+            id: '1',
+            username: 'Pavel',
+            avatar: 'https://cs14.pikabu.ru/post_img/big/2023/02/13/8/1676296367166243426.png',
+        },
+        type: ['IT'],
         blocks: [
             {
                 id: '1',

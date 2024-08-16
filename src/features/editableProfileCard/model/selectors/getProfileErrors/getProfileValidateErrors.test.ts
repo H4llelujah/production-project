@@ -20,6 +20,8 @@ describe('getProfileValidateErrors', () => {
     });
     test('should return undefined', () => {
         const state: DeepPartial<StateSchema> = {};
-        expect(getProfileValidateErrors(state as StateSchema)).toEqual(undefined);
+        expect(getProfileValidateErrors(state as StateSchema)).toEqual(
+            undefined,
+        );
     });
 });

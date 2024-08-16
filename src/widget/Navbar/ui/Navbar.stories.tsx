@@ -17,13 +17,16 @@ export const Primary: Story = {};
 export const UserLogin: Story = {
     decorators: [
         (Story) => (
-            <StoreProvider initialState={{
-                user: {
-                    authData: {
-                        id: '1', username: '1', avatar: 'https://masterpiecer-images.s3.yandex.net/df0c6044571f11ee8131aaafe6635749:upscaled',
+            <StoreProvider
+                initialState={{
+                    user: {
+                        authData: {
+                            id: '1',
+                            username: '1',
+                            avatar: 'https://masterpiecer-images.s3.yandex.net/df0c6044571f11ee8131aaafe6635749:upscaled',
+                        },
                     },
-                },
-            }}
+                }}
             >
                 <Story />
             </StoreProvider>

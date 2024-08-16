@@ -12,12 +12,12 @@ export default meta;
 type Story = StoryObj<typeof Card>;
 
 export const Primary: Story = {
-    args: { children: (<div>hello my card</div>) },
+    args: { children: <div>hello my card</div> },
 };
 
 export const Outlined: Story = {
     args: {
-        children: (<div>hello my card</div>),
+        children: <div>hello my card</div>,
         theme: CardTheme.OUTLINED,
     },
 };

@@ -22,6 +22,6 @@ const children = (
 export const Primary: Story = {
     args: {
         children,
-        trigger: ('trigger'),
+        trigger: 'trigger',
     },
 };

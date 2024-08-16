@@ -16,7 +16,9 @@ const ArticleEditPage = (props: ArticleEditPageProps) => {
     const isEdit = Boolean(id);
     return (
         <Page className={classNames(cls.ArticleEditPage, {}, [className])}>
-            {isEdit ? `Страница редактирования статьи с id = ${id}` : 'Создание новой статьи'}
+            {isEdit
+                ? `Страница редактирования статьи с id = ${id}`
+                : 'Создание новой статьи'}
         </Page>
     );
 };

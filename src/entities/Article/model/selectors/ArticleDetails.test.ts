@@ -2,7 +2,11 @@
 import { StateSchema } from '@/app/providers/StoreProvider';
 import { Article } from '../types/article';
 import { ArticleBlockType, ArticleType } from '../consts/articleConsts';
-import { getArticleDetailsData, getArticleDetailsError, getArticleDetailsIsLoading } from './ArticleDetails';
+import {
+    getArticleDetailsData,
+    getArticleDetailsError,
+    getArticleDetailsIsLoading,
+} from './ArticleDetails';
 
 describe('ArticleDetails', () => {
     test('Data selector should return data', () => {

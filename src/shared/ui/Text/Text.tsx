@@ -1,5 +1,8 @@
 import { memo } from 'react';
-import { AdditionalClasses, classNames } from '@/shared/lib/classNames/classNames';
+import {
+    AdditionalClasses,
+    classNames,
+} from '@/shared/lib/classNames/classNames';
 import cls from './Text.module.scss';
 
 export enum TextTheme {
@@ -69,10 +72,7 @@ export const Text = memo((props: TextProps) => {
                 </HeaderTag>
             )}
             {text && (
-                <p
-                    className={cls.text}
-                    data-testid={`${dataTestId}.Paragraph`}
-                >
+                <p className={cls.text} data-testid={`${dataTestId}.Paragraph`}>
                     {text}
                 </p>
             )}

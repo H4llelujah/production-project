@@ -14,10 +14,7 @@ interface ThemeSwitcherProps {
 export const ThemeSwitcher = memo((props: ThemeSwitcherProps) => {
     const { theme, toogleTheme } = useTheme();
 
-    const {
-        className,
-        invertedColor = false,
-    } = props;
+    const { className, invertedColor = false } = props;
 
     if (invertedColor) {
         return (

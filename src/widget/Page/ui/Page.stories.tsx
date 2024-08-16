@@ -13,6 +13,6 @@ type Story = StoryObj<typeof Page>;
 export const Primary: Story = {
     args: {
         // eslint-disable-next-line i18next/no-literal-string
-        children: (<div>Hello!</div>),
+        children: <div>Hello!</div>,
     },
 };

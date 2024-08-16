@@ -4,9 +4,15 @@ import { useSelector } from 'react-redux';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
-import { DynamicModlueLoader, ReducerList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModlueLoader';
+import {
+    DynamicModlueLoader,
+    ReducerList,
+} from '@/shared/lib/components/DynamicModuleLoader/DynamicModlueLoader';
 import { Page } from '@/widget/Page';
-import { getArticlesPageError, getArticlesPageIsLoading } from '../../model/selectors/articlesPageSelectors';
+import {
+    getArticlesPageError,
+    getArticlesPageIsLoading,
+} from '../../model/selectors/articlesPageSelectors';
 import cls from './ArticlesPage.module.scss';
 import { articlesPageReducer } from '../../model/slice/articlesPageSlice';
 import { fetchNextArticle } from '../../model/services/fetchNextArticle/fetchNextArticle';

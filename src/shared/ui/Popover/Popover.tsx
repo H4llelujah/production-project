@@ -1,4 +1,8 @@
-import { Popover as HPovover, PopoverButton, PopoverPanel } from '@headlessui/react';
+import {
+    Popover as HPovover,
+    PopoverButton,
+    PopoverPanel,
+} from '@headlessui/react';
 import { AnchorProps } from '@headlessui/react/dist/internal/floating';
 import { ReactNode } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
@@ -12,9 +16,7 @@ interface PopoverProps {
 }
 
 export function Popover(props: PopoverProps) {
-    const {
-        className, trigger, anchor = 'bottom start', children,
-    } = props;
+    const { className, trigger, anchor = 'bottom start', children } = props;
     return (
         <HPovover className={classNames(cls.Popover, {}, [className])}>
             <PopoverButton as="div" className={cls.btn}>

@@ -1,7 +1,11 @@
 /* eslint-disable max-len */
 import type { Meta, StoryObj } from '@storybook/react';
 import { StoreProvider } from '@/app/providers/StoreProvider';
-import { Article, ArticleBlockType, articleDetailsReducer } from '@/entities/Article';
+import {
+    Article,
+    ArticleBlockType,
+    articleDetailsReducer,
+} from '@/entities/Article';
 import { Comment } from '@/entities/Comment';
 import ArticleDetailsPage from './ArticleDetailsPage';
 import { articleDetailsPageReducer } from '../../model/slice';

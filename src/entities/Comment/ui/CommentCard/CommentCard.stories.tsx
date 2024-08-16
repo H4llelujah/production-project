@@ -7,7 +7,8 @@ const meta: Meta<typeof CommentCard> = {
     tags: ['autodocs'],
 };
 
-const FirstAvatar = 'https://masterpiecer-images.s3.yandex.net/487ca75268ea11eeaea6da477c0f1ee2:upscaled';
+const FirstAvatar =
+    'https://masterpiecer-images.s3.yandex.net/487ca75268ea11eeaea6da477c0f1ee2:upscaled';
 
 export default meta;
 type Story = StoryObj<typeof CommentCard>;
@@ -15,7 +16,9 @@ type Story = StoryObj<typeof CommentCard>;
 export const Primary: Story = {
     args: {
         comment: {
-            id: '1', text: 'comment 1', user: { id: '1', username: 'Vlad', avatar: FirstAvatar },
+            id: '1',
+            text: 'comment 1',
+            user: { id: '1', username: 'Vlad', avatar: FirstAvatar },
         },
     },
 };

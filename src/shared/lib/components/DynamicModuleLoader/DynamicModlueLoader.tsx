@@ -1,12 +1,16 @@
 import { Reducer } from '@reduxjs/toolkit';
 import { FC, ReactNode, useEffect } from 'react';
 import { useStore } from 'react-redux';
-import { ReduxStoreWithManager, StateSchema, StateSchemaKey } from '@/app/providers/StoreProvider';
+import {
+    ReduxStoreWithManager,
+    StateSchema,
+    StateSchemaKey,
+} from '@/app/providers/StoreProvider';
 import { useAppDispatch } from '../../hooks/useAppDispatch/useAppDispatch';
 
 export type ReducerList = {
     [name in StateSchemaKey]?: Reducer<NonNullable<StateSchema[name]>>;
-}
+};
 
 interface DynamicModlueLoaderProps {
     children: ReactNode;
@@ -38,13 +42,11 @@ export const DynamicModlueLoader: FC<DynamicModlueLoaderProps> = (props) => {
                 });
             }
         };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     return (
         // eslint-disable-next-line react/jsx-no-useless-fragment
-        <>
-            {children}
-        </>
+        <>{children}</>
     );
 };

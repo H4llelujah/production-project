@@ -21,7 +21,9 @@ componentDirs?.forEach((directory) => {
     const indexFile = directory.getSourceFile(indexFilePath);
     if (!indexFile) {
         const sourceCode = `export * from './${directory.getBaseName()}';`;
-        const file = directory.createSourceFile(indexFilePath, sourceCode, { overwrite: true });
+        const file = directory.createSourceFile(indexFilePath, sourceCode, {
+            overwrite: true,
+        });
         file.save();
     }
 });

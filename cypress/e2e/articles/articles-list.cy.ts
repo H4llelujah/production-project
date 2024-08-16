@@ -44,7 +44,9 @@ describe('Пользователь заходит на страницу со с�
         cy.getByTestId('SortSelectButton').select('просмотрам');
         cy.wait('@fetchArticlesSortViews');
         cy.getByTestId('ArticleListItem.Views.Paragraph').then(($elements) => {
-            const texts = $elements.toArray().map((el) => Cypress.$(el).text().trim());
+            const texts = $elements
+                .toArray()
+                .map((el) => Cypress.$(el).text().trim());
             const numbers = texts.map((text) => Number(text));
             // eslint-disable-next-line no-plusplus
             for (let i = 1; i < numbers.length; i++) {
@@ -54,7 +56,9 @@ describe('Пользователь заходит на страницу со с�
         cy.getByTestId('OrderSelectButton').select('убыванию');
         cy.wait('@fetchArticlesOrederDesc');
         cy.getByTestId('ArticleListItem.Views.Paragraph').then(($elements) => {
-            const texts = $elements.toArray().map((el) => Cypress.$(el).text().trim());
+            const texts = $elements
+                .toArray()
+                .map((el) => Cypress.$(el).text().trim());
             const numbers = texts.map((text) => Number(text));
             // eslint-disable-next-line no-plusplus
             for (let i = 1; i < numbers.length; i++) {

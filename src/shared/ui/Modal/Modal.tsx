@@ -15,12 +15,7 @@ interface ModalProps {
 const ANIMATION_DELAY = 300;
 
 export const Modal = (props: ModalProps) => {
-    const {
-        className,
-        children,
-        onClose,
-        isOpen,
-    } = props;
+    const { className, children, onClose, isOpen } = props;
 
     const { close, isClosing, isShow } = useModal({
         animationDelay: ANIMATION_DELAY,
@@ -35,11 +30,14 @@ export const Modal = (props: ModalProps) => {
 
     return (
         <Portal>
-            <div className={classNames(cls.Modal, isShow ? mods : {}, [className, 'app_modal'])}>
+            <div
+                className={classNames(cls.Modal, isShow ? mods : {}, [
+                    className,
+                    'app_modal',
+                ])}
+            >
                 <Overlay onClick={close} />
-                <div className={cls.content}>
-                    {children}
-                </div>
+                <div className={cls.content}>{children}</div>
             </div>
         </Portal>
     );

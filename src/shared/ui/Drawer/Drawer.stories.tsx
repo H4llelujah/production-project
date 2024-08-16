@@ -13,7 +13,7 @@ type Story = StoryObj<typeof Drawer>;
 export const Primary: Story = {
     args: {
         // eslint-disable-next-line i18next/no-literal-string
-        children: (<div>afsfasfsafsa</div>),
+        children: <div>afsfasfsafsa</div>,
         isOpen: true,
     },
 };

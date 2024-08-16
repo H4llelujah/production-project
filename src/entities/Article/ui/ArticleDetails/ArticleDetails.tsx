@@ -2,7 +2,10 @@ import { useTranslation } from 'react-i18next';
 import { memo, useCallback } from 'react';
 import { useSelector } from 'react-redux';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { DynamicModlueLoader, ReducerList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModlueLoader';
+import {
+    DynamicModlueLoader,
+    ReducerList,
+} from '@/shared/lib/components/DynamicModuleLoader/DynamicModlueLoader';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { Text, TextSize, TextTheme } from '@/shared/ui/Text';
 import { Skeleton } from '@/shared/ui/Skeleton';
@@ -14,7 +17,11 @@ import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitial
 import { HStack, VStack } from '@/shared/ui/Stack';
 import { articleDetailsReducer } from '../../model/slice/ArticleDetailsSlice';
 import { FetchArticleById } from '../../model/services/FetchArticleById/FetchArticleById';
-import { getArticleDetailsData, getArticleDetailsError, getArticleDetailsIsLoading } from '../../model/selectors/ArticleDetails';
+import {
+    getArticleDetailsData,
+    getArticleDetailsError,
+    getArticleDetailsIsLoading,
+} from '../../model/selectors/ArticleDetails';
 import { ArticleBlock } from '../../model/types/article';
 import { ArticleBlockType } from '../../model/consts/articleConsts';
 import cls from './ArticleDetails.module.scss';
@@ -45,32 +52,32 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
 
     const renderBlock = useCallback((block: ArticleBlock) => {
         switch (block.type) {
-        case ArticleBlockType.TEXT:
-            return (
-                <ArticleTextBlockComponent
-                    block={block}
-                    key={block.id}
-                    className={cls.block}
-                />
-            );
-        case ArticleBlockType.CODE:
-            return (
-                <ArticleCodeBlockComponent
-                    block={block}
-                    key={block.id}
-                    className={cls.block}
-                />
-            );
-        case ArticleBlockType.IMAGE:
-            return (
-                <ArticleImageBlockComponent
-                    block={block}
-                    key={block.id}
-                    className={cls.block}
-                />
-            );
-        default:
-            return null;
+            case ArticleBlockType.TEXT:
+                return (
+                    <ArticleTextBlockComponent
+                        block={block}
+                        key={block.id}
+                        className={cls.block}
+                    />
+                );
+            case ArticleBlockType.CODE:
+                return (
+                    <ArticleCodeBlockComponent
+                        block={block}
+                        key={block.id}
+                        className={cls.block}
+                    />
+                );
+            case ArticleBlockType.IMAGE:
+                return (
+                    <ArticleImageBlockComponent
+                        block={block}
+                        key={block.id}
+                        className={cls.block}
+                    />
+                );
+            default:
+                return null;
         }
     }, []);
 
@@ -79,7 +86,12 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
     if (isLoading) {
         content = (
             <>
-                <Skeleton className={cls.avatar} width={200} height={200} border="50%" />
+                <Skeleton
+                    className={cls.avatar}
+                    width={200}
+                    height={200}
+                    border="50%"
+                />
                 <Skeleton className={cls.title} width={200} height={32} />
                 <Skeleton className={cls.skeleton} width={600} height={24} />
                 <Skeleton className={cls.skeleton} width="100%" height={200} />
@@ -126,7 +138,11 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
 
     return (
         <DynamicModlueLoader reducers={reducers} removeAfterUnmount>
-            <VStack max gap="16" className={classNames(cls.ArticleDetails, {}, [className])}>
+            <VStack
+                max
+                gap="16"
+                className={classNames(cls.ArticleDetails, {}, [className])}
+            >
                 {content}
             </VStack>
         </DynamicModlueLoader>

@@ -1,5 +1,8 @@
 import {
-    Listbox as HListBox, ListboxButton, ListboxOption, ListboxOptions,
+    Listbox as HListBox,
+    ListboxButton,
+    ListboxOption,
+    ListboxOptions,
 } from '@headlessui/react';
 import { Fragment, ReactNode } from 'react';
 import { AnchorPropsWithSelection } from '@headlessui/react/dist/internal/floating';
@@ -40,14 +43,15 @@ export function ListBox(props: ListBoxProps) {
         <HStack gap="4" className={classNames('', {}, [className])}>
             {label && <span>{`${label}>`}</span>}
             <HListBox disabled={readonly} value={value} onChange={onChange}>
-                <ListboxButton disabled={readonly} className={classNames(cls.trigger, { [cls.disabled]: readonly })}>
+                <ListboxButton
+                    disabled={readonly}
+                    className={classNames(cls.trigger, {
+                        [cls.disabled]: readonly,
+                    })}
+                >
                     {value ?? defaultValue}
                 </ListboxButton>
-                <ListboxOptions
-                    anchor={anchor}
-                    className={cls.options}
-                    as="ul"
-                >
+                <ListboxOptions anchor={anchor} className={cls.options} as="ul">
                     {items?.map((item) => (
                         <ListboxOption
                             key={item.value}
@@ -57,13 +61,10 @@ export function ListBox(props: ListBoxProps) {
                         >
                             {({ active, selected }) => (
                                 <li
-                                    className={classNames(
-                                        cls.item,
-                                        {
-                                            [cls.active]: active,
-                                            [cls.disabled]: item.disabled,
-                                        },
-                                    )}
+                                    className={classNames(cls.item, {
+                                        [cls.active]: active,
+                                        [cls.disabled]: item.disabled,
+                                    })}
                                 >
                                     {selected && '!!!'}
                                     {item.content}

@@ -20,10 +20,12 @@ const article = {
     img: 'https://teknotower.com/wp-content/uploads/2020/11/js.png',
     views: 1022,
     createdAt: '26.02.2022',
-    user: { id: '1', username: 'Pavel', avatar: 'https://cs14.pikabu.ru/post_img/big/2023/02/13/8/1676296367166243426.png' },
-    type: [
-        'IT',
-    ],
+    user: {
+        id: '1',
+        username: 'Pavel',
+        avatar: 'https://cs14.pikabu.ru/post_img/big/2023/02/13/8/1676296367166243426.png',
+    },
+    type: ['IT'],
     blocks: [
         {
             id: '1',
