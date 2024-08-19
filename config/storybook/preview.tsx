@@ -22,11 +22,11 @@ const preview: Preview = {
         },
     },
     decorators: [
-        StoreDecorator,
         ThemeDecorator,
         StyleDecorator,
         RouteDecorator,
         SuspenceDecorator,
+        StoreDecorator,
     ],
 };
 
