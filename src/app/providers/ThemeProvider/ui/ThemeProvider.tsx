@@ -17,10 +17,12 @@ const ThemeProvider = (props: ThemeProviderProps) => {
     const [theme, setTheme] = useState<Theme>(initialTheme || defaultTheme);
     // for storybook!
     useEffect(() => {
-        if (initialTheme) {
-            setTheme(initialTheme);
+        if (__PROJECT__ === 'storybook') {
+            if (initialTheme) {
+                setTheme(initialTheme);
+            }
+            document.body.className = theme;
         }
-        document.body.className = theme;
     }, [initialTheme, theme]);
 
     const defaultProps = useMemo(
