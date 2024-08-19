@@ -531,6 +531,10 @@
             "username": "admin",
             "password": "123",
             "roles": ["ADMIN"],
+            "features": {
+                "isArticleRatingEnabled": true,
+                "isCounterEnabled": true
+            },
             "avatar": "https://cs14.pikabu.ru/post_img/big/2023/02/13/8/1676296367166243426.png"
         },
         {
@@ -538,6 +542,10 @@
             "username": "user",
             "password": "1234",
             "roles": ["USER"],
+            "features": {
+                "isArticleRatingEnabled": false,
+                "isCounterEnabled": false
+            },
             "avatar": "https://masterpiecer-images.s3.yandex.net/487ca75268ea11eeaea6da477c0f1ee2:upscaled"
         },
         {
@@ -545,6 +553,10 @@
             "username": "manager",
             "password": "1234",
             "roles": ["MANAGER"],
+            "features": {
+                "isArticleRatingEnabled": false,
+                "isCounterEnabled": true
+            },
             "avatar": "https://masterpiecer-images.s3.yandex.net/487ca75268ea11eeaea6da477c0f1ee2:upscaled"
         },
         {
@@ -552,6 +564,10 @@
             "username": "testuser",
             "password": "123",
             "roles": ["ADMIN"],
+            "features": {
+                "isArticleRatingEnabled": true,
+                "isCounterEnabled": true
+            },
             "avatar": "https://cs14.pikabu.ru/post_img/big/2023/02/13/8/1676296367166243426.png"
         }
     ],
