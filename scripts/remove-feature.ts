@@ -64,11 +64,11 @@ files.forEach((sourceFile) => {
 
             if (featureName !== removedFeatureName) return;
 
-            if (featureName === 'on') {
+            if (featureState === 'on') {
                 node.replaceWithText(onFunction?.getBody().getText() ?? '');
             }
 
-            if (featureName === 'off') {
+            if (featureState === 'off') {
                 node.replaceWithText(offFunction?.getBody().getText() ?? '');
             }
         }
