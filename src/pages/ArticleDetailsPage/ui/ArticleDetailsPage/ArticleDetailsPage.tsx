@@ -35,9 +35,7 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
 
     const articleRatingCard = toggleFeatures({
         name: 'isArticleRatingEnabled',
-        // eslint-disable-next-line react/no-unstable-nested-components
         on: () => <ArticleRating articleId={id} />,
-        // eslint-disable-next-line react/no-unstable-nested-components
         off: () => <Card>{t('Оценка статей скоро появится!')}</Card>,
     });
 
