@@ -153,6 +153,24 @@ export const Primary: Story = {};
 
 ----
 
+### Работа с feature-flag
+
+Разрешено использование feature flags только с помощью хелпера toggleFeatures
+
+в него передается объект с опциями 
+
+{
+   name: название фича-флага, 
+   on: функция, которая отработает после Включения фичи 
+   of: функция, которая отработает после ВЫключения фичи
+}
+
+Для автоматического удаления фичи использовать скрипт remove-feature.ts,
+который принимает 2 аргумента
+1. Название удаляемого фича-флага
+2. Состояние (on\off)
+
+----
 
 ## Сущности (entities)
 
@@ -168,8 +186,9 @@ export const Primary: Story = {};
 
 ## Фичи (features)
 
-- [addCommentForm](/src/features/addCommentForm)
+- [addCommentForm](/src/features/AddCommentForm/)
 - [articleEditForm](/src/features/articleEditForm)
+- [articlePageGreeting](/src/features/articlePageGreeting/)
 - [articleRating](/src/features/articleRating)
 - [articleRecommendationsList](/src/features/articleRecommendationList)
 - [ArticleSortSelector](/src/features/ArticleSortSelector)
