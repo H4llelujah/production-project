@@ -9,7 +9,9 @@ describe('loginSlice', () => {
                 state as LoginSchema,
                 loginActions.setUsername('test5'),
             ),
-        ).toEqual({ username: 'test5' });
+        ).toEqual({
+            username: 'test5',
+        });
     });
     test('setPassword', () => {
         const state: DeepPartial<LoginSchema> = { password: 'test' };
@@ -18,6 +20,8 @@ describe('loginSlice', () => {
                 state as LoginSchema,
                 loginActions.setPassword('test5'),
             ),
-        ).toEqual({ password: 'test5' });
+        ).toEqual({
+            password: 'test5',
+        });
     });
 });

@@ -26,7 +26,9 @@ describe('Profile', () => {
                 state as ProfileSchema,
                 profileActions.setReadonly(true),
             ),
-        ).toEqual({ readonly: true });
+        ).toEqual({
+            readonly: true,
+        });
     });
     test('cancel edit', () => {
         const state: DeepPartial<ProfileSchema> = {

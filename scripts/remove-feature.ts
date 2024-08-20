@@ -29,7 +29,10 @@ function isToggleFunction(node: Node) {
     let isToggleFeature = false;
 
     node.forEachChild((child) => {
-        if (child.isKind(SyntaxKind.Identifier) && child.getText() === toggleFunctionName) {
+        if (
+            child.isKind(SyntaxKind.Identifier) &&
+            child.getText() === toggleFunctionName
+        ) {
             isToggleFeature = true;
         }
     });
@@ -44,7 +47,9 @@ function isToggleComponent(node: Node) {
 }
 
 const replaceToggleFunction = (node: Node) => {
-    const objectOptions = node.getFirstDescendantByKind(SyntaxKind.ObjectLiteralExpression);
+    const objectOptions = node.getFirstDescendantByKind(
+        SyntaxKind.ObjectLiteralExpression,
+    );
 
     if (!objectOptions) return;
 
@@ -53,8 +58,12 @@ const replaceToggleFunction = (node: Node) => {
 
     const featureNameProperty = objectOptions.getProperty('name');
 
-    const onFunction = onFunctionProperty?.getFirstDescendantByKind(SyntaxKind.ArrowFunction);
-    const offFunction = offFunctionProperty?.getFirstDescendantByKind(SyntaxKind.ArrowFunction);
+    const onFunction = onFunctionProperty?.getFirstDescendantByKind(
+        SyntaxKind.ArrowFunction,
+    );
+    const offFunction = offFunctionProperty?.getFirstDescendantByKind(
+        SyntaxKind.ArrowFunction,
+    );
     const featureName = featureNameProperty
         ?.getFirstDescendantByKind(SyntaxKind.StringLiteral)
         ?.getText()
@@ -119,7 +128,10 @@ files.forEach((sourceFile) => {
             replaceToggleFunction(node);
         }
 
-        if (node.isKind(SyntaxKind.JsxSelfClosingElement) && isToggleComponent(node)) {
+        if (
+            node.isKind(SyntaxKind.JsxSelfClosingElement) &&
+            isToggleComponent(node)
+        ) {
             replaceComponent(node);
         }
     });
