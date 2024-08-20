@@ -14,8 +14,8 @@ interface AvatarProps {
     fallbackInverted?: boolean;
 }
 
-/*
- * устарел, используем новые компоненты из папки redesigned
+/**
+ * Устарел, используем новые компоненты из папки redesigned
  * @deprecated
  */
 

@@ -13,8 +13,8 @@ interface StarRatingProps {
 
 const stars = [1, 2, 3, 4, 5];
 
-/*
- * устарел, используем новые компоненты из папки redesigned
+/**
+ * Устарел, используем новые компоненты из папки redesigned
  * @deprecated
  */
 

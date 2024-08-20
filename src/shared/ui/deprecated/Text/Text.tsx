@@ -41,8 +41,8 @@ const mapSizeToHeaderTag: Record<string, HeaderTagType> = {
     [TextSize.L]: 'h1',
 };
 
-/*
- * устарел, используем новые компоненты из папки redesigned
+/**
+ * Устарел, используем новые компоненты из папки redesigned
  * @deprecated
  */
 

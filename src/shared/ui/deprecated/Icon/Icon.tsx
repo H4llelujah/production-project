@@ -8,8 +8,8 @@ interface IconProps extends React.SVGProps<SVGSVGElement> {
     inverted?: boolean;
 }
 
-/*
- * устарел, используем новые компоненты из папки redesigned
+/**
+ * Устарел, используем новые компоненты из папки redesigned
  * @deprecated
  */
 

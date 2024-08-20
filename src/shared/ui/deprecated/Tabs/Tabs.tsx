@@ -15,8 +15,8 @@ interface TabsProps {
     onTabClick: (tab: TabItem) => void;
 }
 
-/*
- * устарел, используем новые компоненты из папки redesigned
+/**
+ * Устарел, используем новые компоненты из папки redesigned
  * @deprecated
  */
 

@@ -17,8 +17,8 @@ interface SelectProps<T extends string> extends TestProps {
     readonly?: boolean;
 }
 
-/*
- * устарел, используем новые компоненты из папки redesigned
+/**
+ * Устарел, используем новые компоненты из папки redesigned
  * @deprecated
  */
 

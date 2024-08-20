@@ -15,8 +15,8 @@ interface AppLinkProps extends LinkProps {
     children?: ReactNode;
 }
 
-/*
- * устарел, используем новые компоненты из папки redesigned
+/**
+ * Устарел, используем новые компоненты из папки redesigned
  * @deprecated
  */
 

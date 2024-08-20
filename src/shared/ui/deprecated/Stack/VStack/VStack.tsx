@@ -2,8 +2,8 @@ import { Flex, FlexProps } from '../Flex/Flex';
 
 type VStackProps = Omit<FlexProps, 'direction'>;
 
-/*
- * устарел, используем новые компоненты из папки redesigned
+/**
+ * Устарел, используем новые компоненты из папки redesigned
  * @deprecated
  */
 

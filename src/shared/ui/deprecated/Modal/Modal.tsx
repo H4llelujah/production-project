@@ -14,8 +14,8 @@ interface ModalProps {
 
 const ANIMATION_DELAY = 300;
 
-/*
- * устарел, используем новые компоненты из папки redesigned
+/**
+ * Устарел, используем новые компоненты из папки redesigned
  * @deprecated
  */
 

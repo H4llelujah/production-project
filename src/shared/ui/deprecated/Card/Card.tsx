@@ -15,8 +15,8 @@ interface CardProps extends HTMLAttributes<HTMLDivElement> {
     max?: boolean;
 }
 
-/*
- * устарел, используем новые компоненты из папки redesigned
+/**
+ * Устарел, используем новые компоненты из папки redesigned
  * @deprecated
  */
 

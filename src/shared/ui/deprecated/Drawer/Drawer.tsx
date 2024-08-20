@@ -113,8 +113,8 @@ const DrawerAsync: FC<DrawerProps> = (props: DrawerProps) => {
     return <DrawerContent {...props} />;
 };
 
-/*
- * устарел, используем новые компоненты из папки redesigned
+/**
+ * Устарел, используем новые компоненты из папки redesigned
  * @deprecated
  */
 

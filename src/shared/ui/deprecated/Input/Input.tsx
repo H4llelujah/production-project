@@ -24,8 +24,8 @@ interface InputProps extends HTMLInputProps {
     readonly?: boolean;
 }
 
-/*
- * устарел, используем новые компоненты из папки redesigned
+/**
+ * Устарел, используем новые компоненты из папки redesigned
  * @deprecated
  */
 
