@@ -2,14 +2,13 @@ import { useTranslation } from 'react-i18next';
 import { memo, useCallback } from 'react';
 import { useSelector } from 'react-redux';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { Input } from '@/shared/ui/Input';
+import { Input } from '@/shared/ui/deprecated/Input';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import {
     DynamicModlueLoader,
     ReducerList,
 } from '@/shared/lib/components/DynamicModuleLoader/DynamicModlueLoader';
-import { Button, ButtonTheme } from '@/shared/ui/Button';
-import { HStack } from '@/shared/ui/Stack';
+import { HStack } from '@/shared/ui/deprecated/Stack';
 import cls from './AddCommentForm.module.scss';
 import {
     addCommentFormActions,
@@ -19,6 +18,7 @@ import {
     getCommentFormError,
     getCommentFormText,
 } from '../model/selectors/addCommentFormSelectors';
+import { Button, ButtonTheme } from '@/shared/ui/deprecated/Button';
 
 export interface AddCommentFormProps {
     className?: string;

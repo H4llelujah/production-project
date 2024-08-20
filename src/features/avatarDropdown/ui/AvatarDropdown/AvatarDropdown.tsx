@@ -9,8 +9,8 @@ import {
     isUserManager,
     userActions,
 } from '@/entities/User';
-import { Dropdown } from '@/shared/ui/Dropdown';
-import { Avatar } from '@/shared/ui/Avatar';
+import { Dropdown } from '@/shared/ui/deprecated/Dropdown';
+import { Avatar } from '@/shared/ui/deprecated/Avatar';
 import { getRouteAdmin, getRouteProfile } from '@/shared/const/router';
 
 interface AvatarDropdownProps {
