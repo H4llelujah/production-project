@@ -25,7 +25,8 @@
         "generate:slice": "node ./scripts/createSlice/index.js",
         "chromatic": "npx chromatic --project-token=chpt_6b9f77286af7b88",
         "postinstall": "node scripts/clear-cache",
-        "prepare": "husky"
+        "prepare": "husky",
+        "remove-feature": "ts-node ./scripts/remove-feature.ts"
     },
     "lint-staged": {
         "**/*.{ts,tsx}": "eslint"
