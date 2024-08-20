@@ -17,9 +17,9 @@ export function useTheme(): UseThemeResult {
                 newTheme = Theme.DARK;
                 break;
             case Theme.DARK:
-                newTheme = Theme.GREEN;
+                newTheme = Theme.ORANGE;
                 break;
-            case Theme.GREEN:
+            case Theme.ORANGE:
                 newTheme = Theme.LIGHT;
                 break;
             default:

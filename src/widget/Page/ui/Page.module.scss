@@ -6,6 +6,10 @@
     width: calc(100% - var(--sidebar-width));
 }
 
+.PageRedesigned {
+    overflow-y: auto;
+}
+
 .trigger {
     height: 10px;
     width: 100%;

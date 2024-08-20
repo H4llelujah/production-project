@@ -2,12 +2,7 @@
 @import "variables/global";
 @import "themes/dark";
 @import "themes/normal";
-@import "themes/green";
-
-body {
-    font: var(--font-m);
-    color: var(--primary-color);
-}
+@import "themes/orange";
 
 .app,
 .app_modal,
@@ -19,6 +14,14 @@ body {
 .app {
     background: var(--bg-color);
     min-height: 100vh;
+    font: var(--font-m-redesigned);
+    color: var(--text-redesigned);
+}
+
+.app_redesigned {
+    background: var(--bg-redesigned);
+    font: var(--font-m-redesigned);
+    color: var(--primary-color);
 }
 
 .content-page {
