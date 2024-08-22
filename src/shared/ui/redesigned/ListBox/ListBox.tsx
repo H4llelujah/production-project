@@ -10,24 +10,24 @@ import { classNames } from '@/shared/lib/classNames/classNames';
 import cls from './ListBox.module.scss';
 import { HStack } from '../../redesigned/Stack';
 
-export interface ListBoxItem {
+export interface ListBoxItem<T extends string> {
     value: string;
     content: ReactNode;
     disabled?: boolean;
 }
 
-export interface ListBoxProps {
+export interface ListBoxProps<T extends string> {
     className?: string;
-    items?: ListBoxItem[];
+    items?: ListBoxItem<T>[];
     label?: string;
     value?: string;
     defaultValue: string;
     readonly?: boolean;
     anchor?: AnchorPropsWithSelection;
-    onChange: (value: string) => void;
+    onChange: (value: T) => void;
 }
 
-export function ListBox(props: ListBoxProps) {
+export function ListBox<T extends string>(props: ListBoxProps<T>) {
     const {
         className,
         defaultValue,

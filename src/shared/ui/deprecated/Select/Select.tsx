@@ -1,4 +1,4 @@
-import { ChangeEvent, memo, useMemo } from 'react';
+import { ChangeEvent, useMemo } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import cls from './Select.module.scss';
 import { TestProps } from '@/shared/types/tests';
@@ -22,7 +22,7 @@ interface SelectProps<T extends string> extends TestProps {
  * @deprecated
  */
 
-export const Select = memo(<T extends string>(props: SelectProps<T>) => {
+export const Select = <T extends string>(props: SelectProps<T>) => {
     const {
         className,
         label,
@@ -68,4 +68,4 @@ export const Select = memo(<T extends string>(props: SelectProps<T>) => {
             </select>
         </div>
     );
-});
+};

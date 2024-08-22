@@ -1,12 +1,20 @@
 import { memo } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import ListIcon from '@/shared/assets/icons/list-icon.svg';
-import GridIcon from '@/shared/assets/icons/grid-icon.svg';
-
-import { Icon } from '@/shared/ui/deprecated/Icon';
+import ListIconDeprecated from '@/shared/assets/icons/list-icon.svg';
+import GridIconDeprecated from '@/shared/assets/icons/grid-icon.svg';
+import ListIcon from '@/shared/assets/icons/burger.svg';
+import GridIcon from '@/shared/assets/icons/tile.svg';
+import { Icon as IconDeprecated } from '@/shared/ui/deprecated/Icon';
 import cls from './ArticleViewSelector.module.scss';
 import { ArticleView } from '@/entities/Article';
-import { Button, ButtonTheme } from '@/shared/ui/deprecated/Button';
+import {
+    Button as ButtonDeprecated,
+    ButtonTheme,
+} from '@/shared/ui/deprecated/Button';
+import { ToggleFeatures, toggleFeatures } from '@/shared/lib/features';
+import { Icon } from '@/shared/ui/redesigned/Icon';
+import { Card } from '@/shared/ui/redesigned/Card';
+import { HStack } from '@/shared/ui/redesigned/Stack';
 
 interface ArticleViewSelectorProps {
     className?: string;
@@ -17,11 +25,19 @@ interface ArticleViewSelectorProps {
 const viewTypes = [
     {
         view: ArticleView.BIG,
-        icon: ListIcon,
+        icon: toggleFeatures({
+            name: 'isAppRedesigned',
+            on: () => ListIcon,
+            off: () => ListIconDeprecated,
+        }),
     },
     {
         view: ArticleView.SMALL,
-        icon: GridIcon,
+        icon: toggleFeatures({
+            name: 'isAppRedesigned',
+            on: () => GridIcon,
+            off: () => GridIconDeprecated,
+        }),
     },
 ];
 
@@ -33,24 +49,58 @@ export const ArticleViewSelector = memo((props: ArticleViewSelectorProps) => {
     };
 
     return (
-        <div className={classNames(cls.ArticleViewSelector, {}, [className])}>
-            {viewTypes &&
-                viewTypes.map((viewType) => (
-                    <Button
-                        key={viewType.view}
-                        theme={ButtonTheme.ICON_INSIDE}
-                        onClick={onClick(viewType.view)}
-                    >
-                        <Icon
-                            Svg={viewType.icon}
-                            className={classNames('', {
-                                [cls.Selected]: viewType.view === view,
-                            })}
-                            width={20}
-                            height={20}
-                        />
-                    </Button>
-                ))}
-        </div>
+        <ToggleFeatures
+            feature="isAppRedesigned"
+            on={
+                <Card
+                    className={classNames(
+                        cls.ArticleViewSelectorRedesigned,
+                        {},
+                        [className],
+                    )}
+                    border="round"
+                >
+                    <HStack gap="8">
+                        {viewTypes &&
+                            viewTypes.map((viewType) => (
+                                <Icon
+                                    clickable
+                                    onClick={onClick(viewType.view)}
+                                    Svg={viewType.icon}
+                                    className={classNames('', {
+                                        [cls.notSelected]:
+                                            viewType.view !== view,
+                                    })}
+                                />
+                            ))}
+                    </HStack>
+                </Card>
+            }
+            off={
+                <div
+                    className={classNames(cls.ArticleViewSelector, {}, [
+                        className,
+                    ])}
+                >
+                    {viewTypes &&
+                        viewTypes.map((viewType) => (
+                            <ButtonDeprecated
+                                key={viewType.view}
+                                theme={ButtonTheme.ICON_INSIDE}
+                                onClick={onClick(viewType.view)}
+                            >
+                                <IconDeprecated
+                                    Svg={viewType.icon}
+                                    className={classNames('', {
+                                        [cls.Selected]: viewType.view === view,
+                                    })}
+                                    width={20}
+                                    height={20}
+                                />
+                            </ButtonDeprecated>
+                        ))}
+                </div>
+            }
+        />
     );
 });

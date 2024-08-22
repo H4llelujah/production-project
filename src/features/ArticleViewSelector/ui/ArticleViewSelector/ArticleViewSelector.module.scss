@@ -2,8 +2,14 @@
     display: flex;
     align-items: center;
     gap: 10px;
+
+    .Selected {
+        fill: var(--secondary-color);
+    }
 }
 
-.Selected {
-    fill: var(--secondary-color);
+.ArticleViewSelectorRedesigned {
+    .notSelected {
+        color: var(--light-bg-redesigned);
+    }
 }
