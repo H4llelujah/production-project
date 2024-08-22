@@ -6,8 +6,8 @@ import {
 } from '@/shared/lib/components/AnimationProvider';
 import cls from './Drawer.module.scss';
 import { useTheme } from '@/shared/lib/hooks/useTheme/useTheme';
-import { Portal } from '../Portal';
-import { Overlay } from '../Overlay';
+import { Portal } from '../../redesigned/Portal';
+import { Overlay } from '../../redesigned/Overlay';
 
 interface DrawerProps {
     children: ReactNode;

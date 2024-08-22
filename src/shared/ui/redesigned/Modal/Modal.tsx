@@ -4,6 +4,7 @@ import { useModal } from '@/shared/lib/hooks/useModal/useModal';
 import cls from './Modal.module.scss';
 import { Portal } from '../Portal';
 import { Overlay } from '../Overlay';
+import { useTheme } from '@/shared/lib/hooks/useTheme/useTheme';
 
 interface ModalProps {
     className?: string;
@@ -14,13 +15,10 @@ interface ModalProps {
 
 const ANIMATION_DELAY = 300;
 
-/**
- * Устарел, используем новые компоненты из папки redesigned
- * @deprecated
- */
-
 export const Modal = (props: ModalProps) => {
     const { className, children, onClose, isOpen } = props;
+
+    const { theme } = useTheme();
 
     const { close, isClosing, isShow } = useModal({
         animationDelay: ANIMATION_DELAY,
@@ -39,6 +37,7 @@ export const Modal = (props: ModalProps) => {
                 className={classNames(cls.Modal, isShow ? mods : {}, [
                     className,
                     'app_modal',
+                    theme,
                 ])}
             >
                 <Overlay onClick={close} />

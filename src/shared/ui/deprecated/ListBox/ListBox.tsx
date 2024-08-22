@@ -8,7 +8,7 @@ import { Fragment, ReactNode } from 'react';
 import { AnchorPropsWithSelection } from '@headlessui/react/dist/internal/floating';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import cls from './ListBox.module.scss';
-import { HStack } from '../Stack';
+import { HStack } from '../../redesigned/Stack';
 
 export interface ListBoxItem {
     value: string;

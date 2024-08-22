@@ -28,7 +28,7 @@ export interface DropwdownProps {
 export function Dropdown(props: DropwdownProps) {
     const { className, items, trigger, anchor = 'bottom' } = props;
     return (
-        <Menu as="menu" className={classNames(cls.Dropdown, {}, [className])}>
+        <Menu as="menu" className={classNames('', {}, [className])}>
             <MenuButton className={cls.btn}>{trigger}</MenuButton>
             <MenuItems anchor={anchor} className={cls.menu}>
                 {items.map((item, index) => {

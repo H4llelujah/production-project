@@ -1,0 +1,21 @@
+.Popover {
+    position: relative;
+}
+
+.btn {
+    background: none;
+    outline: none;
+    margin: 0;
+    padding: 0;
+    border: none;
+    cursor: pointer;
+}
+
+.panel {
+    background: var(--dark-bg-redesigned);
+    position: absolute;
+    z-index: 10000;
+    border-radius: 8px;
+    padding: 15px;
+    font: var(--font-m-redesigned);
+}

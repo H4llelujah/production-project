@@ -14,7 +14,7 @@ import CaledarIcon from '@/shared/assets/icons/calendar-icon.svg';
 import EyeIcon from '@/shared/assets/icons/eye-icon.svg';
 import { Icon } from '@/shared/ui/deprecated/Icon';
 import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
-import { HStack, VStack } from '@/shared/ui/deprecated/Stack';
+import { HStack, VStack } from '@/shared/ui/redesigned/Stack';
 import { articleDetailsReducer } from '../../model/slice/ArticleDetailsSlice';
 import { FetchArticleById } from '../../model/services/FetchArticleById/FetchArticleById';
 import {

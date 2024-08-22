@@ -9,9 +9,12 @@ import {
     isUserManager,
     userActions,
 } from '@/entities/User';
-import { Dropdown } from '@/shared/ui/deprecated/Dropdown';
-import { Avatar } from '@/shared/ui/deprecated/Avatar';
+import { Dropdown as DropdownDeprecated } from '@/shared/ui/deprecated/Dropdown';
+import { Avatar as AvatarDeprecated } from '@/shared/ui/deprecated/Avatar';
 import { getRouteAdmin, getRouteProfile } from '@/shared/const/router';
+import { ToggleFeatures } from '@/shared/lib/features';
+import { Avatar } from '@/shared/ui/redesigned/Avatar';
+import { Dropdown } from '@/shared/ui/redesigned/Dropdown';
 
 interface AvatarDropdownProps {
     className?: string;
@@ -35,31 +38,50 @@ export const AvatarDropdown = memo((props: AvatarDropdownProps) => {
         return null;
     }
 
+    const items = [
+        ...(isAdminPanelAvaliable
+            ? [
+                  {
+                      content: t('Админка'),
+                      href: getRouteAdmin(),
+                  },
+              ]
+            : []),
+        {
+            content: t('Профиль'),
+            href: getRouteProfile(authData.id),
+        },
+        {
+            content: t('Выйти'),
+            onClick: onLogout,
+        },
+    ];
+
     return (
-        <Dropdown
-            className={classNames('', {}, [className])}
-            trigger={
-                <Avatar fallbackInverted size={30} src={authData.avatar} />
+        <ToggleFeatures
+            feature="isAppRedesigned"
+            on={
+                <Dropdown
+                    className={classNames('', {}, [className])}
+                    trigger={<Avatar size={40} src={authData.avatar} />}
+                    anchor="bottom end"
+                    items={items}
+                />
             }
-            anchor="bottom end"
-            items={[
-                ...(isAdminPanelAvaliable
-                    ? [
-                          {
-                              content: t('Админка'),
-                              href: getRouteAdmin(),
-                          },
-                      ]
-                    : []),
-                {
-                    content: t('Профиль'),
-                    href: getRouteProfile(authData.id),
-                },
-                {
-                    content: t('Выйти'),
-                    onClick: onLogout,
-                },
-            ]}
+            off={
+                <DropdownDeprecated
+                    className={classNames('', {}, [className])}
+                    trigger={
+                        <AvatarDeprecated
+                            fallbackInverted
+                            size={30}
+                            src={authData.avatar}
+                        />
+                    }
+                    anchor="bottom end"
+                    items={items}
+                />
+            }
         />
     );
 });

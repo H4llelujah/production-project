@@ -3,7 +3,7 @@ import { Mods, classNames } from '@/shared/lib/classNames/classNames';
 import UserIcon from '@/shared/assets/icons/user-icon.svg';
 import cls from './Avatar.module.scss';
 import { Icon } from '../Icon';
-import { AppImage } from '../AppImage';
+import { AppImage } from '../../redesigned/AppImage';
 import { Skeleton } from '../Skeleton';
 
 interface AvatarProps {

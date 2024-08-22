@@ -15,7 +15,7 @@ import {
     ArticleBlockType,
 } from '../../model/consts/articleConsts';
 import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
-import { AppImage } from '@/shared/ui/deprecated/AppImage';
+import { AppImage } from '@/shared/ui/redesigned/AppImage';
 import { Skeleton } from '@/shared/ui/deprecated/Skeleton';
 import { Button, ButtonTheme } from '@/shared/ui/deprecated/Button';
 
