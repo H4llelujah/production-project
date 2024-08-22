@@ -1,18 +1,9 @@
 .trigger {
-    cursor: pointer;
-    color: (var(--primary-color));
-    padding: 6px 15px;
-    transition: all 0.3s ease-out;
     background: none;
+    border: none;
     outline: none;
+    padding: 0;
     margin: 0;
-    border: 1px solid var(--primary-color);
-    font: var(--font-m);
-
-    &:not(.disabled):hover {
-        background-color: var(--primary-color);
-        color: var(--inverted-primary-color);
-    }
 }
 
 .options {
@@ -21,17 +12,17 @@
     z-index: 10000;
     border-radius: 12px;
     box-shadow: 4px 4px 8px var(--dark-bg-redesigned);
+    font: var(--font-m-redesigned);
 }
 
 .item {
     padding: 10px 20px;
-    cursor: pointer;
+}
+
+.selected {
+    background: var(--light-bg-redesigned);
 }
 
 .active {
     background: var(--light-bg-redesigned);
-}
-
-.disabled {
-    opacity: 0.7;
 }
