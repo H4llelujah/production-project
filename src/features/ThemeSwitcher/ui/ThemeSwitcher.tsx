@@ -1,19 +1,21 @@
 import { memo, useCallback } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import ThemeIcon from '@/shared/assets/icons/theme-light.svg';
+import ThemeIconDeprecated from '@/shared/assets/icons/theme-light.svg';
+import ThemeIcon from '@/shared/assets/icons/theme.svg';
 import { useTheme } from '@/shared/lib/hooks/useTheme/useTheme';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { saveJsonSettings } from '@/entities/User';
-import { Icon } from '@/shared/ui/deprecated/Icon';
+import { Icon as IconDeprecated } from '@/shared/ui/deprecated/Icon';
 import { Button, ButtonTheme } from '@/shared/ui/deprecated/Button';
+import { ToggleFeatures } from '@/shared/lib/features';
+import { Icon } from '@/shared/ui/redesigned/Icon';
 
 interface ThemeSwitcherProps {
     className?: string;
-    invertedColor?: boolean;
 }
 
 export const ThemeSwitcher = memo((props: ThemeSwitcherProps) => {
-    const { className, invertedColor = false } = props;
+    const { className } = props;
     const { theme, toggleTheme } = useTheme();
     const dispatch = useAppDispatch();
 
@@ -23,25 +25,32 @@ export const ThemeSwitcher = memo((props: ThemeSwitcherProps) => {
         });
     }, [dispatch, toggleTheme]);
 
-    if (invertedColor) {
-        return (
-            <Button
-                className={classNames('', {}, [className])}
-                onClick={onToggleHandler}
-                theme={ButtonTheme.ICON_INSIDE}
-            >
-                <Icon Svg={ThemeIcon} width={40} height={40} inverted />
-            </Button>
-        );
-    }
-
     return (
-        <Button
-            className={classNames('', {}, [className])}
-            onClick={onToggleHandler}
-            theme={ButtonTheme.ICON_INSIDE}
-        >
-            <Icon Svg={ThemeIcon} width={40} height={40} />
-        </Button>
+        <ToggleFeatures
+            feature="isAppRedesigned"
+            on={
+                <Button
+                    className={classNames('', {}, [className])}
+                    onClick={onToggleHandler}
+                    theme={ButtonTheme.ICON_INSIDE}
+                >
+                    <Icon Svg={ThemeIcon} width={40} height={40} />
+                </Button>
+            }
+            off={
+                <Button
+                    className={classNames('', {}, [className])}
+                    onClick={onToggleHandler}
+                    theme={ButtonTheme.ICON_INSIDE}
+                >
+                    <IconDeprecated
+                        Svg={ThemeIconDeprecated}
+                        width={40}
+                        height={40}
+                        inverted
+                    />
+                </Button>
+            }
+        />
     );
 });

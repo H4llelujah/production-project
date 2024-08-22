@@ -72,6 +72,7 @@ module.exports = {
                     'role',
                     'feature',
                     'color',
+                    'variant',
                 ],
             },
         ],
