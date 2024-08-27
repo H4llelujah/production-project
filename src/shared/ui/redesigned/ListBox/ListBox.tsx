@@ -10,6 +10,8 @@ import { classNames } from '@/shared/lib/classNames/classNames';
 import cls from './ListBox.module.scss';
 import { HStack } from '../../redesigned/Stack';
 import { Button } from '../Button';
+import ArrowIcon from '@/shared/assets/icons/arrow-bottom.svg';
+import { Icon } from '../Icon';
 
 export interface ListBoxItem<T extends string> {
     value: string;
@@ -55,7 +57,11 @@ export function ListBox<T extends string>(props: ListBoxProps<T>) {
                         [cls.disabled]: readonly,
                     })}
                 >
-                    <Button variant="filled" disabled={readonly}>
+                    <Button
+                        variant="filled"
+                        disabled={readonly}
+                        addonRight={<Icon Svg={ArrowIcon} />}
+                    >
                         {selectedItem?.content ?? defaultValue}
                     </Button>
                 </ListboxButton>
