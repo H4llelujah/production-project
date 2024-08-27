@@ -1,37 +1,56 @@
 import { useTranslation } from 'react-i18next';
-import { Mods, classNames } from '@/shared/lib/classNames/classNames';
-import { Text, TextAlign, TextTheme } from '@/shared/ui/deprecated/Text';
-import { Input } from '@/shared/ui/deprecated/Input';
-import { Loader } from '@/shared/ui/deprecated/Loader';
-import { Avatar } from '@/shared/ui/deprecated/Avatar';
-import { Currency, CurrencySelect } from '@/entities/Currency';
-import { Country, CountrySelect } from '@/entities/Country';
+import { memo } from 'react';
+import { Input as InputDeprecated } from '@/shared/ui/deprecated/Input';
+import { Avatar as AvatarDeprecated } from '@/shared/ui/deprecated/Avatar';
+import { classNames, Mods } from '@/shared/lib/classNames/classNames';
+import cls from './ProfileCardDeprecated.module.scss';
 import { HStack, VStack } from '@/shared/ui/redesigned/Stack';
-import cls from './ProfileCard.module.scss';
-import { Profile } from '../model/types/profile';
+import { CurrencySelect } from '@/entities/Currency';
+import { CountrySelect } from '@/entities/Country';
+import { ProfileCardProps } from '../ProfileCard/ProfileCard';
+import { Loader } from '@/shared/ui/deprecated/Loader';
+import {
+    Text as TextDeprecated,
+    TextAlign,
+    TextTheme,
+} from '@/shared/ui/deprecated/Text';
 
-interface ProfileCardProps {
-    className?: string;
-    data?: Profile;
-    error?: string;
-    isLoading?: boolean;
-    readonly?: boolean;
-    onChangeFirstname: (value?: string) => void;
-    onChangeLastname: (value?: string) => void;
-    onChangeAge: (value?: string) => void;
-    onChangeCity: (value?: string) => void;
-    onChangeUsername: (value?: string) => void;
-    onChangeAvatar: (value?: string) => void;
-    onChangeCurrency: (value: Currency) => void;
-    onChangeCountry: (value: Country) => void;
-}
+export const ProfileCardDeprecatedError = () => {
+    const { t } = useTranslation('/profile');
 
-export const ProfileCard = (props: ProfileCardProps) => {
+    return (
+        <HStack
+            max
+            justify="center"
+            className={classNames(cls.ProfileCard, {}, [cls.error])}
+        >
+            <TextDeprecated
+                theme={TextTheme.ERROR}
+                align={TextAlign.CENTER}
+                title={t('Произошла ошибка при загрузке профиля')}
+                text={t('Попробуйте обновить страницу')}
+            />
+        </HStack>
+    );
+};
+
+export const ProfileCardDeprecatedLoader = () => {
+    return (
+        <HStack
+            justify="center"
+            align="center"
+            max
+            className={classNames(cls.ProfileCard, {}, [cls.loading])}
+        >
+            <Loader />
+        </HStack>
+    );
+};
+
+export const ProfileCardDeprecated = memo((props: ProfileCardProps) => {
     const {
         className,
         data,
-        error,
-        isLoading,
         readonly,
         onChangeFirstname,
         onChangeLastname,
@@ -44,41 +63,6 @@ export const ProfileCard = (props: ProfileCardProps) => {
     } = props;
     const { t } = useTranslation('/profile');
 
-    if (isLoading) {
-        return (
-            <HStack
-                justify="center"
-                align="center"
-                max
-                className={classNames(cls.ProfileCard, {}, [
-                    className,
-                    cls.loading,
-                ])}
-            >
-                <Loader />
-            </HStack>
-        );
-    }
-    if (error) {
-        return (
-            <HStack
-                max
-                justify="center"
-                className={classNames(cls.ProfileCard, {}, [
-                    className,
-                    cls.error,
-                ])}
-            >
-                <Text
-                    theme={TextTheme.ERROR}
-                    align={TextAlign.CENTER}
-                    title={t('Произошла ошибка при загрузке профиля')}
-                    text={t('Попробуйте обновить страницу')}
-                />
-            </HStack>
-        );
-    }
-
     const mods: Mods = {
         [cls.isEditing]: !readonly,
     };
@@ -90,9 +74,9 @@ export const ProfileCard = (props: ProfileCardProps) => {
             className={classNames(cls.ProfileCard, mods, [className])}
         >
             <HStack max align="center" justify="center">
-                {data?.avatar && <Avatar src={data?.avatar} />}
+                {data?.avatar && <AvatarDeprecated src={data?.avatar} />}
             </HStack>
-            <Input
+            <InputDeprecated
                 value={data?.first}
                 placeholder={t('Ваше имя')}
                 className={cls.input}
@@ -100,7 +84,7 @@ export const ProfileCard = (props: ProfileCardProps) => {
                 readonly={readonly}
                 data-testid="ProfileCard.firstname"
             />
-            <Input
+            <InputDeprecated
                 value={data?.lastname}
                 placeholder={t('Ваша фамилия')}
                 className={cls.input}
@@ -108,7 +92,7 @@ export const ProfileCard = (props: ProfileCardProps) => {
                 readonly={readonly}
                 data-testid="ProfileCard.lastname"
             />
-            <Input
+            <InputDeprecated
                 value={data?.age}
                 placeholder={t('Ваш возраст')}
                 className={cls.input}
@@ -116,7 +100,7 @@ export const ProfileCard = (props: ProfileCardProps) => {
                 readonly={readonly}
                 data-testid="ProfileCard.age"
             />
-            <Input
+            <InputDeprecated
                 value={data?.city}
                 placeholder={t('Город')}
                 className={cls.input}
@@ -124,7 +108,7 @@ export const ProfileCard = (props: ProfileCardProps) => {
                 readonly={readonly}
                 data-testid="ProfileCard.city"
             />
-            <Input
+            <InputDeprecated
                 value={data?.username}
                 placeholder={t('Введите имя пользователя')}
                 className={cls.input}
@@ -132,7 +116,7 @@ export const ProfileCard = (props: ProfileCardProps) => {
                 readonly={readonly}
                 data-testid="ProfileCard.username"
             />
-            <Input
+            <InputDeprecated
                 value={data?.avatar}
                 placeholder={t('Введите ссылку на аватар')}
                 className={cls.input}
@@ -154,4 +138,4 @@ export const ProfileCard = (props: ProfileCardProps) => {
             />
         </VStack>
     );
-};
+});
