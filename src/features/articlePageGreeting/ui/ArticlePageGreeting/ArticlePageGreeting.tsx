@@ -4,7 +4,7 @@ import { isMobile } from 'react-device-detect';
 import { Text } from '@/shared/ui/deprecated/Text';
 import { saveJsonSettings, useJsonSettings } from '@/entities/User';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { Drawer } from '@/shared/ui/deprecated/Drawer';
+import { Drawer } from '@/shared/ui/redesigned/Drawer';
 import { Modal } from '@/shared/ui/redesigned/Modal';
 
 interface ArticlePageGreetingProps {

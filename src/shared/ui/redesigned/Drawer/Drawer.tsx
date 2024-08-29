@@ -8,6 +8,7 @@ import cls from './Drawer.module.scss';
 import { useTheme } from '@/shared/lib/hooks/useTheme/useTheme';
 import { Portal } from '../../redesigned/Portal';
 import { Overlay } from '../../redesigned/Overlay';
+import { toggleFeatures } from '@/shared/lib/features';
 
 interface DrawerProps {
     children: ReactNode;
@@ -79,12 +80,17 @@ const DrawerContent = memo((props: DrawerProps) => {
     const display = y.to((py) => (py < height ? 'block' : 'none'));
 
     return (
-        <Portal>
+        <Portal element={document.getElementById('app') ?? document.body}>
             <div
                 className={classNames(cls.Drawer, {}, [
                     className,
                     theme,
                     'app_drawer',
+                    toggleFeatures({
+                        name: 'isAppRedesigned',
+                        on: () => cls.DrawerNew,
+                        off: () => cls.DrawerOld,
+                    }),
                 ])}
             >
                 <Overlay onClick={close} />
@@ -112,11 +118,6 @@ const DrawerAsync: FC<DrawerProps> = (props: DrawerProps) => {
     }
     return <DrawerContent {...props} />;
 };
-
-/**
- * Устарел, используем новые компоненты из папки redesigned
- * @deprecated
- */
 
 export const Drawer = (props: DrawerProps) => {
     return (

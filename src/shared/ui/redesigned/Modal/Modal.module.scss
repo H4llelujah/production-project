@@ -16,9 +16,20 @@
     padding: 20px;
     border-radius: 12px;
     max-width: 60%;
-    background-color: var(--bg-color);
     transform: scale(0.5);
     transition: transform 0.3s;
+}
+
+.ModalNew {
+    .content {
+        background: var(--light-bg-redesigned);
+    }
+}
+
+.ModalOld {
+    .content {
+        background: var(--bg-color);
+    }
 }
 
 .opened {
