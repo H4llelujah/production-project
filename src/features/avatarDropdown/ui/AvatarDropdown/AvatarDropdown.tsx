@@ -11,7 +11,11 @@ import {
 } from '@/entities/User';
 import { Dropdown as DropdownDeprecated } from '@/shared/ui/deprecated/Dropdown';
 import { Avatar as AvatarDeprecated } from '@/shared/ui/deprecated/Avatar';
-import { getRouteAdmin, getRouteProfile } from '@/shared/const/router';
+import {
+    getRouteAdmin,
+    getRouteProfile,
+    getRouteSettings,
+} from '@/shared/const/router';
 import { ToggleFeatures } from '@/shared/lib/features';
 import { Avatar } from '@/shared/ui/redesigned/Avatar';
 import { Dropdown } from '@/shared/ui/redesigned/Dropdown';
@@ -47,6 +51,10 @@ export const AvatarDropdown = memo((props: AvatarDropdownProps) => {
                   },
               ]
             : []),
+        {
+            content: t('Настройки'),
+            href: getRouteSettings(),
+        },
         {
             content: t('Профиль'),
             href: getRouteProfile(authData.id),
