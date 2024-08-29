@@ -26,18 +26,15 @@ export const ArticleListItemRedesigned = memo((props: ArticleListItemProps) => {
 
     const userInfo = (
         <>
-            <Avatar src={article.user.avatar} size={32} />
+            <Avatar
+                src={article.user.avatar}
+                size={32}
+                className={cls.avatar}
+            />
             <Text bold text={article.user.username} />
         </>
     );
 
-    const types = (
-        <Text
-            text={article.type.join(', ')}
-            className={cls.types}
-            data-testid="ArticleListItem.Types"
-        />
-    );
     const views = (
         <HStack gap="8">
             <Icon Svg={EyeIcon} />
@@ -107,9 +104,9 @@ export const ArticleListItemRedesigned = memo((props: ArticleListItemProps) => {
                 cls[view],
             ])}
         >
-            <Card className={cls.card} border="round">
+            <Card className={cls.card} border="round" padding="0">
                 <AppImage
-                    fallback={<Skeleton width={200} height={200} />}
+                    fallback={<Skeleton width="100%" height={200} />}
                     src={article.img}
                     alt={article.title}
                     className={cls.img}

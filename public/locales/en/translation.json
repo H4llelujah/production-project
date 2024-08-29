@@ -14,5 +14,8 @@
     "Форма авторизации": "Auth form",
     "Главная": "Main",
     "Профиль": "Profile",
-    "Статьи": "Articles"
+    "Статьи": "Articles",
+    "{{count}} просмотров_zero": "{{count}} views",
+    "{{count}} просмотров_one": "{{count}} view",
+    "{{count}} просмотров_other": "{{count}} views"
 }
