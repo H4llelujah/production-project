@@ -192,7 +192,7 @@ export const RatingCard = memo((props: RatingCardProps) => {
                     max
                     className={classNames('', {}, [className])}
                     padding="24"
-                    border="round"
+                    border="partial"
                 >
                     {content}
                 </Card>
