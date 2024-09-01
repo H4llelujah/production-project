@@ -562,6 +562,18 @@
       "articleId": "16",
       "text": "Wow",
       "id": "dKMNrkx"
+    },
+    {
+      "userId": "1",
+      "articleId": "3",
+      "text": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ducimus odio corrupti consequuntur minima doloremque repellat inventore vero. Officiis magnam non dolorem accusantium adipisci? Vero atque harum veniam beatae repellendus praesentium quia quaerat ut velit, consequatur libero officiis sunt, pariatur quo quod molestias. Ipsa ratione eligendi ea debitis sit temporibus tempora architecto deserunt, quas illum laboriosam accusamus optio alias, in ducimus corporis voluptatem illo magnam? Incidunt similique pariatur velit fuga possimus vel earum asperiores modi error consectetur sit magnam libero explicabo obcaecati dolores, perferendis veniam non laborum nostrum quae, expedita minus consequuntur? Quisquam exercitationem adipisci sed iusto laborum et incidunt expedita harum, pariatur ipsam officia cum magni veniam rem illo inventore, consequatur molestias nesciunt, omnis excepturi quidem. Odio, veniam. Dolorum voluptatem rem non, labore quia eum cumque expedita ea vero sequi harum et velit at numquam culpa explicabo voluptatum omnis beatae dolor perferendis sed natus! Alias inventore quasi delectus impedit ea.",
+      "id": "ox7b_Jp"
+    },
+    {
+      "userId": "1",
+      "articleId": "3",
+      "text": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ducimus odio corrupti consequuntur minima doloremque repellat inventore vero. Officiis magnam non dolorem accusantium adipisci? Vero atque harum veniam beatae repellendus praesentium quia quaerat ut velit, consequatur libero officiis sunt, pariatur quo quod molestias. Ipsa ratione eligendi ea debitis sit temporibus tempora architecto deserunt, quas illum laboriosam accusamus optio alias, in ducimus corporis voluptatem illo magnam? Incidunt similique pariatur velit fuga possimus vel earum asperiores modi error consectetur sit magnam libero explicabo obcaecati dolores, perferendis veniam non laborum nostrum quae, expedita minus consequuntur? Quisquam exercitationem adipisci sed iusto laborum et incidunt expedita harum, pariatur ipsam officia cum magni veniam rem illo inventore, consequatur molestias nesciunt, omnis excepturi quidem. Odio, veniam. Dolorum voluptatem rem non, labore quia eum cumque expedita ea vero sequi harum et velit at numquam culpa explicabo voluptatum omnis beatae dolor perferendis sed natus! Alias inventore quasi delectus impedit ea.",
+      "id": "rg2y6Fd"
     }
   ],
   "users": [
@@ -579,7 +591,7 @@
       },
       "avatar": "https://cs14.pikabu.ru/post_img/big/2023/02/13/8/1676296367166243426.png",
       "jsonSettings": {
-        "theme": "app_light_theme",
+        "theme": "app_dark_theme",
         "isFirstVisit": true,
         "settingsPageHasBeenOpen": false,
         "isArticlePageWasOpened": true
@@ -718,6 +730,13 @@
       "rate": 4,
       "feedback": "f",
       "id": "AMffR2k"
+    },
+    {
+      "userId": "1",
+      "articleId": "3",
+      "rate": 2,
+      "feedback": "Круто!",
+      "id": "q4lgewv"
     }
   ],
   "profile-ratings": [
