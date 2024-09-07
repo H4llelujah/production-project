@@ -37,7 +37,7 @@ export const globalTypes = {
         defaultValue: Theme.LIGHT,
         toolbar: {
             icon: 'mirror',
-            items: [Theme.LIGHT, Theme.DARK, Theme.GREEN],
+            items: [Theme.LIGHT, Theme.DARK],
             dynamicTitle: true,
         },
     },

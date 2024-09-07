@@ -2,11 +2,13 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Dropdown } from './Dropdown';
 import { Button } from '../Button/Button';
+import { FeatureFlagsDecorator } from '@/shared/config/storybook/FeatureFlagsDecorator/FeatureFlagsDecorator';
 
 const meta: Meta<typeof Dropdown> = {
-    title: 'Shared/Dropdown',
+    title: 'Shared/Redesigned/Dropdown',
     component: Dropdown,
     tags: ['autodocs'],
+    decorators: [FeatureFlagsDecorator({ isAppRedesigned: true })],
 };
 
 export default meta;

@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { AppLink, AppLinkTheme } from './AppLink';
 
 const meta: Meta<typeof AppLink> = {
-    title: 'Shared/AppLink',
+    title: 'Shared/Deprecated/AppLink',
     component: AppLink,
     tags: ['autodocs'],
 };

@@ -1,11 +1,13 @@
 /* eslint-disable i18next/no-literal-string */
 import type { Meta, StoryObj } from '@storybook/react';
 import { Popover } from './Popover';
+import { FeatureFlagsDecorator } from '@/shared/config/storybook/FeatureFlagsDecorator/FeatureFlagsDecorator';
 
 const meta: Meta<typeof Popover> = {
-    title: 'Shared/Popover',
+    title: 'Shared/Redesigned/Popover',
     component: Popover,
     tags: ['autodocs'],
+    decorators: [FeatureFlagsDecorator({ isAppRedesigned: true })],
 };
 
 export default meta;

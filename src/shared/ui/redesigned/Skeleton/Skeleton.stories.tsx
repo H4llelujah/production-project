@@ -1,10 +1,12 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Skeleton } from './Skeleton';
+import { FeatureFlagsDecorator } from '@/shared/config/storybook/FeatureFlagsDecorator/FeatureFlagsDecorator';
 
 const meta: Meta<typeof Skeleton> = {
-    title: 'Shared/Skeleton',
+    title: 'Shared/Redesigned/Skeleton',
     component: Skeleton,
     tags: ['autodocs'],
+    decorators: [FeatureFlagsDecorator({ isAppRedesigned: true })],
 };
 
 export default meta;

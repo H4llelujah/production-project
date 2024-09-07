@@ -1,10 +1,12 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Drawer } from './Drawer';
+import { FeatureFlagsDecorator } from '@/shared/config/storybook/FeatureFlagsDecorator/FeatureFlagsDecorator';
 
 const meta: Meta<typeof Drawer> = {
-    title: 'Shared/Drawer',
+    title: 'Shared/Redesigned/Drawer',
     component: Drawer,
     tags: ['autodocs'],
+    decorators: [FeatureFlagsDecorator({ isAppRedesigned: true })],
 };
 
 export default meta;

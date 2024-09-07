@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { ListBox } from './ListBox';
 
 const meta: Meta<typeof ListBox> = {
-    title: 'Shared/ListBox',
+    title: 'Shared/Deprecated/ListBox',
     component: ListBox,
     tags: ['autodocs'],
 };

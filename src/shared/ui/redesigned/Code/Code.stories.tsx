@@ -1,10 +1,12 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Code } from './Code';
+import { FeatureFlagsDecorator } from '@/shared/config/storybook/FeatureFlagsDecorator/FeatureFlagsDecorator';
 
 const meta: Meta<typeof Code> = {
-    title: 'Shared/Code',
+    title: 'Shared/Redesigned/Code',
     component: Code,
     tags: ['autodocs'],
+    decorators: [FeatureFlagsDecorator({ isAppRedesigned: true })],
 };
 
 export default meta;

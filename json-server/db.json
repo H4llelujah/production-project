@@ -737,6 +737,13 @@
       "rate": 2,
       "feedback": "Круто!",
       "id": "q4lgewv"
+    },
+    {
+      "userId": "1",
+      "articleId": "4",
+      "rate": 5,
+      "feedback": "Super!",
+      "id": "VfKFcU7"
     }
   ],
   "profile-ratings": [

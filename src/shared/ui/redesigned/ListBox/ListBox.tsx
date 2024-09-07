@@ -48,22 +48,18 @@ export function ListBox<T extends string>(props: ListBoxProps<T>) {
 
     return (
         <HStack gap="4" className={classNames('', {}, [className])}>
-            {label && <span>{`${label}>`}</span>}
+            {label && <span>{`${label}`}</span>}
             <HListBox disabled={readonly} value={value} onChange={onChange}>
                 <ListboxButton
                     disabled={readonly}
-                    as="div"
+                    as={Button}
+                    variant="filled"
+                    addonRight={<Icon Svg={ArrowIcon} />}
                     className={classNames(cls.trigger, {
                         [cls.disabled]: readonly,
                     })}
                 >
-                    <Button
-                        variant="filled"
-                        disabled={readonly}
-                        addonRight={<Icon Svg={ArrowIcon} />}
-                    >
-                        {selectedItem?.content ?? defaultValue}
-                    </Button>
+                    {selectedItem?.content ?? defaultValue}
                 </ListboxButton>
                 <ListboxOptions anchor={anchor} className={cls.options} as="ul">
                     {items?.map((item) => (

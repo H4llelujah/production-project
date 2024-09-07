@@ -3,7 +3,7 @@ import AvatarImg from './StorybookAvatar.jpg';
 import { Avatar } from './Avatar';
 
 const meta: Meta<typeof Avatar> = {
-    title: 'Shared/Avatar',
+    title: 'Shared/Deprecated/Avatar',
     component: Avatar,
     tags: ['autodocs'],
 };

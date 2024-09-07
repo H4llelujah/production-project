@@ -1,10 +1,12 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Text } from './Text';
+import { FeatureFlagsDecorator } from '@/shared/config/storybook/FeatureFlagsDecorator/FeatureFlagsDecorator';
 
 const meta: Meta<typeof Text> = {
-    title: 'Shared/Text',
+    title: 'Shared/Redesigned/Text',
     component: Text,
     tags: ['autodocs'],
+    decorators: [FeatureFlagsDecorator({ isAppRedesigned: true })],
 };
 
 export default meta;
@@ -17,57 +19,50 @@ export const Primary: Story = {
     },
 };
 
-// export const Inverted: Story = {
-//     args: {
-//         title: 'title',
-//         text: 'sometext some text some',
-//         theme: TextTheme.INVERTED,
-//     },
-// };
+export const AccentVariant: Story = {
+    args: {
+        title: 'title',
+        text: 'sometext some text some',
+        variant: 'accent',
+    },
+};
 
-// export const TitleOnly: Story = {
-//     args: {
-//         title: 'title',
-//     },
-// };
+export const ErrorVariant: Story = {
+    args: {
+        title: 'title',
+        text: 'sometext some text some',
+        variant: 'error',
+    },
+};
 
-// export const TextOnly: Story = {
-//     args: {
-//         text: 'sometext some text some',
-//     },
-// };
+export const SizeS: Story = {
+    args: {
+        title: 'title',
+        text: 'sometext some text some',
+        size: 's',
+    },
+};
 
-// export const ErrorText: Story = {
-//     args: {
-//         title: 'title',
-//         text: 'sometext some text some',
-//         theme: TextTheme.ERROR,
-//     },
-// };
+export const SizeM: Story = {
+    args: {
+        title: 'title',
+        text: 'sometext some text some',
+        size: 'm',
+    },
+};
 
-// export const TextSizeS: Story = {
-//     args: {
-//         title: 'title',
-//         text: 'sometext some text some',
-//         theme: TextTheme.PRIMARY,
-//         size: TextSize.S,
-//     },
-// };
+export const SizeL: Story = {
+    args: {
+        title: 'title',
+        text: 'sometext some text some',
+        size: 'l',
+    },
+};
 
-// export const TextSizeM: Story = {
-//     args: {
-//         title: 'title',
-//         text: 'sometext some text some',
-//         theme: TextTheme.PRIMARY,
-//         size: TextSize.M,
-//     },
-// };
-
-// export const TextSizeL: Story = {
-//     args: {
-//         title: 'title',
-//         text: 'sometext some text some',
-//         theme: TextTheme.PRIMARY,
-//         size: TextSize.L,
-//     },
-// };
+export const Bold: Story = {
+    args: {
+        title: 'title',
+        text: 'sometext some text some',
+        bold: true,
+    },
+};

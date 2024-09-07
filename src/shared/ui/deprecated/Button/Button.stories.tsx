@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { Button, ButtonSize, ButtonTheme } from './Button';
 
 const meta: Meta<typeof Button> = {
-    title: 'Shared/Button',
+    title: 'Shared/Deprecated/Button',
     component: Button,
     tags: ['autodocs'],
 };

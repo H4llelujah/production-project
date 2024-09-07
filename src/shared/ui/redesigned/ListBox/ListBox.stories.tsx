@@ -2,11 +2,13 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { useState } from 'react';
 import { ListBox } from './ListBox';
+import { FeatureFlagsDecorator } from '@/shared/config/storybook/FeatureFlagsDecorator/FeatureFlagsDecorator';
 
 const meta: Meta<typeof ListBox> = {
-    title: 'Shared/ListBox',
+    title: 'Shared/Redesigned/ListBox',
     component: ListBox,
     tags: ['autodocs'],
+    decorators: [FeatureFlagsDecorator({ isAppRedesigned: true })],
 };
 
 export default meta;
@@ -23,7 +25,7 @@ export const Primary: Story = {
         return <ListBox {...args} value={value} onChange={onChange} />;
     },
     args: {
-        label: 'Введите значение',
+        label: 'Выберите вариант',
         items: [
             { value: 'Первый пункт', content: 'Первый пункт' },
             { value: 'Второй пункт', content: 'Второй пункт' },
@@ -43,7 +45,7 @@ export const WithDisabledOption: Story = {
         return <ListBox {...args} value={value} onChange={onChange} />;
     },
     args: {
-        label: 'Введите значение',
+        label: 'Выберите вариант',
         items: [
             { value: 'Первый пункт', content: 'Первый пункт' },
             { value: 'Второй пункт', content: 'Второй пункт', disabled: true },
@@ -63,7 +65,7 @@ export const DisabledListBox: Story = {
         return <ListBox {...args} value={value} onChange={onChange} />;
     },
     args: {
-        label: 'Введите значение',
+        label: 'Выберите вариант',
         items: [
             { value: 'Первый пункт', content: 'Первый пункт' },
             { value: 'Второй пункт', content: 'Второй пункт', disabled: true },

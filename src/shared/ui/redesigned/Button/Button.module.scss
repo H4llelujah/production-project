@@ -98,6 +98,11 @@
 
 .disabled {
     opacity: 0.5;
+    cursor: auto;
+
+    &:hover {
+        color: var(--text-redesigned);
+    }
 }
 
 .fullWidth {

@@ -1,10 +1,14 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Button } from './Button';
+import { FeatureFlagsDecorator } from '@/shared/config/storybook/FeatureFlagsDecorator/FeatureFlagsDecorator';
+import { Icon } from '../Icon';
+import SVG from '@/shared/assets/icons/arrow-bottom.svg';
 
 const meta: Meta<typeof Button> = {
-    title: 'Shared/Button',
+    title: 'Shared/Redesigned/Button',
     component: Button,
     tags: ['autodocs'],
+    decorators: [FeatureFlagsDecorator({ isAppRedesigned: true })],
 };
 
 export default meta;
@@ -16,124 +20,87 @@ export const Primary: Story = {
     },
 };
 
-// export const Clear: Story = {
-//     args: {
-//         children: 'text',
-//         theme: ButtonTheme.CLEAR,
-//     },
-// };
+export const Clear: Story = {
+    args: {
+        children: 'text',
+        variant: 'clear',
+    },
+};
 
-// export const ClearInverted: Story = {
-//     args: {
-//         children: 'text',
-//         theme: ButtonTheme.CLEAR_INVERTED,
-//     },
-// };
+export const filled: Story = {
+    args: {
+        children: 'text',
+        variant: 'filled',
+    },
+};
 
-// export const Outline: Story = {
-//     args: {
-//         children: 'text',
-//         theme: ButtonTheme.OUTLINE,
-//     },
-// };
+export const ColorError: Story = {
+    args: {
+        children: 'text',
+        color: 'error',
+    },
+};
 
-// export const OutlineRed: Story = {
-//     args: {
-//         children: 'text',
-//         theme: ButtonTheme.OUTLINE_RED,
-//     },
-// };
+export const ColorSuccess: Story = {
+    args: {
+        children: 'text',
+        color: 'success',
+    },
+};
 
-// export const OutlineSizeM: Story = {
-//     args: {
-//         children: 'text',
-//         theme: ButtonTheme.OUTLINE,
-//         size: ButtonSize.M,
-//     },
-// };
+export const OutlineSizeL: Story = {
+    args: {
+        children: 'text',
+        size: 'l',
+    },
+};
 
-// export const OutlineSizeL: Story = {
-//     args: {
-//         children: 'text',
-//         theme: ButtonTheme.OUTLINE,
-//         size: ButtonSize.L,
-//     },
-// };
+export const OutlineSizeM: Story = {
+    args: {
+        children: 'text',
+        size: 'm',
+    },
+};
 
-// export const OutlineSizeXL: Story = {
-//     args: {
-//         children: 'text',
-//         theme: ButtonTheme.OUTLINE,
-//         size: ButtonSize.XL,
-//     },
-// };
+export const OutlineSizeXL: Story = {
+    args: {
+        children: 'text',
+        size: 'xl',
+    },
+};
 
-// export const Background: Story = {
-//     args: {
-//         children: 'text',
-//         theme: ButtonTheme.BACKGROUND,
-//     },
-// };
+export const FullWitdh: Story = {
+    args: {
+        children: 'text',
+        fullWidth: true,
+    },
+};
 
-// export const BackgroundInverted: Story = {
-//     args: {
-//         children: 'text',
-//         theme: ButtonTheme.BACKGROUND_INVERTED,
-//     },
-// };
+export const WithAddonLeft: Story = {
+    args: {
+        children: 'text',
+        addonLeft: <Icon Svg={SVG} />,
+    },
+};
 
-// export const SquareSizeM: Story = {
-//     args: {
-//         children: '>',
-//         square: true,
-//         size: ButtonSize.M,
-//         theme: ButtonTheme.BACKGROUND_INVERTED,
-//     },
-// };
+export const WithAddonRight: Story = {
+    args: {
+        children: 'text',
+        addonRight: <Icon Svg={SVG} />,
+    },
+};
 
-// export const SquareSizeL: Story = {
-//     args: {
-//         children: '>',
-//         square: true,
-//         size: ButtonSize.L,
-//         theme: ButtonTheme.BACKGROUND_INVERTED,
-//     },
-// };
+export const WithBothAddons: Story = {
+    args: {
+        children: 'text',
+        addonRight: <Icon Svg={SVG} />,
+        addonLeft: <Icon Svg={SVG} />,
+    },
+};
 
-// export const SquareSizeXL: Story = {
-//     args: {
-//         children: '>',
-//         square: true,
-//         size: ButtonSize.XL,
-//         theme: ButtonTheme.BACKGROUND_INVERTED,
-//     },
-// };
-
-// export const SizeM: Story = {
-//     args: {
-//         children: 'text',
-//         size: ButtonSize.M,
-//     },
-// };
-
-// export const SizeL: Story = {
-//     args: {
-//         children: 'text',
-//         size: ButtonSize.L,
-//     },
-// };
-
-// export const SizeXL: Story = {
-//     args: {
-//         children: 'text',
-//         size: ButtonSize.XL,
-//     },
-// };
-
-// export const disabled: Story = {
-//     args: {
-//         children: 'text',
-//         size: ButtonSize.L,
-//         disabled: true,
-//     },
-// };
+export const Disabled: Story = {
+    args: {
+        children: 'text',
+        disabled: true,
+    },
+};

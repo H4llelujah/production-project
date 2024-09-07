@@ -1,11 +1,13 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import AvatarImg from './StorybookAvatar.jpg';
 import { Avatar } from './Avatar';
+import { FeatureFlagsDecorator } from '@/shared/config/storybook/FeatureFlagsDecorator/FeatureFlagsDecorator';
 
 const meta: Meta<typeof Avatar> = {
-    title: 'Shared/Avatar',
+    title: 'Shared/Redesigned/Avatar',
     component: Avatar,
     tags: ['autodocs'],
+    decorators: [FeatureFlagsDecorator({ isAppRedesigned: true })],
 };
 
 export default meta;

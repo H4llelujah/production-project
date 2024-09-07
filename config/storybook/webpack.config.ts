@@ -16,8 +16,8 @@ export default ({ config }: { config: webpack.Configuration }) => {
     if (config.module?.rules) {
         config.module.rules.push(buildCssLoader(true));
         // eslint-disable-next-line no-param-reassign
-        // @ts-ignore
         config.module.rules = config.module.rules.map(
+            // @ts-ignore
             (rule: RuleSetRule | '...') => {
                 if (
                     typeof rule === 'object' &&
