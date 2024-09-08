@@ -39,6 +39,7 @@ export const ArticlesFilters = memo((props: ArticlesFiltersProps) => {
     const { t } = useTranslation();
     return (
         <Card
+            border="partial"
             className={classNames(cls.ArticlesFilters, {}, [className])}
             padding="24"
         >

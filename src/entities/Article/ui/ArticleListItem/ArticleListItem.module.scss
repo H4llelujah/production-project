@@ -105,10 +105,37 @@
 .ArticleListItemRedesigned {
     &.BIG {
         width: 100%;
+
+        .img {
+            width: 100%;
+            max-height: 420px;
+            object-fit: cover;
+            margin: 16px 0;
+        }
+
+        .subtitle {
+            margin-top: 10px;
+        }
+
+        .footerSkeleton {
+            margin-top: 16px;
+        }
     }
 
     &.SMALL {
-        width: 240px;
-        height: 350px;
+        .card {
+            width: 240px;
+            height: 350px;
+            overflow: hidden;
+        }
+
+        .infoSkeletonWrapper {
+            margin-top: 10px;
+            padding: 8px 8px 16px;
+        }
+
+        .text {
+            margin-bottom: 20px;
+        }
     }
 }

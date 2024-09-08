@@ -100,13 +100,37 @@ export const RatingCard = memo((props: RatingCardProps) => {
     const content = (
         <>
             <VStack align="center" gap="16">
-                <TextDeprecated
-                    title={starsCount ? t('Спасибо за оценку!') : title}
-                />
-                <StarRating
-                    selectedStars={starsCount}
-                    size={40}
-                    onSelect={onSelectStars}
+                <ToggleFeatures
+                    feature="isAppRedesigned"
+                    on={
+                        <>
+                            <Text
+                                title={
+                                    starsCount ? t('Спасибо за оценку!') : title
+                                }
+                            />
+                            <StarRating
+                                selectedStars={starsCount}
+                                size={40}
+                                onSelect={onSelectStars}
+                            />
+                        </>
+                    }
+                    off={
+                        <>
+                            {' '}
+                            <TextDeprecated
+                                title={
+                                    starsCount ? t('Спасибо за оценку!') : title
+                                }
+                            />
+                            <StarRating
+                                selectedStars={starsCount}
+                                size={40}
+                                onSelect={onSelectStars}
+                            />
+                        </>
+                    }
                 />
             </VStack>
             <BrowserView>
