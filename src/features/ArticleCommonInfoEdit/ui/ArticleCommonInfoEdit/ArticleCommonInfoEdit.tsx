@@ -6,6 +6,7 @@ import { HStack, VStack } from '@/shared/ui/redesigned/Stack';
 import { Input } from '@/shared/ui/redesigned/Input';
 import { AppImage } from '@/shared/ui/redesigned/AppImage';
 import { AppLogo } from '@/shared/ui/redesigned/AppLogo';
+import { Skeleton } from '@/shared/ui/redesigned/Skeleton';
 
 interface ArticleCommonInfoEditProps {
     className?: string;
@@ -36,12 +37,15 @@ export const ArticleCommonInfoEdit = memo(
             </div>
         );
 
+        const ImgFallback = <Skeleton width="100%" height={100} />;
+
         return (
             <VStack
                 className={classNames(cls.ArticleCommonInfoCreate, {}, [
                     className,
                 ])}
                 gap="16"
+                max
             >
                 <HStack max>
                     <Input
@@ -64,8 +68,12 @@ export const ArticleCommonInfoEdit = memo(
                         onChange={onChangeImgLink}
                     />
                 </HStack>
-
-                <AppImage src={imgLink} errorFallback={ImgErrorFallback} />
+                <AppImage
+                    className={cls.img}
+                    src={imgLink}
+                    errorFallback={ImgErrorFallback}
+                    fallback={ImgFallback}
+                />
             </VStack>
         );
     },

@@ -3,19 +3,27 @@ import { memo, useCallback, useState } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { ArticleBlockType } from '@/entities/Article';
 import { Dropdown } from '@/shared/ui/redesigned/Dropdown';
-import { Button } from '@/shared/ui/redesigned/Button';
 import { Text } from '@/shared/ui/redesigned/Text';
 import { ArticleNewBlockCreate } from '../ArticleNewBlockCreate/ArticleNewBlockCreate';
 
 interface ArticleBlockCreatorModalProps {
     className?: string;
+    onAddBlock?: (
+        blockType: ArticleBlockType,
+        index: number,
+        value: string,
+        title?: string,
+    ) => void;
+    index?: number;
 }
 
 export const ArticleBlockCreatorModal = memo(
     (props: ArticleBlockCreatorModalProps) => {
-        const { className } = props;
+        const { className, onAddBlock, index } = props;
         const { t } = useTranslation();
-        const [blockType, setBlockType] = useState<ArticleBlockType>();
+        const [blockType, setBlockType] = useState<ArticleBlockType>(
+            ArticleBlockType.TEXT,
+        );
         const [isOpen, setIsOpen] = useState(false);
 
         const onOpen = useCallback((blockType: ArticleBlockType) => {
@@ -42,11 +50,7 @@ export const ArticleBlockCreatorModal = memo(
             },
         ];
 
-        const trigger = (
-            <Button>
-                <Text text={t('Выберете блок, который хотите создать')} />
-            </Button>
-        );
+        const trigger = <Text text={t('Добавить новый блок')} />;
 
         return (
             <>
@@ -54,11 +58,14 @@ export const ArticleBlockCreatorModal = memo(
                     className={classNames('', {}, [className])}
                     trigger={trigger}
                     items={items}
+                    triggerVariant="outline"
                 />
                 <ArticleNewBlockCreate
                     blockType={blockType}
                     onClose={onClose}
                     isOpen={isOpen}
+                    onAddBlock={onAddBlock}
+                    index={index}
                 />
             </>
         );

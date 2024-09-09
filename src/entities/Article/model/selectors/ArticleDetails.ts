@@ -6,3 +6,5 @@ export const getArticleDetailsIsLoading = (state: StateSchema) =>
     state.articleDetails?.isLoading || false;
 export const getArticleDetailsError = (state: StateSchema) =>
     state.articleDetails?.error;
+export const getArticleDetailsForm = (state: StateSchema) =>
+    state.articleDetails?.form;

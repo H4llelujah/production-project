@@ -9,20 +9,30 @@ import { ArticleCodeBlockCreate } from '../ArticleCodeBlockCreate/ArticleCodeBlo
 import { HStack, VStack } from '@/shared/ui/redesigned/Stack';
 import { Button } from '@/shared/ui/redesigned/Button';
 import cls from './ArticleNewBlockCreate.module.scss';
+import { Text } from '@/shared/ui/redesigned/Text';
 
 interface ArticleNewBlockCreateProps {
     className?: string;
-    blockType?: ArticleBlockType;
+    blockType: ArticleBlockType;
+    onAddBlock?: (
+        blockType: ArticleBlockType,
+        index: number,
+        value: string,
+        title?: string,
+    ) => void;
+    index?: number;
     isOpen?: boolean;
-    onClose?: () => void;
+    onClose: () => void;
 }
 
 export const ArticleNewBlockCreate = memo(
     (props: ArticleNewBlockCreateProps) => {
-        const { className, blockType, isOpen, onClose } = props;
+        const { className, blockType, isOpen, onClose, onAddBlock, index } =
+            props;
         const { t } = useTranslation();
         const [title, setTitle] = useState<string>();
         const [value, setValue] = useState<string>();
+        const [error, setError] = useState<Boolean>(false);
         const onChangeValue = useCallback((value: string) => {
             setValue(value);
         }, []);
@@ -64,9 +74,34 @@ export const ArticleNewBlockCreate = memo(
             }
         };
         const content = createBlock();
+        const onSave = useCallback(() => {
+            if (index !== undefined && onAddBlock) {
+                if (blockType === ArticleBlockType.CODE) {
+                    if (value) {
+                        onAddBlock(blockType, index, value);
+                        onClose();
+                        setValue('');
+                        setTitle('');
+                    } else {
+                        setError(true);
+                    }
+                } else if (value && title) {
+                    onAddBlock(blockType, index, value, title);
+                    onClose();
+                    setValue('');
+                    setTitle('');
+                } else {
+                    setError(true);
+                }
+            }
+        }, [blockType, index, onAddBlock, onClose, title, value]);
 
-        const onSave = useCallback(() => {}, []);
-        const onCancel = useCallback(() => {}, []);
+        const onCancel = useCallback(() => {
+            onClose();
+            setValue('');
+            setTitle('');
+        }, [onClose]);
+
         return (
             <Modal
                 isOpen={isOpen}
@@ -74,12 +109,13 @@ export const ArticleNewBlockCreate = memo(
                 className={classNames('', {}, [className])}
             >
                 <VStack gap="16">
+                    {error && <Text text={t('Все поля обязательны!')} />}
                     {content}
                     <HStack justify="between" max>
-                        <Button color="error" onClick={onSave}>
+                        <Button color="error" onClick={onCancel}>
                             {t('Отменить')}
                         </Button>
-                        <Button color="success" onClick={onCancel}>
+                        <Button color="success" onClick={onSave}>
                             {t('Сохранить')}
                         </Button>
                     </HStack>

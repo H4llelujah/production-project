@@ -5,6 +5,7 @@ import { classNames } from '@/shared/lib/classNames/classNames';
 import cls from './Dropdown.module.scss';
 import { AppLink } from '../AppLink/AppLink';
 import { useTheme } from '@/shared/lib/hooks/useTheme/useTheme';
+import { Button, ButtonVariant } from '../Button';
 
 export interface DropdownItem {
     disabled?: boolean;
@@ -17,16 +18,29 @@ export interface DropwdownProps {
     className?: string;
     items: DropdownItem[];
     trigger: ReactNode;
+    triggerVariant?: ButtonVariant;
     anchor?: AnchorProps;
 }
 
 export function Dropdown(props: DropwdownProps) {
-    const { className, items, trigger, anchor = 'bottom' } = props;
+    const {
+        className,
+        items,
+        trigger,
+        triggerVariant = 'clear',
+        anchor = 'bottom',
+    } = props;
     const { theme } = useTheme();
 
     return (
         <Menu as="menu" className={classNames(cls.Dropdown, {}, [className])}>
-            <MenuButton className={cls.btn}>{trigger}</MenuButton>
+            <MenuButton
+                as={Button}
+                variant={triggerVariant}
+                className={cls.btn}
+            >
+                {trigger}
+            </MenuButton>
             <MenuItems
                 anchor={anchor}
                 className={classNames(cls.menu, {}, [theme])}

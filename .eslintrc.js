@@ -75,6 +75,7 @@ module.exports = {
                     'variant',
                     'size',
                     'wrap',
+                    'triggerVariant',
                 ],
             },
         ],
