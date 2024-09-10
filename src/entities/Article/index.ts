@@ -26,3 +26,7 @@ export {
 } from './model/selectors/ArticleDetails';
 
 export { FetchArticleById } from './model/services/FetchArticleById/FetchArticleById';
+
+export { updateArticleData } from './model/services/updateArticleData/updateArticleData';
+
+export { createArticleData } from './model/services/createArticleData/createArticleData';

@@ -5,6 +5,7 @@ import { ArticleDetailsSchema } from '../types/articleDetailsSchema';
 import { Article, ArticleBlock } from '../types/article';
 import { LOCAL_STORAGE_ARTICLE_EDIT_KEY } from '@/shared/const/localstorage';
 import { ArticleBlockType, ArticleType } from '../consts/articleConsts';
+import { updateArticleData } from '../services/updateArticleData/updateArticleData';
 
 const initialState: ArticleDetailsSchema = {
     data: undefined,
@@ -17,13 +18,18 @@ export const articleDetailsSlice = createSlice({
     name: 'articleDetails',
     initialState,
     reducers: {
-        setForm(state) {
+        setForm(state, action: PayloadAction<boolean>) {
             const savedFormData = localStorage.getItem(
                 LOCAL_STORAGE_ARTICLE_EDIT_KEY,
             );
             if (savedFormData) {
                 try {
-                    state.form = JSON.parse(savedFormData) as Article;
+                    const draft = JSON.parse(savedFormData) as Article;
+                    if (draft.id && !action.payload) {
+                        state.form = undefined;
+                    } else {
+                        state.form = draft;
+                    }
                 } catch (error) {
                     console.log(
                         'Error parsing article form data from localStorage:',
@@ -34,6 +40,14 @@ export const articleDetailsSlice = createSlice({
             } else {
                 state.form = undefined;
             }
+        },
+        onCancelEdit: (state) => {
+            if (state.data) {
+                state.form = state.data;
+            } else {
+                state.form = undefined;
+            }
+            localStorage.removeItem(LOCAL_STORAGE_ARTICLE_EDIT_KEY);
         },
         updateArticle: (state, action: PayloadAction<Partial<Article>>) => {
             state.form = {
@@ -127,7 +141,8 @@ export const articleDetailsSlice = createSlice({
             (state, action: PayloadAction<Article>) => {
                 state.isLoading = false;
                 state.data = action.payload;
-                state.form = action.payload;
+                const { user, ...articleWithoutUser } = action.payload;
+                state.form = articleWithoutUser;
                 localStorage.setItem(
                     LOCAL_STORAGE_ARTICLE_EDIT_KEY,
                     JSON.stringify(state.form),
@@ -137,6 +152,18 @@ export const articleDetailsSlice = createSlice({
         builder.addCase(FetchArticleById.rejected, (state, action) => {
             state.isLoading = false;
             state.error = action.payload;
+        });
+        builder.addCase(
+            updateArticleData.fulfilled,
+            (state, action: PayloadAction<Article>) => {
+                state.isLoading = false;
+                state.data = action.payload;
+                state.form = action.payload;
+            },
+        );
+        builder.addCase(updateArticleData.rejected, (state, action) => {
+            state.isLoading = false;
+            state.validateErrors = action.payload;
         });
     },
 });

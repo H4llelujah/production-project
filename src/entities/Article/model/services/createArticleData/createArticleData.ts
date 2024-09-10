@@ -32,7 +32,7 @@ export const createArticleData = createAsyncThunk<
         const response = await extra.api.post<Article>('/articles', {
             id: uuidv4(),
             userId: userData?.id,
-            formData,
+            ...formData,
         });
         if (!response.data) {
             throw new Error();

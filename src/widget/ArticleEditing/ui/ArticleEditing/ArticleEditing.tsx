@@ -1,6 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import { memo, useCallback } from 'react';
-import { VStack } from '@/shared/ui/redesigned/Stack';
+import { useNavigate } from 'react-router-dom';
+import { HStack, VStack } from '@/shared/ui/redesigned/Stack';
 import { Card } from '@/shared/ui/redesigned/Card';
 import { ArticleBlockCreatorModal } from '@/features/articleNewBlockCreate';
 import {
@@ -8,20 +9,25 @@ import {
     ArticleBlockType,
     articleDetailsActions,
     ArticleType,
+    createArticleData,
     renderArticleBlock,
+    updateArticleData,
 } from '@/entities/Article';
 import { ArticleCommonInfoEdit } from '@/features/ArticleCommonInfoEdit';
 import { ArticleTypeSelector } from '@/features/articleTypeSelector';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { Button } from '@/shared/ui/redesigned/Button';
 
 interface ArticleEditingProps {
     className?: string;
     article?: Partial<Article>;
+    isEdit?: Boolean;
 }
 
 export const ArticleEditing = memo((props: ArticleEditingProps) => {
-    const { className, article } = props;
+    const { className, article, isEdit } = props;
     const { t } = useTranslation();
+    const navigate = useNavigate();
 
     const dispatch = useAppDispatch();
 
@@ -84,8 +90,32 @@ export const ArticleEditing = memo((props: ArticleEditingProps) => {
         },
         [dispatch],
     );
+
+    const onSaveArticle = useCallback(() => {
+        if (isEdit) {
+            dispatch(updateArticleData());
+            navigate('/articles');
+        } else {
+            dispatch(createArticleData());
+            navigate('/articles');
+        }
+    }, [dispatch, isEdit, navigate]);
+
+    const onCancelEdit = useCallback(() => {
+        dispatch(articleDetailsActions.onCancelEdit());
+        navigate('/articles');
+    }, [dispatch, navigate]);
+
     return (
         <VStack max gap="16" className={className}>
+            <HStack justify="between" max>
+                <Button onClick={onCancelEdit} color="error">
+                    {t('Отменить')}
+                </Button>
+                <Button onClick={onSaveArticle} color="success">
+                    {t('Сохранить')}
+                </Button>
+            </HStack>
             <Card max border="partial" padding="24">
                 <VStack gap="16" max>
                     <ArticleTypeSelector

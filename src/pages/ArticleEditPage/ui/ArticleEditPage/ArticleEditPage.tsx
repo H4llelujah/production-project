@@ -1,8 +1,8 @@
 import { memo } from 'react';
+import { useParams } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { Page } from '@/widget/Page';
-import cls from './ArticleEditPage.module.scss';
 import {
     articleDetailsReducer,
     getArticleDetailsForm,
@@ -26,17 +26,19 @@ const reducers: ReducerList = {
 
 const ArticleEditPage = (props: ArticleEditPageProps) => {
     const { className } = props;
+    const { id } = useParams<{ id: string }>();
+    const isEdit = Boolean(id);
     const article = useSelector(getArticleDetailsForm);
     const dispatch = useAppDispatch();
 
     useInitialEffect(() => {
-        dispatch(articleDetailsActions.setForm());
+        dispatch(articleDetailsActions.setForm(isEdit));
     });
 
     return (
         <DynamicModlueLoader reducers={reducers} removeAfterUnmount={false}>
-            <Page className={classNames(cls.ArticleEditPage, {}, [className])}>
-                <ArticleEditing article={article} />
+            <Page className={classNames('', {}, [className])}>
+                <ArticleEditing article={article} isEdit={isEdit} />
             </Page>
         </DynamicModlueLoader>
     );
