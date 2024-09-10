@@ -65,7 +65,7 @@ const Deprecated = () => {
                     <TextDeprecated text={article?.createdAt} />
                 </HStack>
             </VStack>
-            {article?.blocks.map(renderArticleBlock)}
+            {article?.blocks.map((block) => renderArticleBlock(block))}
         </>
     );
 };
@@ -87,7 +87,7 @@ const Redesigned = () => {
                 src={article?.img}
                 className={cls.img}
             />
-            {article?.blocks.map(renderArticleBlock)}
+            {article?.blocks.map((block) => renderArticleBlock(block))}
         </>
     );
 };

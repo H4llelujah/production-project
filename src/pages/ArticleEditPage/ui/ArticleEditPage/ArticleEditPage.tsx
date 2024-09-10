@@ -1,21 +1,12 @@
-import { useTranslation } from 'react-i18next';
-import { memo, useCallback } from 'react';
-import { useParams } from 'react-router-dom';
+import { memo } from 'react';
 import { useSelector } from 'react-redux';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { Page } from '@/widget/Page';
 import cls from './ArticleEditPage.module.scss';
-import { ArticleBlockCreatorModal } from '@/features/articleNewBlockCreate';
-import { Card } from '@/shared/ui/redesigned/Card';
-import { VStack } from '@/shared/ui/redesigned/Stack';
-import { ArticleCommonInfoEdit } from '@/features/ArticleCommonInfoEdit';
 import {
     articleDetailsReducer,
     getArticleDetailsForm,
     articleDetailsActions,
-    renderArticleBlock,
-    ArticleBlockType,
-    ArticleType,
 } from '@/entities/Article';
 import {
     DynamicModlueLoader,
@@ -23,7 +14,7 @@ import {
 } from '@/shared/lib/components/DynamicModuleLoader/DynamicModlueLoader';
 import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { ArticleTypeSelector } from '@/features/articleTypeSelector';
+import { ArticleEditing } from '@/widget/ArticleEditing';
 
 interface ArticleEditPageProps {
     className?: string;
@@ -35,9 +26,6 @@ const reducers: ReducerList = {
 
 const ArticleEditPage = (props: ArticleEditPageProps) => {
     const { className } = props;
-    const { t } = useTranslation();
-    const { id } = useParams<{ id: string }>();
-    const isEdit = Boolean(id);
     const article = useSelector(getArticleDetailsForm);
     const dispatch = useAppDispatch();
 
@@ -45,100 +33,10 @@ const ArticleEditPage = (props: ArticleEditPageProps) => {
         dispatch(articleDetailsActions.setForm());
     });
 
-    const onChangeTitle = useCallback(
-        (value?: string) => {
-            dispatch(
-                articleDetailsActions.updateArticle({ title: value || '' }),
-            );
-        },
-        [dispatch],
-    );
-
-    const onChangeSubtitle = useCallback(
-        (value?: string) => {
-            dispatch(
-                articleDetailsActions.updateArticle({ subtitle: value || '' }),
-            );
-        },
-        [dispatch],
-    );
-
-    const onChangeImg = useCallback(
-        (value?: string) => {
-            dispatch(articleDetailsActions.updateArticle({ img: value || '' }));
-        },
-        [dispatch],
-    );
-
-    const onAddBlock = useCallback(
-        (
-            blockType: ArticleBlockType,
-            index: number,
-            value: string,
-            title?: string,
-        ) => {
-            dispatch(
-                articleDetailsActions.addNewArticleBlock({
-                    blockType,
-                    index,
-                    value,
-                    title,
-                }),
-            );
-        },
-        [dispatch],
-    );
-
-    const onChangeType = useCallback(
-        (value: string) => {
-            dispatch(
-                articleDetailsActions.updateArticleType(value as ArticleType),
-            );
-        },
-        [dispatch],
-    );
-
     return (
         <DynamicModlueLoader reducers={reducers} removeAfterUnmount={false}>
             <Page className={classNames(cls.ArticleEditPage, {}, [className])}>
-                <VStack max gap="16">
-                    {isEdit
-                        ? `Страница редактирования статьи с id = ${id}`
-                        : 'Создание новой статьи'}
-                    <Card max border="partial" padding="24">
-                        <VStack gap="16" max>
-                            <ArticleTypeSelector
-                                onChange={onChangeType}
-                                types={article?.type}
-                            />
-                            <ArticleCommonInfoEdit
-                                title={article?.title}
-                                subtitle={article?.subtitle}
-                                imgLink={article?.img}
-                                onChangeTitle={onChangeTitle}
-                                onChangeImgLink={onChangeImg}
-                                onChangeSubtitle={onChangeSubtitle}
-                            />
-                            {article?.blocks?.map((block, index) => {
-                                return (
-                                    <VStack gap="16" key={block.id}>
-                                        {renderArticleBlock(block)}
-                                        <ArticleBlockCreatorModal
-                                            index={index}
-                                            onAddBlock={onAddBlock}
-                                        />
-                                    </VStack>
-                                );
-                            })}
-                            {!article?.blocks?.length && (
-                                <ArticleBlockCreatorModal
-                                    index={0}
-                                    onAddBlock={onAddBlock}
-                                />
-                            )}
-                        </VStack>
-                    </Card>
-                </VStack>
+                <ArticleEditing article={article} />
             </Page>
         </DynamicModlueLoader>
     );

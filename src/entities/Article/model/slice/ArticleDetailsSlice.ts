@@ -1,4 +1,5 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
+import { v4 as uuidv4 } from 'uuid';
 import { FetchArticleById } from '../services/FetchArticleById/FetchArticleById';
 import { ArticleDetailsSchema } from '../types/articleDetailsSchema';
 import { Article, ArticleBlock } from '../types/article';
@@ -24,7 +25,7 @@ export const articleDetailsSlice = createSlice({
                 try {
                     state.form = JSON.parse(savedFormData) as Article;
                 } catch (error) {
-                    console.error(
+                    console.log(
                         'Error parsing article form data from localStorage:',
                         error,
                     );
@@ -60,7 +61,7 @@ export const articleDetailsSlice = createSlice({
             switch (payload.blockType) {
                 case ArticleBlockType.TEXT:
                     newBlock = {
-                        id: `${payload.index + 2}`,
+                        id: uuidv4(),
                         type: ArticleBlockType.TEXT,
                         title: payload.title ?? 'defaultTitile',
                         paragraphs: payload.value.split('\n'),
@@ -68,18 +69,19 @@ export const articleDetailsSlice = createSlice({
                     break;
                 case ArticleBlockType.CODE:
                     newBlock = {
-                        id: `${payload.index + 2}`,
+                        id: uuidv4(),
                         type: ArticleBlockType.CODE,
                         code: payload.value,
                     };
                     break;
                 case ArticleBlockType.IMAGE:
                     newBlock = {
-                        id: `${payload.index + 2}`,
+                        id: uuidv4(),
                         type: ArticleBlockType.IMAGE,
                         title: payload.title ?? 'defaultTitile',
                         src: payload.value,
                     };
+                    break;
             }
             if (state.form) {
                 state.form.blocks = state.form.blocks ?? [];
@@ -102,6 +104,17 @@ export const articleDetailsSlice = createSlice({
                     state.form.type.push(action.payload);
                 }
             }
+        },
+        deleteArticleBlock: (state, action: PayloadAction<string>) => {
+            if (state.form) {
+                state.form.blocks = state.form.blocks?.filter(
+                    (item) => item.id !== action.payload,
+                );
+            }
+            localStorage.setItem(
+                LOCAL_STORAGE_ARTICLE_EDIT_KEY,
+                JSON.stringify(state.form),
+            );
         },
     },
     extraReducers: (builder) => {
