@@ -3,7 +3,7 @@ import { FetchArticleById } from '../services/FetchArticleById/FetchArticleById'
 import { ArticleDetailsSchema } from '../types/articleDetailsSchema';
 import { Article, ArticleBlock } from '../types/article';
 import { LOCAL_STORAGE_ARTICLE_EDIT_KEY } from '@/shared/const/localstorage';
-import { ArticleBlockType } from '../consts/articleConsts';
+import { ArticleBlockType, ArticleType } from '../consts/articleConsts';
 
 const initialState: ArticleDetailsSchema = {
     data: undefined,
@@ -90,6 +90,17 @@ export const articleDetailsSlice = createSlice({
                     LOCAL_STORAGE_ARTICLE_EDIT_KEY,
                     JSON.stringify(state.form),
                 );
+            }
+        },
+        updateArticleType: (state, action: PayloadAction<ArticleType>) => {
+            if (state.form) {
+                state.form.type = state.form.type ?? [];
+                if (state.form.type.includes(action.payload)) {
+                    const index = state.form.type.indexOf(action.payload);
+                    state.form.type.splice(index, 1);
+                } else {
+                    state.form.type.push(action.payload);
+                }
             }
         },
     },

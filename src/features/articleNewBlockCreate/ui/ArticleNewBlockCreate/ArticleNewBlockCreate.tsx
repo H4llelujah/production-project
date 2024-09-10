@@ -109,7 +109,12 @@ export const ArticleNewBlockCreate = memo(
                 className={classNames('', {}, [className])}
             >
                 <VStack gap="16">
-                    {error && <Text text={t('Все поля обязательны!')} />}
+                    {error && (
+                        <Text
+                            variant="error"
+                            text={t('Все поля обязательны!')}
+                        />
+                    )}
                     {content}
                     <HStack justify="between" max>
                         <Button color="error" onClick={onCancel}>

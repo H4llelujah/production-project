@@ -1,0 +1,28 @@
+.checkbox {
+    position: relative;
+}
+
+.multiselect {
+    width: 200px;
+    position: relative;
+}
+
+.checkboxes {
+    position: absolute;
+    background-color: var(--dark-bg-redesigned);
+    z-index: 1000;
+    border: 1px solid var(--accent-redesigned);
+    border-radius: 20px;
+    overflow: hidden;
+    width: 100%;
+}
+
+.option {
+    display: flex;
+    gap: 16px;
+    padding: 8px;
+
+    &:hover {
+        background-color: var(--icon-redesigned);
+    }
+}

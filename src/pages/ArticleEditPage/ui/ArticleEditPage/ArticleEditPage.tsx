@@ -15,6 +15,7 @@ import {
     articleDetailsActions,
     renderArticleBlock,
     ArticleBlockType,
+    ArticleType,
 } from '@/entities/Article';
 import {
     DynamicModlueLoader,
@@ -22,6 +23,7 @@ import {
 } from '@/shared/lib/components/DynamicModuleLoader/DynamicModlueLoader';
 import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { ArticleTypeSelector } from '@/features/articleTypeSelector';
 
 interface ArticleEditPageProps {
     className?: string;
@@ -40,9 +42,7 @@ const ArticleEditPage = (props: ArticleEditPageProps) => {
     const dispatch = useAppDispatch();
 
     useInitialEffect(() => {
-        if (isEdit) {
-            dispatch(articleDetailsActions.setForm());
-        }
+        dispatch(articleDetailsActions.setForm());
     });
 
     const onChangeTitle = useCallback(
@@ -89,6 +89,15 @@ const ArticleEditPage = (props: ArticleEditPageProps) => {
         [dispatch],
     );
 
+    const onChangeType = useCallback(
+        (value: string) => {
+            dispatch(
+                articleDetailsActions.updateArticleType(value as ArticleType),
+            );
+        },
+        [dispatch],
+    );
+
     return (
         <DynamicModlueLoader reducers={reducers} removeAfterUnmount={false}>
             <Page className={classNames(cls.ArticleEditPage, {}, [className])}>
@@ -98,6 +107,10 @@ const ArticleEditPage = (props: ArticleEditPageProps) => {
                         : 'Создание новой статьи'}
                     <Card max border="partial" padding="24">
                         <VStack gap="16" max>
+                            <ArticleTypeSelector
+                                onChange={onChangeType}
+                                types={article?.type}
+                            />
                             <ArticleCommonInfoEdit
                                 title={article?.title}
                                 subtitle={article?.subtitle}
@@ -117,6 +130,12 @@ const ArticleEditPage = (props: ArticleEditPageProps) => {
                                     </VStack>
                                 );
                             })}
+                            {!article?.blocks?.length && (
+                                <ArticleBlockCreatorModal
+                                    index={0}
+                                    onAddBlock={onAddBlock}
+                                />
+                            )}
                         </VStack>
                     </Card>
                 </VStack>
