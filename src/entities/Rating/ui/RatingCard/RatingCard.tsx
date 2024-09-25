@@ -69,8 +69,6 @@ export const RatingCard = memo((props: RatingCardProps) => {
         onCancel?.(starsCount);
     }, [onCancel, starsCount]);
 
-    console.log('This console log shoul be here');
-
     const modalContent = (
         <ToggleFeatures
             feature="isAppRedesigned"
